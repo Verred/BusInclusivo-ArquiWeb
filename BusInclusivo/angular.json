@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "BusInclusivo": {
+    "ListarColor": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/bus-inclusivo",
+            "outputPath": "dist/listar-color",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": [
@@ -61,10 +61,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "BusInclusivo:build:production"
+              "browserTarget": "ListarColor:build:production"
             },
             "development": {
-              "browserTarget": "BusInclusivo:build:development"
+              "browserTarget": "ListarColor:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -72,7 +72,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "BusInclusivo:build"
+            "browserTarget": "ListarColor:build"
           }
         },
         "test": {
@@ -96,5 +96,8 @@
         }
       }
     }
+  },
+  "cli": {
+    "analytics": "68534185-1fcf-49c4-b709-00faed8bf879"
   }
 }
