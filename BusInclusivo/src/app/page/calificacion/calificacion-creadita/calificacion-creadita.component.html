@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<div style="text-align:center;">
+
+  <h1>Registro de calificaciones</h1>
+</div>
+<body>
+    <div class="container">
+        <form [formGroup]="form" (submit)="aceptar()">
+            <mat-form-field class="example-full-width">
+                <mat-label>                  id                </mat-label>
+                <input matInput placeholder="id" formControlName = "id">
+            </mat-form-field>
+            <br>
+
+            <mat-form-field class="example-full-width">
+                <mat-label>                  comentario                </mat-label>
+                <input matInput placeholder="comentario" formControlName = "comentario">
+            </mat-form-field>
+            <br>
+            <mat-form-field class="example-full-width">
+              <mat-label>                  Valoracion               </mat-label>
+              <input matInput placeholder="valoracion" formControlName = "valoracion">
+          </mat-form-field>
+
+            <div style="text-align:center">
+            <button mat-raidsed-button>aceptar</button>
+            <button mat-raidsed-button routerLink="/calificaciones"> Cancelar </button>
+          </div>
+
+        </form>
+    </div>
+</body>
+</html>
