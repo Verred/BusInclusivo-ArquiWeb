@@ -1,9 +1,11 @@
-import { Component, OnInit} from '@angular/core';
+import { Component, OnInit, ViewChild} from '@angular/core';
 import { MatTableDataSource } from '@angular/material/table';
 import { Marca } from 'src/app/model/Marca';
 import { MarcaService } from 'src/app/service/marca.service';
 import { MatDialog } from '@angular/material/dialog'
 import { MarcaDialogoComponent } from './marca-dialogo/marca-dialogo.component';
+import { MatPaginator } from '@angular/material/paginator';
+import { NgxPaginationModule } from 'ngx-pagination';
 
 @Component({
   selector: 'app-marca-listar',
@@ -11,6 +13,14 @@ import { MarcaDialogoComponent } from './marca-dialogo/marca-dialogo.component';
   styleUrls: ['./marca-listar.component.css']
 })
 export class MarcaListarComponent implements OnInit {
+
+  @ViewChild(MatPaginator)
+  paginator!: MatPaginator;
+
+
+
+
+
   lista: Marca[] = [];
   dataSource: MatTableDataSource<Marca> = new MatTableDataSource();
   displayedColumns: string[] = ['id', 'descripcion','Actualizar'];
@@ -21,10 +31,12 @@ export class MarcaListarComponent implements OnInit {
   ngOnInit(): void {
     this.mS.list().subscribe((data) => {
       this.dataSource = new MatTableDataSource(data);
+      this.dataSource.paginator = this.paginator;
     });
 
     this.mS.getList().subscribe(data=>{
       this.dataSource=new MatTableDataSource(data);
+      this.dataSource.paginator = this.paginator;
     })
     this.mS.getConfirmaEliminacion().subscribe(data => {
       data == true ? this.eliminar(this.idMayor) : false;
@@ -41,4 +53,12 @@ export class MarcaListarComponent implements OnInit {
       });
     });
   }
+  ngAfterViewInit() {
+    this.dataSource.paginator = this.paginator;
+  }
+
+  page = 1;
+  pageSize = 10;
+  collectionSize = 100;
+  items = [5]; // Aquí debes reemplazar "..." con los elementos que quieres paginar
 }
