@@ -1,9 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { Calificacion } from 'src/app/model/calificacion';
 import { CalificacionService } from 'src/app/service/calificacion.service';
 import { MatTableDataSource } from '@angular/material/table';
 import { CalificacionDialogoComponent } from './calificacion-dialogo/calificacion-dialogo.component';
 import { MatDialog } from '@angular/material/dialog';
+import { MatPaginator } from '@angular/material/paginator';
+
 @Component({
   selector: 'app-calificacion-listar',
   templateUrl: './calificacion-listar.component.html',
@@ -11,6 +13,19 @@ import { MatDialog } from '@angular/material/dialog';
 })
 
 export class CalificacionListarComponent implements OnInit {
+
+  @ViewChild(MatPaginator)
+  paginator!: MatPaginator;
+
+  page = 1;
+  pageSize = 10;
+  collectionSize = 100;
+  items = [5]; // Aquí debes reemplazar "..." con los elementos que quieres paginar
+
+
+
+
+
 
   lista: Calificacion[] = [];
 
@@ -21,6 +36,24 @@ export class CalificacionListarComponent implements OnInit {
   constructor(private pS: CalificacionService, private dialog:MatDialog) { }
 
   ngOnInit(): void {
+
+    this.pS.list().subscribe(data => {
+      this.dataSource = new MatTableDataSource(data);
+      this.dataSource.paginator = this.paginator;
+    });
+
+    this.pS.getLista().subscribe(data => {
+      this.dataSource = new MatTableDataSource(data);
+      this.dataSource.paginator = this.paginator;
+    });
+
+    this.pS.getConfirmaEliminacion().subscribe(data => {
+      data == true ? this.eliminar(this.idMayor) : false;
+    });
+
+
+
+
     this.pS.list().subscribe(data => {
       this.dataSource = new MatTableDataSource(data);
     })
@@ -43,6 +76,11 @@ export class CalificacionListarComponent implements OnInit {
       });
     });
   }
+
+  ngAfterViewInit() {
+    this.dataSource.paginator = this.paginator;
+}
+
 
 }
 

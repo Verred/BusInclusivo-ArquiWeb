@@ -11,4 +11,6 @@ export class CalificacionComponent implements OnInit {
   constructor(public route: ActivatedRoute){};
   ngOnInit(): void {}
 
+
+
 }
