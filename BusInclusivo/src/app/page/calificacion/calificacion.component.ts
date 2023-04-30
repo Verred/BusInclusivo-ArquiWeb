@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { CalificacionListarComponent } from './calificacion-listar/calificacion-listar.component';
 
 @Component({
   selector: 'app-calificacion',
