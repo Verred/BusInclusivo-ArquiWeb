@@ -5,13 +5,15 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
 
-
-
 import { CalificacionComponent } from './page/calificacion/calificacion.component';
 import { CalificacionListarComponent } from './page/calificacion/calificacion-listar/calificacion-listar.component';
 import { CalificacionCreaditaComponent } from './page/calificacion/calificacion-creadita/calificacion-creadita.component';
 
+import { MarcaComponent } from './page/marca/marca.component';
+import { MarcaListarComponent } from './page/marca/marca-listar/marca-listar.component';
 import { MatTableModule } from '@angular/material/table';
+import { MarcaCreaeditaComponent } from './page/marca/marca-creaedita/marca-creaedita.component'
+
 import { MatNativeDateModule } from '@angular/material/core';
 import {MatInputModule} from '@angular/material/input';
 import {MatSelectModule} from '@angular/material/select';
@@ -23,6 +25,8 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { Component } from '@angular/core';
 import { FormGroup, FormBuilder } from '@angular/forms';
 import { CalificacionDialogoComponent } from './page/calificacion/calificacion-listar/calificacion-dialogo/calificacion-dialogo.component';
+
+import { MarcaDialogoComponent } from './page/marca/marca-listar/marca-dialogo/marca-dialogo.component';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatIconModule } from '@angular/material/icon';
 import { NgxPaginationModule } from 'ngx-pagination';
@@ -35,8 +39,11 @@ import { MatPaginatorModule } from '@angular/material/paginator';
     CalificacionListarComponent,
     CalificacionComponent,
     CalificacionCreaditaComponent,
-    CalificacionDialogoComponent
-
+    CalificacionDialogoComponent,
+    MarcaComponent,
+    MarcaListarComponent,
+    MarcaCreaeditaComponent,
+    MarcaDialogoComponent,
   ],
   imports: [
     BrowserModule,
@@ -54,9 +61,7 @@ import { MatPaginatorModule } from '@angular/material/paginator';
     MatDialogModule,
     MatIconModule,
     NgxPaginationModule,
-    MatPaginatorModule
-
-
+    MatPaginatorModule,
 
 
   ],
