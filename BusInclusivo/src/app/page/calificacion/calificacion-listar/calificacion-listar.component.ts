@@ -50,20 +50,7 @@ export class CalificacionListarComponent implements OnInit {
     this.pS.getConfirmaEliminacion().subscribe(data => {
       data == true ? this.eliminar(this.idMayor) : false;
     });
-
-
-
-
-    this.pS.list().subscribe(data => {
-      this.dataSource = new MatTableDataSource(data);
-    })
-
-    this.pS.getLista().subscribe(data => {
-      this.dataSource = new MatTableDataSource(data);
-    });
-    this.pS.getConfirmaEliminacion().subscribe(data => {
-      data == true ? this.eliminar(this.idMayor) : false;
-    });
+    
   }
   confirmar(id: number) {
     this.idMayor = id;
