@@ -31,6 +31,9 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { MatIconModule } from '@angular/material/icon';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { MatPaginatorModule } from '@angular/material/paginator';
+import { MenuComponent } from './menu/menu.component';
+import { LoginComponent } from './login/login.component';
+import { HomePageComponent } from './home-page/home-page.component';
 
 
 @NgModule({
@@ -44,6 +47,9 @@ import { MatPaginatorModule } from '@angular/material/paginator';
     MarcaListarComponent,
     MarcaCreaeditaComponent,
     MarcaDialogoComponent,
+    MenuComponent,
+    LoginComponent,
+    HomePageComponent,
   ],
   imports: [
     BrowserModule,
