@@ -7,12 +7,19 @@ import { CalificacionCreaditaComponent } from './page/calificacion/calificacion-
 import { MenuComponent } from './menu/menu.component';
 import { LoginComponent } from './login/login.component';
 import { HomePageComponent } from './home-page/home-page.component';
+import { ModeloComponent } from './page/modelo/modelo.component';
+import { ModeloCreaeditaComponent } from './page/modelo/modelo-creaedita/modelo-creaedita.component';
+import { ColorCreaeditaComponent } from './page/color/color-creaedita/color-creaedita.component';
+import { ColorComponent } from './page/color/color.component';
+import { MetodopagoComponent } from './page/metodopago/metodopago.component';
+import { MetodopagoCreaeditaComponent } from './page/metodopago/metodopago-creaedita/metodopago-creaedita.component';
 const routes: Routes = [
   {
     path: 'calificaciones', component: CalificacionComponent, children: [
       { path: 'calificacionEditar', component: CalificacionCreaditaComponent },
       { path: 'edicion/:id', component: CalificacionCreaditaComponent }
     ]
+    
   },
   {
     path: 'marcas', component: MarcaComponent, children: [
@@ -21,9 +28,26 @@ const routes: Routes = [
     ]
   },
   {
+    path:'modelos',component:ModeloComponent,children:[
+      { path: 'modeloEditar',component: ModeloCreaeditaComponent },
+      { path: 'edicion/:id',component:ModeloCreaeditaComponent },
+    ]
+  },
+  {
+    path: 'color', component:ColorComponent, children:[
+      {path:'coloreditar',component:ColorCreaeditaComponent},
+      {path:'edicion/:id', component:ColorCreaeditaComponent},
+    ]
+  },
+  {
+    path:'metodopagos',component:MetodopagoComponent,children:[
+      { path: 'metopagoEditar',component: MetodopagoCreaeditaComponent },
+      { path: 'edicion/:id',component:MetodopagoCreaeditaComponent },
+    ]
+  },
+  {
     path: 'menu', component: MenuComponent
   },
-  //{ path: 'login', component: LoginComponent },
   { path: 'landing', component: HomePageComponent
   },
   { 
