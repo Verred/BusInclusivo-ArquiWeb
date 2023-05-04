@@ -10,3 +10,6 @@ button {
     background-color: #00bcd4 !important; 
     color: #fff; 
   }
+  mat-icon {
+    color: #ffffff;
+  }

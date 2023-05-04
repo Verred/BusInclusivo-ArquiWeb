@@ -5,25 +5,25 @@ module.exports = function () {
         id:1,
         valoracion: 3,
 
-        comentario:"Macho",
+        comentario:"Bueena atencion",
       },
       {
         id:2,
         valoracion: 3,
 
-        comentario:"Macho",
+        comentario:"Atento",
       },
       {
         id:3,
         valoracion: 3,
 
-        comentario:"Macho",
+        comentario:"Promedio",
       },
       {
         id:4,
         valoracion: 3,
 
-        comentario:"Macho",
+        comentario:"Conduce lento",
       },
     ],
     marca: [
