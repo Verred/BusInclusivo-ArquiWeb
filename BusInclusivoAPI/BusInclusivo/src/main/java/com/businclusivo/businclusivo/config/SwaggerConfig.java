@@ -15,6 +15,7 @@ public class SwaggerConfig {
     public Docket apiDocket(){
         return new Docket(DocumentationType.SWAGGER_2)
                 .select()
+                //No olvidar configurar esto si por error pusieron otro nombre al proyecto
                 .apis(RequestHandlerSelectors.basePackage("com.businclusivo.businclusivo.controllers"))
                 .paths(PathSelectors.any())
                 .build();
