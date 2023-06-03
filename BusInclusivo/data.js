@@ -30,6 +30,7 @@ module.exports = function () {
       {
         id:1,
         descripcion: "Mitsuvishi",
+
       },
       {
         id:2,
@@ -38,6 +39,7 @@ module.exports = function () {
       {
         id:3,
         descripcion: "Hyunday",
+
       },
       {
         id:4,

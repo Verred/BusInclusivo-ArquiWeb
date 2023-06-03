@@ -34,10 +34,12 @@ import { MatPaginatorModule } from '@angular/material/paginator';
 import { MenuComponent } from './menu/menu.component';
 import { LoginComponent } from './login/login.component';
 import { HomePageComponent } from './home-page/home-page.component';
+
 import { ModeloComponent } from './page/modelo/modelo.component';
 import { ModeloCreaeditaComponent } from './page/modelo/modelo-creaedita/modelo-creaedita.component';
 import { ModeloDialogoComponent } from './page/modelo/modelo-listar/modelo-dialogo/modelo-dialogo.component';
 import { ModeloListarComponent } from './page/modelo/modelo-listar/modelo-listar.component';
+
 import { ColorListarComponent } from './page/color/color-listar/color-listar.component';
 import { ColorCreaeditaComponent } from './page/color/color-creaedita/color-creaedita.component';
 import { ColorDialogoComponent } from './page/color/color-listar/color-dialogo/color-dialogo.component'
@@ -72,6 +74,7 @@ import { MetodopagoCreaeditaComponent } from './page/metodopago/metodopago-creae
     MetodopagoCreaeditaComponent,
     MetodopagoDialogoComponent,
     MetodopagoListarComponent
+
   ],
   imports: [
     BrowserModule,
@@ -90,7 +93,6 @@ import { MetodopagoCreaeditaComponent } from './page/metodopago/metodopago-creae
     MatIconModule,
     NgxPaginationModule,
     MatPaginatorModule,
-
 
   ],
   providers: [],
