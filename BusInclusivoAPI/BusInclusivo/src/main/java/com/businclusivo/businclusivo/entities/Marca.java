@@ -8,25 +8,24 @@ public class Marca {
 
 @Id
 @GeneratedValue (strategy = GenerationType.IDENTITY)
-
-private int PK_idMarca;
+private int idMarca;
 @Column (name = "descripcion", length = 25, nullable = false)
 private String descripcion;
 
     public Marca() {
     }
 
-    public Marca(int PK_idMarca, String descripcion) {
-        this.PK_idMarca = PK_idMarca;
+    public Marca(int idMarca, String descripcion) {
+        this.idMarca = idMarca;
         this.descripcion = descripcion;
     }
 
-    public int getPK_idMarca() {
-        return PK_idMarca;
+    public int getIdMarca() {
+        return idMarca;
     }
 
-    public void setPK_idMarca(int PK_idMarca) {
-        this.PK_idMarca = PK_idMarca;
+    public void setIdMarca(int idMarca) {
+        this.idMarca = idMarca;
     }
 
     public String getDescripcion() {

@@ -1,15 +1,15 @@
 package com.businclusivo.businclusivo.dtos;
 
 public class MarcaDTO {
- private int PK_idMarca;
+ private int idMarca;
  private String descripcion;
 
-    public int getPK_idMarca() {
-        return PK_idMarca;
+    public int getIdMarca() {
+        return idMarca;
     }
 
-    public void setPK_idMarca(int PK_idMarca) {
-        this.PK_idMarca = PK_idMarca;
+    public void setIdMarca(int idMarca) {
+        this.idMarca = idMarca;
     }
 
     public String getDescripcion() {
