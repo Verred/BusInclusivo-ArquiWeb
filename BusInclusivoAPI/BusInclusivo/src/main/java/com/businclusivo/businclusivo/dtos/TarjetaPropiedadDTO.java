@@ -1,6 +1,7 @@
 package com.businclusivo.businclusivo.dtos;
 
 import com.businclusivo.businclusivo.entities.Marca;
+import com.businclusivo.businclusivo.entities.Modelo;
 
 import java.time.LocalDate;
 
@@ -12,6 +13,8 @@ public class TarjetaPropiedadDTO {
     private String descripcion;
     private int cantidadAsientos;
     private Marca marca;
+
+    private Modelo modelo;
 
     public int getIdTarjetaPropiedad() {
         return idTarjetaPropiedad;
@@ -67,5 +70,13 @@ public class TarjetaPropiedadDTO {
 
     public void setMarca(Marca marca) {
         this.marca = marca;
+    }
+
+    public Modelo getModelo() {
+        return modelo;
+    }
+
+    public void setModelo(Modelo modelo) {
+        this.modelo = modelo;
     }
 }

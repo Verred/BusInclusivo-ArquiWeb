@@ -12,8 +12,9 @@ import java.util.stream.Collectors;
 
 @RestController
 @RequestMapping("/modelos")
-public class modeloController {
+public class ModeloController {
 
+    @Autowired
     private ModeloService mS;
     //insert
     @PostMapping

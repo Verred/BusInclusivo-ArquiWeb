@@ -1,16 +1,18 @@
-package pe.edu.upc.bus.dtos;
+package com.businclusivo.businclusivo.dtos;
 
 public class CalificacionDTO {
-    private int PK_idCalificacion;
+    private int idCalificacion;
     private int valoracion;
 
     private String comentario;
 
-    public int getPK_idCalificacion() {
-        return PK_idCalificacion;
+    public int getIdCalificacion() {
+        return idCalificacion;
     }
 
-    public void setPK_idCalificacion(int PK_idCalificacion) {this.PK_idCalificacion = PK_idCalificacion;}
+    public void setIdCalificacion(int idCalificacion) {
+        this.idCalificacion = idCalificacion;
+    }
 
     public int getValoracion() {
         return valoracion;

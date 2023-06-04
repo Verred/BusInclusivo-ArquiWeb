@@ -1,17 +1,17 @@
-package pe.edu.upc.bus.servicesimplement;
+package com.businclusivo.businclusivo.servicesimplement;
 import org.springframework.beans.factory.annotation.Autowired;
-import pe.edu.upc.bus.entities.Calificacion;
-import pe.edu.upc.bus.repositories.CalificacionRepository;
-import pe.edu.upc.bus.servicies.CalificacionService;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import com.businclusivo.businclusivo.entities.Calificacion;
+import com.businclusivo.businclusivo.repositories.CalificacionRepository;
+import com.businclusivo.businclusivo.services.CalificacionService;
 
 import java.util.List;
 
-
+@Service
 public class CalificacionServicieImplement implements  CalificacionService{
 
+    @Autowired
     private CalificacionRepository mR;
 
 

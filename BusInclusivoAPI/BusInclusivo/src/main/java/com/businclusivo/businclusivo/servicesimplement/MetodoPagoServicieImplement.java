@@ -2,13 +2,14 @@ package com.businclusivo.businclusivo.servicesimplement;
 
 import com.businclusivo.businclusivo.entities.MetodoPago;
 import com.businclusivo.businclusivo.repositories.MetodoPagoRepository;
+import com.businclusivo.businclusivo.services.MetodoPagoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 @Service
-public class MetodoPagoServicieImplement {
+public class MetodoPagoServicieImplement implements MetodoPagoService {
 
     @Autowired
     private MetodoPagoRepository mR;

@@ -1,9 +1,9 @@
-package pe.edu.upc.bus.controller;
+package com.businclusivo.businclusivo.controllers;
 import org.modelmapper.ModelMapper;
 
-import pe.edu.upc.bus.dtos.CalificacionDTO;
-import pe.edu.upc.bus.entities.Calificacion;
-import pe.edu.upc.bus.servicies.CalificacionService;
+import com.businclusivo.businclusivo.dtos.CalificacionDTO;
+import com.businclusivo.businclusivo.entities.Calificacion;
+import com.businclusivo.businclusivo.services.CalificacionService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -15,6 +15,7 @@ import java.util.List;
 @RequestMapping("/calificaciones")
 public class CalificacionController {
 
+    @Autowired
     private CalificacionService mS;
     //insert
     @PostMapping

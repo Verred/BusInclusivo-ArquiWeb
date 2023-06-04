@@ -1,6 +1,6 @@
-package pe.edu.upc.bus.servicies;
+package com.businclusivo.businclusivo.services;
 
-import pe.edu.upc.bus.entities.Calificacion;
+import com.businclusivo.businclusivo.entities.Calificacion;
 
 import java.util.List;
 

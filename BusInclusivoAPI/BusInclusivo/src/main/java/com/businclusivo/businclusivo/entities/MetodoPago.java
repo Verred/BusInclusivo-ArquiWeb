@@ -8,7 +8,7 @@ public class MetodoPago {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int PK_idMetodoPago;
+    private int idMetodoPago;
 
 
     @Column (name = "descripcion", length = 25, nullable = false)
@@ -17,17 +17,17 @@ public class MetodoPago {
     public MetodoPago() {
     }
 
-    public MetodoPago(int PK_idMetodoPago, String descripcion) {
-        this.PK_idMetodoPago = PK_idMetodoPago;
+    public MetodoPago(int idMetodoPago, String descripcion) {
+        this.idMetodoPago = idMetodoPago;
         this.descripcion = descripcion;
     }
 
-    public int getPK_idMetodoPago() {
-        return PK_idMetodoPago;
+    public int getIdMetodoPago() {
+        return idMetodoPago;
     }
 
-    public void setPK_idMetodoPago(int PK_idMetodoPago) {
-        this.PK_idMetodoPago = PK_idMetodoPago;
+    public void setIdMetodoPago(int idMetodoPago) {
+        this.idMetodoPago = idMetodoPago;
     }
 
     public String getDescripcion() {

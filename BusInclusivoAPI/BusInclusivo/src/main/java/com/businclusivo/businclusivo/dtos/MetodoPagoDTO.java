@@ -3,15 +3,15 @@ package com.businclusivo.businclusivo.dtos;
 
 
 public class MetodoPagoDTO {
-    private int PK_idMetodoPago;
+    private int idMetodoPago;
     private String descripcion;
 
-    public int getPK_idMetodoPago() {
-        return PK_idMetodoPago;
+    public int getIdMetodoPago() {
+        return idMetodoPago;
     }
 
-    public void setPK_idMetodoPago(int PK_idMetodoPago) {
-        this.PK_idMetodoPago = PK_idMetodoPago;
+    public void setIdMetodoPago(int idMetodoPago) {
+        this.idMetodoPago = idMetodoPago;
     }
 
     public String getDescripcion() {

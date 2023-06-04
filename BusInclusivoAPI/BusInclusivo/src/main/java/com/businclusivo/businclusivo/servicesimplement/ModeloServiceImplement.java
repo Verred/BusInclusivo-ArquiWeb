@@ -2,14 +2,16 @@ package com.businclusivo.businclusivo.servicesimplement;
 
 import com.businclusivo.businclusivo.entities.Modelo;
 import com.businclusivo.businclusivo.repositories.ModeloRepository;
+import com.businclusivo.businclusivo.services.ModeloService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 @Service
-public class ModeloServiceImplement {
+public class ModeloServiceImplement implements ModeloService {
 
+    @Autowired
     private ModeloRepository mR;
 
 

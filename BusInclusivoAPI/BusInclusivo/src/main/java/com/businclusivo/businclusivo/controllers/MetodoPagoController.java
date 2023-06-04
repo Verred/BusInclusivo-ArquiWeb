@@ -15,6 +15,7 @@ import java.util.stream.Collectors;
 @RequestMapping("/metodospagos")
 public class MetodoPagoController {
 
+    @Autowired
     private MetodoPagoService mS;
 
     //insert

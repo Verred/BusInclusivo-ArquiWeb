@@ -30,10 +30,13 @@ public class TarjetaPropiedad {
     @JoinColumn(name = "idMarca")
     private Marca marca;
 
+    @ManyToOne
+    @JoinColumn(name = "idModelo")
+    private Modelo modelo;
     public TarjetaPropiedad() {
     }
 
-    public TarjetaPropiedad(int idTarjetaPropiedad, String placa, int tarjetaNumero, LocalDate anio, String descripcion, int cantidadAsientos, Marca marca) {
+    public TarjetaPropiedad(int idTarjetaPropiedad, String placa, int tarjetaNumero, LocalDate anio, String descripcion, int cantidadAsientos, Marca marca, Modelo modelo) {
         this.idTarjetaPropiedad = idTarjetaPropiedad;
         this.placa = placa;
         TarjetaNumero = tarjetaNumero;
@@ -41,6 +44,7 @@ public class TarjetaPropiedad {
         this.descripcion = descripcion;
         this.cantidadAsientos = cantidadAsientos;
         this.marca = marca;
+        this.modelo = modelo;
     }
 
     public int getIdTarjetaPropiedad() {
@@ -97,5 +101,13 @@ public class TarjetaPropiedad {
 
     public void setMarca(Marca marca) {
         this.marca = marca;
+    }
+
+    public Modelo getModelo() {
+        return modelo;
+    }
+
+    public void setModelo(Modelo modelo) {
+        this.modelo = modelo;
     }
 }

@@ -7,22 +7,22 @@ import javax.persistence.*;
 public class Modelo {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-
-    private int PK_idModelo;
+    private int idModelo;
     @Column (name = "descripcion", length = 25, nullable = false)
     private String descripcion;
 
-    public Modelo(int PK_idModelo, String descripcion) {
-        this.PK_idModelo = PK_idModelo;
+
+    public Modelo(int idModelo, String descripcion) {
+        this.idModelo = idModelo;
         this.descripcion = descripcion;
     }
 
-    public int getPK_idModelo() {
-        return PK_idModelo;
+    public int getIdModelo() {
+        return idModelo;
     }
 
-    public void setPK_idModelo(int PK_idModelo) {
-        this.PK_idModelo = PK_idModelo;
+    public void setIdModelo(int idModelo) {
+        this.idModelo = idModelo;
     }
 
     public String getDescripcion() {
