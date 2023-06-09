@@ -40,7 +40,7 @@ export class MarcaCreaeditaComponent implements OnInit{
   }
 
   aceptar(): void {
-    this.marca.id = this.form.value['id'];
+    this.marca.idMarca = this.form.value['id'];
     this.marca.descripcion = this.form.value['descripcion'];
 
     if (this.form.value['descripcion'].length > 0) {
@@ -68,7 +68,7 @@ export class MarcaCreaeditaComponent implements OnInit{
     if (this.edicion) {
       this.mS.listId(this.id).subscribe((data) => {
         this.form = new FormGroup({
-          id: new FormControl(data.id),
+          id: new FormControl(data.idMarca),
           descripcion: new FormControl(data.descripcion)
         });
 

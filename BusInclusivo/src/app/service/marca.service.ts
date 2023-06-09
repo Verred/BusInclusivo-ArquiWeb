@@ -9,7 +9,7 @@ const base_url = environment.base
   providedIn: 'root'
 })
 export class MarcaService {
-  private url = `${base_url}/marca`;
+  private url = `${base_url}/marcas`;
   private listCambio = new Subject<Marca[]>();
   private confirmaEliminacion = new Subject<Boolean>()
   constructor(private http:HttpClient) { }
@@ -32,10 +32,9 @@ export class MarcaService {
     return this.http.get<Marca>(`${this.url}/${id}`);
   }
   update(marca: Marca) {
-    return this.http.put(this.url + '/' + marca.id, marca);
+    return this.http.put(this.url + '/' + marca.idMarca, marca);
   }
   eliminar(id: number) {
-
     return this.http.delete(`${this.url}/${id}`);
   }
   getConfirmaEliminacion() {

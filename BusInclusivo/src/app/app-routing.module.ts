@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-<<<<<<< HEAD
 import { MarcaComponent } from './page/marca/marca.component';
 import { MarcaCreaeditaComponent } from './page/marca/marca-creaedita/marca-creaedita.component';
 import { CalificacionComponent } from './page/calificacion/calificacion.component';

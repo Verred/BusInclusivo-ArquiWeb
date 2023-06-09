@@ -14,8 +14,7 @@ public class TarjetaPropiedad {
 
     private String placa;
     @Column(name = "TarjetaNumero",  nullable = false)
-
-    private int TarjetaNumero;
+    private int tarjetaNumero;
     @Column(name = "anio", nullable = false)
 
     private LocalDate anio;
@@ -33,18 +32,23 @@ public class TarjetaPropiedad {
     @ManyToOne
     @JoinColumn(name = "idModelo")
     private Modelo modelo;
+
+    @ManyToOne
+    @JoinColumn(name = "idColor")
+    private Color color;
     public TarjetaPropiedad() {
     }
 
-    public TarjetaPropiedad(int idTarjetaPropiedad, String placa, int tarjetaNumero, LocalDate anio, String descripcion, int cantidadAsientos, Marca marca, Modelo modelo) {
+    public TarjetaPropiedad(int idTarjetaPropiedad, String placa, int tarjetaNumero, LocalDate anio, String descripcion, int cantidadAsientos, Marca marca, Modelo modelo, Color color) {
         this.idTarjetaPropiedad = idTarjetaPropiedad;
         this.placa = placa;
-        TarjetaNumero = tarjetaNumero;
+        this.tarjetaNumero = tarjetaNumero;
         this.anio = anio;
         this.descripcion = descripcion;
         this.cantidadAsientos = cantidadAsientos;
         this.marca = marca;
         this.modelo = modelo;
+        this.color = color;
     }
 
     public int getIdTarjetaPropiedad() {
@@ -64,11 +68,11 @@ public class TarjetaPropiedad {
     }
 
     public int getTarjetaNumero() {
-        return TarjetaNumero;
+        return tarjetaNumero;
     }
 
     public void setTarjetaNumero(int tarjetaNumero) {
-        TarjetaNumero = tarjetaNumero;
+        this.tarjetaNumero = tarjetaNumero;
     }
 
     public LocalDate getAnio() {
@@ -110,4 +114,13 @@ public class TarjetaPropiedad {
     public void setModelo(Modelo modelo) {
         this.modelo = modelo;
     }
+
+    public Color getColor() {
+        return color;
+    }
+
+    public void setColor(Color color) {
+        this.color = color;
+    }
 }
+

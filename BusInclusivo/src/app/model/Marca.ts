@@ -1,4 +1,4 @@
 export class Marca{
-    id:number=0
+    idMarca:number=0
     descripcion:string=""
 }

@@ -1,5 +1,6 @@
 package com.businclusivo.businclusivo.dtos;
 
+import com.businclusivo.businclusivo.entities.Color;
 import com.businclusivo.businclusivo.entities.Marca;
 import com.businclusivo.businclusivo.entities.Modelo;
 
@@ -15,6 +16,7 @@ public class TarjetaPropiedadDTO {
     private Marca marca;
 
     private Modelo modelo;
+    private Color color;
 
     public int getIdTarjetaPropiedad() {
         return idTarjetaPropiedad;
@@ -78,5 +80,13 @@ public class TarjetaPropiedadDTO {
 
     public void setModelo(Modelo modelo) {
         this.modelo = modelo;
+    }
+
+    public Color getColor() {
+        return color;
+    }
+
+    public void setColor(Color color) {
+        this.color = color;
     }
 }
