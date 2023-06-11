@@ -10,7 +10,7 @@ const base_url = environment.base
 })
 export class ModeloService {
 
-  private url = `${base_url}/modelo`;
+  private url = `${base_url}/modelos`;
   private listCambio = new Subject<Modelo[]>();
   private confirmaEliminacion = new Subject<Boolean>()
   constructor(private http:HttpClient) { }
@@ -33,7 +33,9 @@ export class ModeloService {
     return this.http.get<Modelo>(`${this.url}/${id}`);
   }
   update(modelo: Modelo) {
-    return this.http.put(this.url + '/' + modelo.id, modelo);
+    //return this.http.put(this.url + '/' + modelo.id, modelo);
+    return this.http.put(this.url, modelo);
+
   }
   eliminar(id: number) {
 

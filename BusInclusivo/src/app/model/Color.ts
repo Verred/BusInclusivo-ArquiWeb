@@ -1,4 +1,4 @@
 export class Color{
-  id:number=0
-  nameColor: string=""
+  idColor:number=0
+  descripcion: string=""
 }

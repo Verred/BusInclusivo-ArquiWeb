@@ -22,7 +22,7 @@
 
     <div>
       <div style="text-align: right;">
-        <button type="button" class="btn btn-success" mat-raidsed-button routerLink="/color/coloreditar">
+        <button type="button" class="btn btn-success" mat-raidsed-button routerLink="/colores/coloreditar">
           Nuevo
         </button>
       </div>
@@ -31,13 +31,13 @@
   
         <ng-container matColumnDef="id">
           <th mat-header-cell *matHeaderCellDef> No. </th>
-          <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+          <td mat-cell *matCellDef="let element"> {{element.idColor}} </td>
         </ng-container>
   
         <!-- Name Column -->
         <ng-container matColumnDef="color">
           <th mat-header-cell *matHeaderCellDef> Color </th>
-          <td mat-cell *matCellDef="let element"> {{element.nameColor}} </td>
+          <td mat-cell *matCellDef="let element"> {{element.descripcion}} </td>
         </ng-container>
   
         <!-- Position Column -->
@@ -45,11 +45,11 @@
           <th mat-header-cell *matHeaderCellDef>Acciones</th>
           <td mat-cell *matCellDef="let element">
   
-            <button mat-raised-button class="boton-verde" [routerLink]="['edicion', element.id]">
+            <button mat-raised-button class="boton-verde" [routerLink]="['edicion', element.idColor]">
               <mat-icon>edit</mat-icon>
             </button>
   
-            <button mat-raised-button class="boton-celeste" (click)="confirmar(element.id)">
+            <button mat-raised-button class="boton-celeste" (click)="confirmar(element.idColor)">
               <mat-icon>delete</mat-icon>
             </button>
   

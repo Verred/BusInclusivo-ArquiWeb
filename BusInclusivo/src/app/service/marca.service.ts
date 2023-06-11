@@ -32,7 +32,8 @@ export class MarcaService {
     return this.http.get<Marca>(`${this.url}/${id}`);
   }
   update(marca: Marca) {
-    return this.http.put(this.url + '/' + marca.idMarca, marca);
+    //return this.http.put(this.url + '/' + marca.idMarca, marca);
+    return this.http.put(this.url, marca);
   }
   eliminar(id: number) {
     return this.http.delete(`${this.url}/${id}`);

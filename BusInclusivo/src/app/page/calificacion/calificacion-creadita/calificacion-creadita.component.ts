@@ -33,7 +33,7 @@ ngOnInit():void{
 }
 
 aceptar():void{
-  this.calificacion.id=this.form.value['id'];
+  this.calificacion.idCalificacion=this.form.value['id'];
   this.calificacion.comentario=this.form.value['comentario'];
   this.calificacion.valoracion=this.form.value['valoracion'];
   if(this.form.value['comentario'].length>0){
@@ -60,7 +60,7 @@ if (this.edicion) {
 
   this.pS.listID(this.id).subscribe(data => {
     this.form = new FormGroup({
-      id: new FormControl(data.id),
+      id: new FormControl(data.idCalificacion),
       comentario: new FormControl(data.comentario),
       valoracion: new FormControl(data.valoracion),
     });

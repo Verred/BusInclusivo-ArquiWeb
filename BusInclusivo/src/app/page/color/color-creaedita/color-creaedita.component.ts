@@ -21,9 +21,9 @@ export class ColorCreaeditaComponent implements OnInit {
   }
   ngOnInit(): void {
     this.route.params.subscribe ((data:Params)=> {
-this.id=data['id'];
-this.edicion=data['id']!=null
-  this.init();
+    this.id=data['id'];
+    this.edicion=data['id']!=null
+    this.init();
     })
       //.pipe(map(params => params.get('id')), tap(id => (this.id = +id)))
       //.subscribe(id => {});
@@ -34,8 +34,8 @@ this.edicion=data['id']!=null
     });
   }
   aceptar(): void {
-    this.color.id = this.form.value['id'];
-    this.color.nameColor = this.form.value['nameColor'];
+    this.color.idColor = this.form.value['id'];
+    this.color.descripcion = this.form.value['nameColor'];
 
     //this.form.value['nameColor'].length > 0
 
@@ -53,7 +53,7 @@ this.edicion=data['id']!=null
       })
     })
   }
-  this.router.navigate(['color']);
+  this.router.navigate(['colores']);
   } else {
     this.mensaje="Ingrese el color";
 
@@ -64,8 +64,8 @@ this.edicion=data['id']!=null
     if(this.edicion){
       this.cS.listId(this.id).subscribe((data)=>{
         this.form=new FormGroup({
-          id:new FormControl(data.id),
-          nameColor:new FormControl(data.nameColor),
+          id:new FormControl(data.idColor),
+          nameColor:new FormControl(data.descripcion),
 
         })
       })

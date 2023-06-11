@@ -39,7 +39,7 @@ export class ModeloCreaeditaComponent implements OnInit{
   }
 
   aceptar(): void {
-    this.modelo.id = this.form.value['id'];
+    this.modelo.idModelo = this.form.value['id'];
     this.modelo.descripcion = this.form.value['descripcion'];
 
     if (this.form.value['descripcion'].length > 0) {
@@ -67,7 +67,7 @@ export class ModeloCreaeditaComponent implements OnInit{
     if (this.edicion) {
       this.mS.listId(this.id).subscribe((data) => {
         this.form = new FormGroup({
-          id: new FormControl(data.id),
+          id: new FormControl(data.idModelo),
           descripcion: new FormControl(data.descripcion)
         });
 

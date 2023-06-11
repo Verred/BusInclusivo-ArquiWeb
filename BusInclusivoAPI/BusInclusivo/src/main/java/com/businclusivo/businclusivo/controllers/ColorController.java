@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 import java.util.stream.Collectors;
 @RestController
-@RequestMapping("/Colores")
+@RequestMapping("/colores")
 public class ColorController {
     @Autowired
     private ColorService Servic;

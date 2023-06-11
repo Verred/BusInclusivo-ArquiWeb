@@ -8,7 +8,7 @@ const base_url = environment.base
   providedIn: 'root'
 })
 export class CalificacionService {
-  private url = `${base_url}/calificacion` ;
+  private url = `${base_url}/calificaciones` ;
   private listaCambio = new Subject<Calificacion[]>()
   private confirmaEliminacion = new Subject<Boolean>()
   constructor(private http: HttpClient) { }
@@ -32,14 +32,11 @@ export class CalificacionService {
   listID(id: number){
     // return this.listCambio.asObservable();
      return this.http.get<Calificacion>(`${this.url}/${id}`)
-   }
+  }
 
-   update(calificacion:Calificacion){
-    return this.http.put(this.url+'/'+calificacion.id,calificacion);
-
-
-
- }
+  update(calificacion:Calificacion){
+    return this.http.put(this.url, calificacion);
+  }
  eliminar(id: number) {
 
   return this.http.delete(`${this.url}/${id}`);

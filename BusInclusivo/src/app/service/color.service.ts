@@ -8,7 +8,7 @@ const base_url = environment.base
   providedIn: 'root'
 })
 export class ColorService {
-  private url = `${base_url}/color`
+  private url = `${base_url}/colores`
   private listCambio = new Subject<Color[]>()
   private confirmaEliminacion = new Subject<Boolean>()
 
@@ -35,8 +35,8 @@ export class ColorService {
   }
 
   update(color:Color){
-  return this.http.put(this.url+"/"+color.id,color);
-
+   //return this.http.put(this.url+"/"+color.id,color);
+   return this.http.put(this.url, color);
   }
   eliminar(id: number) {
 

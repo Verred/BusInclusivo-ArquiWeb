@@ -10,7 +10,7 @@ const base_url = environment.base
 })
 export class MetodopagoService {
 
-  private url = `${base_url}/metodoPago`;
+  private url = `${base_url}/metodospagos`;
   private listCambio = new Subject<MetodoPago[]>();
   private confirmaEliminacion = new Subject<Boolean>()
   
@@ -34,7 +34,8 @@ export class MetodopagoService {
     return this.http.get<MetodoPago>(`${this.url}/${id}`);
   }
   update(metodoPago: MetodoPago) {
-    return this.http.put(this.url + '/' + metodoPago.id, metodoPago);
+    //return this.http.put(this.url + '/' + metodoPago.id, metodoPago);
+    return this.http.put(this.url, metodoPago);
   }
   eliminar(id: number) {
 

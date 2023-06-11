@@ -39,7 +39,7 @@ export class MetodopagoCreaeditaComponent implements OnInit{
   }
 
   aceptar(): void {
-    this.metodoPago.id = this.form.value['id'];
+    this.metodoPago.idMetodoPago = this.form.value['id'];
     this.metodoPago.descripcion = this.form.value['descripcion'];
 
     if (this.form.value['descripcion'].length > 0) {
@@ -67,7 +67,7 @@ export class MetodopagoCreaeditaComponent implements OnInit{
     if (this.edicion) {
       this.mS.listId(this.id).subscribe((data) => {
         this.form = new FormGroup({
-          id: new FormControl(data.id),
+          id: new FormControl(data.idMetodoPago),
           descripcion: new FormControl(data.descripcion)
         });
 

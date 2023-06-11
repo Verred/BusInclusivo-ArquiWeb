@@ -34,7 +34,7 @@ const routes: Routes = [
     ]
   },
   {
-    path: 'color', component:ColorComponent, children:[
+    path: 'colores', component:ColorComponent, children:[
       {path:'coloreditar',component:ColorCreaeditaComponent},
       {path:'edicion/:id', component:ColorCreaeditaComponent},
     ]
