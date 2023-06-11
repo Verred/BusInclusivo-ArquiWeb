@@ -11,7 +11,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 @RestController
-@RequestMapping("/Rutas")
+@RequestMapping("/rutas")
 public class RutaController {
     @Autowired
     private RutaService Servic;

@@ -11,7 +11,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 @RestController
-@RequestMapping("/TarjetaPropiedades")
+@RequestMapping("/tarjetaPropiedades")
 public class TarjetaPropiedadController {
 
     @Autowired

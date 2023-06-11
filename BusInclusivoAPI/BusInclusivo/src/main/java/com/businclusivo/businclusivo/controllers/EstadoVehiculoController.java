@@ -11,7 +11,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 @RestController
-@RequestMapping("/EstadoVehiculos")
+@RequestMapping("/estadovehiculos")
 public class EstadoVehiculoController {
     @Autowired
     private EstadoVehiculoService Servic;
