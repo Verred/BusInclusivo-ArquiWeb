@@ -48,6 +48,7 @@ import { MetodopagoListarComponent } from './page/metodopago/metodopago-listar/m
 import { MetodopagoComponent } from './page/metodopago/metodopago.component';
 import { MetodopagoDialogoComponent } from './page/metodopago/metodopago-listar/metodopago-dialogo/metodopago-dialogo.component';
 import { MetodopagoCreaeditaComponent } from './page/metodopago/metodopago-creaedita/metodopago-creaedita.component';
+
 import { PagoComponent } from './page/pago/pago.component';
 import { PagoListarComponent } from './page/pago/pago-listar/pago-listar.component';
 import { PagoCreaeditaComponent } from './page/pago/pago-creaedita/pago-creaedita.component';
@@ -56,6 +57,20 @@ import { TarjetapropiedadComponent } from './page/tarjetapropiedad/tarjetapropie
 import { TarjetapropiedadListarComponent } from './page/tarjetapropiedad/tarjetapropiedad-listar/tarjetapropiedad-listar.component';
 import { TarjetapropiedadCreaeditaComponent } from './page/tarjetapropiedad/tarjetapropiedad-creaedita/tarjetapropiedad-creaedita.component';
 import { TarjetaPropiedadDialogoComponent } from './page/tarjetapropiedad/tarjetapropiedad-listar/tarjetapropiedad-dialogo/tarjetapropiedad-dialogo.component';
+
+import { EstadoVehiculo } from './model/EstadoVehiculo';
+import { EstadoVehiculoService } from './service/estadovehiculo.service';
+import { EstadoVehiculoCreaditaComponent } from './page/estadovehiculo/estadovehiculo-creadita/estadovehiculo-creadita.component';
+import { EstadoVehiculoListarComponent } from './page/estadovehiculo/estadovehiculo-listar/estadovehiculo-listar.component';
+import { EstadoVehiculoDialogoComponent } from './page/estadovehiculo/estadovehiculo-listar/estadovehiculo-dialogo/estadovehiculo-dialogo.component';
+import { EstadoVehiculoComponent } from './page/estadovehiculo/estadovehiculo.component';
+import { TipoDocumentoComponent } from './page/tipodocumento/tipodocumento.component';
+import { TipoDocumentoCreaditaComponent } from './page/tipodocumento/tipodocumento-creadita/tipodocumento-creadita.component';
+import { TipoDocumentoService } from './service/tipodocumento.service';
+import { TipoDocumentoDialogoComponent } from './page/tipodocumento/tipodocumento-listar/tipodocumento-dialogo/tipodocumento-dialogo.component';
+import { TipoDocumentoListarComponent } from './page/tipodocumento/tipodocumento-listar/tipodocumento-listar.component';
+
+
 
 @NgModule({
   declarations: [
@@ -83,6 +98,7 @@ import { TarjetaPropiedadDialogoComponent } from './page/tarjetapropiedad/tarjet
     MetodopagoCreaeditaComponent,
     MetodopagoDialogoComponent,
     MetodopagoListarComponent,
+
     PagoComponent,
     PagoListarComponent,
     PagoCreaeditaComponent,
@@ -90,7 +106,17 @@ import { TarjetaPropiedadDialogoComponent } from './page/tarjetapropiedad/tarjet
     TarjetapropiedadComponent,
     TarjetapropiedadListarComponent,
     TarjetapropiedadCreaeditaComponent,
-    TarjetaPropiedadDialogoComponent
+    TarjetaPropiedadDialogoComponent,
+
+    EstadoVehiculoComponent,
+    EstadoVehiculoCreaditaComponent,
+    EstadoVehiculoListarComponent,
+    EstadoVehiculoDialogoComponent,
+    TipoDocumentoComponent,
+    TipoDocumentoCreaditaComponent,
+    TipoDocumentoDialogoComponent,
+   TipoDocumentoListarComponent
+
 
   ],
   imports: [
