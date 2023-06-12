@@ -12,17 +12,26 @@
     <div class="container" style="text-align: center;">
         <div style="text-align: center;">
             <h1>
-             Agregar marca
+             Agregar Pagos
             </h1>
         </div>
 
         <form [formGroup]="form"(submit)="aceptar()">
 
-
-
             <mat-form-field class="example-full-width">
-                <mat-label>                  Descripcion                </mat-label>
-                <input matInput  required placeholder="descripcion" formControlName = "descripcion">
+                <mat-label>                  Precio                </mat-label>
+                <input matInput  required placeholder="precio" formControlName = "precio">
+            </mat-form-field>
+
+            <br>
+
+            <mat-form-field appearance="fill">
+                <mat-label> Metodo </mat-label>
+                <mat-select formControlName="metodo" [(value)]="idEntidadSele" required>
+                  <mat-option *ngFor="let enty of lista" [value]="enty.idMetodoPago">
+                    {{enty.descripcion}}
+                </mat-option>
+                </mat-select>
             </mat-form-field>
 
             <br>
@@ -30,8 +39,11 @@
             <div style="text-align: center;"  >
                 <button mat-raidsed-button class="btn btn-success" role="button" >Aceptar</button>
               
-                <button mat-raidsed-button routerLink="/marcas" class="btn btn-danger" role="button" style="margin-left: 10em"> Cancelar </button>
+                <button mat-raidsed-button routerLink="/pagos" class="btn btn-danger" role="button" style="margin-left: 10em"> Cancelar </button>
             </div>
+
+
+          
 
         </form>
     </div>
