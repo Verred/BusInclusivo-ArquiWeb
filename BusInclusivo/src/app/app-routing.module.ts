@@ -13,13 +13,35 @@ import { ColorCreaeditaComponent } from './page/color/color-creaedita/color-crea
 import { ColorComponent } from './page/color/color.component';
 import { MetodopagoComponent } from './page/metodopago/metodopago.component';
 import { MetodopagoCreaeditaComponent } from './page/metodopago/metodopago-creaedita/metodopago-creaedita.component';
+import { EstadoVehiculo } from './model/EstadoVehiculo';
+import { EstadoVehiculoCreaditaComponent } from './page/estadovehiculo/estadovehiculo-creadita/estadovehiculo-creadita.component';
+import { EstadoVehiculoComponent } from './page/estadovehiculo/estadovehiculo.component';
+import { TipoDocumentoComponent } from './page/tipodocumento/tipodocumento.component';
+import { TipoDocumentoCreaditaComponent } from './page/tipodocumento/tipodocumento-creadita/tipodocumento-creadita.component';
 const routes: Routes = [
+  {
+    path: 'tipodocumento', component: TipoDocumentoComponent, children: [
+      { path: 'tipodocumentoEditar', component: TipoDocumentoCreaditaComponent },
+      { path: 'edicion/:id', component: TipoDocumentoCreaditaComponent }
+    ]
+
+  },
+
+
+
+  {
+    path: 'estadovehiculo', component: EstadoVehiculoComponent, children: [
+      { path: 'estadovehiculoEditar', component: EstadoVehiculoCreaditaComponent },
+      { path: 'edicion/:id', component: EstadoVehiculoCreaditaComponent }
+    ]
+
+  },
   {
     path: 'calificaciones', component: CalificacionComponent, children: [
       { path: 'calificacionEditar', component: CalificacionCreaditaComponent },
       { path: 'edicion/:id', component: CalificacionCreaditaComponent }
     ]
-    
+
   },
   {
     path: 'marcas', component: MarcaComponent, children: [
@@ -50,8 +72,8 @@ const routes: Routes = [
   },
   { path: 'landing', component: HomePageComponent
   },
-  { 
-    path: 'login', component: LoginComponent 
+  {
+    path: 'login', component: LoginComponent
   },
 ];
 

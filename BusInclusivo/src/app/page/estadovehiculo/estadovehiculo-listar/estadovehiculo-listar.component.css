@@ -1,0 +1,17 @@
+
+button {
+  margin: 12px;
+
+}
+.boton-verde {
+  background-color: #4caf50 !important;
+  color: #ffffff;
+}
+.boton-celeste {
+  background-color: #00bcd4 !important;
+  color: #fff;
+
+}
+mat-icon {
+  color: #ffffff;
+}
