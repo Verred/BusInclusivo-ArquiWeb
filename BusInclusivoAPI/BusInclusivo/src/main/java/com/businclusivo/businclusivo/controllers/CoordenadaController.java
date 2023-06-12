@@ -11,7 +11,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 @RestController
-@RequestMapping("/Coordenadas")
+@RequestMapping("/coordenadas")
 public class CoordenadaController {
     @Autowired
     private CoordenadaService Servic;

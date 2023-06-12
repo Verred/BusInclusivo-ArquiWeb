@@ -48,6 +48,15 @@ import { MetodopagoListarComponent } from './page/metodopago/metodopago-listar/m
 import { MetodopagoComponent } from './page/metodopago/metodopago.component';
 import { MetodopagoDialogoComponent } from './page/metodopago/metodopago-listar/metodopago-dialogo/metodopago-dialogo.component';
 import { MetodopagoCreaeditaComponent } from './page/metodopago/metodopago-creaedita/metodopago-creaedita.component';
+import { PagoComponent } from './page/pago/pago.component';
+import { PagoListarComponent } from './page/pago/pago-listar/pago-listar.component';
+import { PagoCreaeditaComponent } from './page/pago/pago-creaedita/pago-creaedita.component';
+import { PagoDialogoComponent } from './page/pago/pago-listar/pago-dialogo/pago-dialogo.component';
+import { TarjetapropiedadComponent } from './page/tarjetapropiedad/tarjetapropiedad.component';
+import { TarjetapropiedadListarComponent } from './page/tarjetapropiedad/tarjetapropiedad-listar/tarjetapropiedad-listar.component';
+import { TarjetapropiedadCreaeditaComponent } from './page/tarjetapropiedad/tarjetapropiedad-creaedita/tarjetapropiedad-creaedita.component';
+import { TarjetaPropiedadDialogoComponent } from './page/tarjetapropiedad/tarjetapropiedad-listar/tarjetapropiedad-dialogo/tarjetapropiedad-dialogo.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -73,7 +82,15 @@ import { MetodopagoCreaeditaComponent } from './page/metodopago/metodopago-creae
     MetodopagoComponent,
     MetodopagoCreaeditaComponent,
     MetodopagoDialogoComponent,
-    MetodopagoListarComponent
+    MetodopagoListarComponent,
+    PagoComponent,
+    PagoListarComponent,
+    PagoCreaeditaComponent,
+    PagoDialogoComponent,
+    TarjetapropiedadComponent,
+    TarjetapropiedadListarComponent,
+    TarjetapropiedadCreaeditaComponent,
+    TarjetaPropiedadDialogoComponent
 
   ],
   imports: [

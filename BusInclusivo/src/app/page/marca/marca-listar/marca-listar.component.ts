@@ -17,10 +17,6 @@ export class MarcaListarComponent implements OnInit {
   @ViewChild(MatPaginator)
   paginator!: MatPaginator;
 
-
-
-
-
   lista: Marca[] = [];
   dataSource: MatTableDataSource<Marca> = new MatTableDataSource();
   displayedColumns: string[] = ['id', 'descripcion','Actualizar'];

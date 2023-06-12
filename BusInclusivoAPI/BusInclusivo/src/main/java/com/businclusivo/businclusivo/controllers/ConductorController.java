@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 import java.util.stream.Collectors;
 @RestController
-@RequestMapping("/Conductores")
+@RequestMapping("/conductores")
 public class ConductorController {
     @Autowired
     private ConductorService Servic;

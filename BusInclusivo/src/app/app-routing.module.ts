@@ -13,6 +13,10 @@ import { ColorCreaeditaComponent } from './page/color/color-creaedita/color-crea
 import { ColorComponent } from './page/color/color.component';
 import { MetodopagoComponent } from './page/metodopago/metodopago.component';
 import { MetodopagoCreaeditaComponent } from './page/metodopago/metodopago-creaedita/metodopago-creaedita.component';
+import { PagoComponent } from './page/pago/pago.component';
+import { PagoCreaeditaComponent } from './page/pago/pago-creaedita/pago-creaedita.component';
+import { TarjetapropiedadComponent } from './page/tarjetapropiedad/tarjetapropiedad.component';
+import { TarjetapropiedadCreaeditaComponent } from './page/tarjetapropiedad/tarjetapropiedad-creaedita/tarjetapropiedad-creaedita.component';
 const routes: Routes = [
   {
     path: 'calificaciones', component: CalificacionComponent, children: [
@@ -52,6 +56,19 @@ const routes: Routes = [
   },
   { 
     path: 'login', component: LoginComponent 
+  },
+  {
+    path:'pagos',component:PagoComponent,children:[
+      { path: 'pagoEditar',component: PagoCreaeditaComponent },
+      { path: 'edicion/:id',component:PagoCreaeditaComponent },
+    ]
+  },
+  {
+    path: 'tarjetapropiedades', component: TarjetapropiedadComponent, children: [
+      { path: 'tarjetapropiedadEditar', component: TarjetapropiedadCreaeditaComponent },
+      { path: 'edicion/:id', component: TarjetapropiedadCreaeditaComponent }
+    ]
+    
   },
 ];
 
