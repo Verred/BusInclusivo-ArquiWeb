@@ -24,6 +24,10 @@ import { EstadoVehiculoCreaditaComponent } from './page/estadovehiculo/estadoveh
 import { EstadoVehiculoComponent } from './page/estadovehiculo/estadovehiculo.component';
 import { TipoDocumentoComponent } from './page/tipodocumento/tipodocumento.component';
 import { TipoDocumentoCreaditaComponent } from './page/tipodocumento/tipodocumento-creadita/tipodocumento-creadita.component';
+import { CoordenadaComponent } from './page/coordenada/coordenada.component';
+import { CoordenadaCreaeditaComponent } from './page/coordenada/coordenada-creaedita/coordenada-creaedita.component';
+import { UsuarioComponent } from './page/usuario/usuario.component';
+import { UsuarioCreaeditaComponent } from './page/usuario/usuario-creaedita/usuario-creaedita.component';
 
 const routes: Routes = [
   {
@@ -92,6 +96,21 @@ const routes: Routes = [
     path: 'tarjetapropiedades', component: TarjetapropiedadComponent, children: [
       { path: 'tarjetapropiedadEditar', component: TarjetapropiedadCreaeditaComponent },
       { path: 'edicion/:id', component: TarjetapropiedadCreaeditaComponent }
+    ]
+    
+  },
+  {
+    path: 'coordenadas', component: CoordenadaComponent, children: [
+      { path: 'coordenadaEditar', component: CoordenadaCreaeditaComponent },
+      { path: 'edicion/:id', component: CoordenadaCreaeditaComponent }
+    ]
+    
+  },
+
+  {
+    path: 'usuarios', component: UsuarioComponent, children: [
+      { path: 'usuarioEditar', component: UsuarioCreaeditaComponent },
+      { path: 'edicion/:id', component: UsuarioCreaeditaComponent }
     ]
     
   },

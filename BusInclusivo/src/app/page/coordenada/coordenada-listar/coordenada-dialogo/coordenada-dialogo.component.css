@@ -1,0 +1,11 @@
+
+.boton-verde {
+    background-color: #4caf50 !important;
+    color: #ffffff;
+    margin-right: 10px;
+  }
+  .boton-celeste {
+    background-color: #00bcd4 !important; 
+    color: #fff; 
+    margin-left: 10px;
+  }

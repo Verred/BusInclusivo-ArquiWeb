@@ -69,6 +69,14 @@ import { TipoDocumentoCreaditaComponent } from './page/tipodocumento/tipodocumen
 import { TipoDocumentoService } from './service/tipodocumento.service';
 import { TipoDocumentoDialogoComponent } from './page/tipodocumento/tipodocumento-listar/tipodocumento-dialogo/tipodocumento-dialogo.component';
 import { TipoDocumentoListarComponent } from './page/tipodocumento/tipodocumento-listar/tipodocumento-listar.component';
+import { CoordenadaComponent } from './page/coordenada/coordenada.component';
+import { CoordenadaListarComponent } from './page/coordenada/coordenada-listar/coordenada-listar.component';
+import { CoordenadaCreaeditaComponent } from './page/coordenada/coordenada-creaedita/coordenada-creaedita.component';
+import { CoordenadaDialogoComponent } from './page/coordenada/coordenada-listar/coordenada-dialogo/coordenada-dialogo.component';
+import { UsuarioComponent } from './page/usuario/usuario.component';
+import { UsuarioListarComponent } from './page/usuario/usuario-listar/usuario-listar.component';
+import { UsuarioCreaeditaComponent } from './page/usuario/usuario-creaedita/usuario-creaedita.component';
+import { UsuarioDialogoComponent } from './page/usuario/usuario-listar/usuario-dialogo/usuario-dialogo.component';
 
 
 
@@ -115,7 +123,15 @@ import { TipoDocumentoListarComponent } from './page/tipodocumento/tipodocumento
     TipoDocumentoComponent,
     TipoDocumentoCreaditaComponent,
     TipoDocumentoDialogoComponent,
-   TipoDocumentoListarComponent
+   TipoDocumentoListarComponent,
+   CoordenadaComponent,
+   CoordenadaListarComponent,
+   CoordenadaCreaeditaComponent,
+   CoordenadaDialogoComponent,
+   UsuarioComponent,
+   UsuarioListarComponent,
+   UsuarioCreaeditaComponent,
+   UsuarioDialogoComponent
 
 
   ],
