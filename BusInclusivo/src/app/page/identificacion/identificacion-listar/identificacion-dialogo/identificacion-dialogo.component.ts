@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { MatDialogRef } from '@angular/material/dialog';
+import { IdentificacionService } from 'src/app/service/identificacion.service';
 
 @Component({
   selector: 'app-identificacion-dialogo',
@@ -6,5 +8,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./identificacion-dialogo.component.css']
 })
 export class IdentificacionDialogoComponent {
-
+  constructor(private servi : IdentificacionService,
+    private dialogRef: MatDialogRef<IdentificacionDialogoComponent>){  }
+    ngOnInit(): void { }
+    confirmar(estado: boolean) {
+      this.servi.setConfirmaEliminacion(estado);
+      this.dialogRef.close();
+    }
 }

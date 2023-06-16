@@ -2,24 +2,24 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatTableDataSource } from '@angular/material/table';
 import { MatDialog } from '@angular/material/dialog'
 import { MatPaginator } from '@angular/material/paginator';
-import { Identificacion } from 'src/app/model/Identificacion';
-import { IdentificacionService } from 'src/app/service/identificacion.service';
-import { IdentificacionDialogoComponent } from './identificacion-dialogo/identificacion-dialogo.component';
+import { Conductor } from 'src/app/model/Conductor';
+import { ConductorService } from 'src/app/service/conductor.service';
+import { ConductorDialogoComponent } from './conductor-dialogo/conductor-dialogo.component';
 
 @Component({
-  selector: 'app-identificacion-listar',
-  templateUrl: './identificacion-listar.component.html',
-  styleUrls: ['./identificacion-listar.component.css']
+  selector: 'app-conductor-listar',
+  templateUrl: './conductor-listar.component.html',
+  styleUrls: ['./conductor-listar.component.css']
 })
-export class IdentificacionListarComponent {
+export class ConductorListarComponent implements OnInit{
   @ViewChild(MatPaginator)
   paginator!: MatPaginator;
-  lista: Identificacion [] = [];
-  dataSource: MatTableDataSource<Identificacion> = new MatTableDataSource();
-  displayedColumns: string[] = ['id', 'numdocumento','tipo','user','vencimiento','Actualizar'];
+  lista: Conductor [] = [];
+  dataSource: MatTableDataSource<Conductor> = new MatTableDataSource();
+  displayedColumns: string[] = ['id', 'ususario','licencia','horas', 'Actualizar'];
   private idMayor: number = 0;
 
-  constructor(private serv : IdentificacionService, private dialog: MatDialog) {}
+  constructor(private serv : ConductorService, private dialog: MatDialog) {}
 
   ngOnInit(): void {
     this.serv.list().subscribe((data) => {
@@ -37,7 +37,7 @@ export class IdentificacionListarComponent {
   }
   confirmar(id: number) {
     this.idMayor = id;
-    this.dialog.open(IdentificacionDialogoComponent);
+    this.dialog.open(ConductorDialogoComponent);
   }
   eliminar(id: number) {
     this.serv.eliminar(id).subscribe(() => {

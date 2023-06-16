@@ -2,24 +2,26 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatTableDataSource } from '@angular/material/table';
 import { MatDialog } from '@angular/material/dialog'
 import { MatPaginator } from '@angular/material/paginator';
-import { Identificacion } from 'src/app/model/Identificacion';
-import { IdentificacionService } from 'src/app/service/identificacion.service';
-import { IdentificacionDialogoComponent } from './identificacion-dialogo/identificacion-dialogo.component';
+import { Viaje } from 'src/app/model/Viaje';
+import { ViajeService } from 'src/app/service/viaje.service';
+import { ViajeDialogoComponent } from './viaje-dialogo/viaje-dialogo.component';
+
 
 @Component({
-  selector: 'app-identificacion-listar',
-  templateUrl: './identificacion-listar.component.html',
-  styleUrls: ['./identificacion-listar.component.css']
+  selector: 'app-viaje-listar',
+  templateUrl: './viaje-listar.component.html',
+  styleUrls: ['./viaje-listar.component.css']
 })
-export class IdentificacionListarComponent {
+export class ViajeListarComponent implements OnInit {
+
   @ViewChild(MatPaginator)
   paginator!: MatPaginator;
-  lista: Identificacion [] = [];
-  dataSource: MatTableDataSource<Identificacion> = new MatTableDataSource();
-  displayedColumns: string[] = ['id', 'numdocumento','tipo','user','vencimiento','Actualizar'];
+  lista: Viaje [] = [];
+  dataSource: MatTableDataSource<Viaje> = new MatTableDataSource();
+  displayedColumns: string[] = ['id','conductor','vehiculo','pasajero','calificacion','pago','ruta','fecha','Actualizar'];
   private idMayor: number = 0;
 
-  constructor(private serv : IdentificacionService, private dialog: MatDialog) {}
+  constructor(private serv : ViajeService, private dialog: MatDialog) {}
 
   ngOnInit(): void {
     this.serv.list().subscribe((data) => {
@@ -37,7 +39,7 @@ export class IdentificacionListarComponent {
   }
   confirmar(id: number) {
     this.idMayor = id;
-    this.dialog.open(IdentificacionDialogoComponent);
+    this.dialog.open(ViajeDialogoComponent);
   }
   eliminar(id: number) {
     this.serv.eliminar(id).subscribe(() => {
@@ -54,4 +56,6 @@ export class IdentificacionListarComponent {
   pageSize = 10;
   collectionSize = 100;
   items = [5]; // Aquí debes reemplazar "..." con los elementos que quieres paginar
+
+
 }

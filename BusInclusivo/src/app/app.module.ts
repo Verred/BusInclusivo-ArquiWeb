@@ -89,6 +89,18 @@ import { IdentificacionComponent } from './page/identificacion/identificacion.co
 import { IdentificacionListarComponent } from './page/identificacion/identificacion-listar/identificacion-listar.component';
 import { IdentificacionCreaeditaComponent } from './page/identificacion/identificacion-creaedita/identificacion-creaedita.component';
 import { IdentificacionDialogoComponent } from './page/identificacion/identificacion-listar/identificacion-dialogo/identificacion-dialogo.component';
+import { ConductorComponent } from './page/conductor/conductor.component';
+import { ConductorListarComponent } from './page/conductor/conductor-listar/conductor-listar.component';
+import { ConductorCreaeditaComponent } from './page/conductor/conductor-creaedita/conductor-creaedita.component';
+import { ConductorDialogoComponent } from './page/conductor/conductor-listar/conductor-dialogo/conductor-dialogo.component';
+import { PasajeroComponent } from './page/pasajero/pasajero.component';
+import { PasajeroCreaeditaComponent } from './page/pasajero/pasajero-creaedita/pasajero-creaedita.component';
+import { PasajeroDialogoComponent } from './page/pasajero/pasajero-listar/pasajero-dialogo/pasajero-dialogo.component';
+import { PasajeroListarComponent } from './page/pasajero/pasajero-listar/pasajero-listar.component';
+import { ViajeComponent } from './page/viaje/viaje.component';
+import { ViajeListarComponent } from './page/viaje/viaje-listar/viaje-listar.component';
+import { ViajeCreaeditaComponent } from './page/viaje/viaje-creaedita/viaje-creaedita.component';
+import { ViajeDialogoComponent } from './page/viaje/viaje-listar/viaje-dialogo/viaje-dialogo.component';
 
 
 
@@ -155,7 +167,19 @@ import { IdentificacionDialogoComponent } from './page/identificacion/identifica
    IdentificacionComponent,
    IdentificacionListarComponent,
    IdentificacionCreaeditaComponent,
-   IdentificacionDialogoComponent
+   IdentificacionDialogoComponent,
+   ConductorComponent,
+   ConductorListarComponent,
+   ConductorCreaeditaComponent,
+   ConductorDialogoComponent,
+   PasajeroComponent,
+   PasajeroCreaeditaComponent,
+   PasajeroDialogoComponent,
+   PasajeroListarComponent,
+   ViajeComponent,
+   ViajeListarComponent,
+   ViajeCreaeditaComponent,
+   ViajeDialogoComponent
 
 
   ],

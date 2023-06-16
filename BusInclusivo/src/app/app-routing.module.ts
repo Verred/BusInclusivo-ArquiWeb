@@ -34,6 +34,10 @@ import { VehiculoComponent } from './page/vehiculo/vehiculo.component';
 import { VehiculoCreaeditaComponent } from './page/vehiculo/vehiculo-creaedita/vehiculo-creaedita.component';
 import { IdentificacionComponent } from './page/identificacion/identificacion.component';
 import { IdentificacionCreaeditaComponent } from './page/identificacion/identificacion-creaedita/identificacion-creaedita.component';
+import { ConductorComponent } from './page/conductor/conductor.component';
+import { ConductorCreaeditaComponent } from './page/conductor/conductor-creaedita/conductor-creaedita.component';
+import { PasajeroComponent } from './page/pasajero/pasajero.component';
+import { PasajeroCreaeditaComponent } from './page/pasajero/pasajero-creaedita/pasajero-creaedita.component';
 
 const routes: Routes = [
   {
@@ -142,6 +146,24 @@ const routes: Routes = [
     path: 'identificaciones', component: IdentificacionComponent, children: [
       { path: 'identificacionEditar', component: IdentificacionCreaeditaComponent },
       { path: 'edicion/:id', component: IdentificacionCreaeditaComponent }
+    ]
+  },
+  {
+    path: 'conductores', component: ConductorComponent, children: [
+      { path: 'conductorEditar', component: ConductorCreaeditaComponent },
+      { path: 'edicion/:id', component: ConductorCreaeditaComponent }
+    ]
+  },
+  {
+    path: 'pasajeros', component: PasajeroComponent, children: [
+      { path: 'pasajeroEditar', component: PasajeroCreaeditaComponent },
+      { path: 'edicion/:id', component: PasajeroCreaeditaComponent }
+    ]
+  },
+  {
+    path: 'viajes', component: PasajeroComponent, children: [
+      { path: 'viajeEditar', component: PasajeroCreaeditaComponent },
+      { path: 'edicion/:id', component: PasajeroCreaeditaComponent }
     ]
   },
 ];

@@ -27,9 +27,6 @@ public class Viaje {
     @JoinColumn(name = "idPago")
     private Pago pago;
     @ManyToOne
-    @JoinColumn(name = "idReclamo")
-    private Reclamo reclamo;
-    @ManyToOne
     @JoinColumn(name = "idRuta")
     private Ruta ruta;
     public Viaje() {
@@ -43,7 +40,6 @@ public class Viaje {
         this.pasajero = pasajero;
         this.calificacion = calificacion;
         this.pago = pago;
-        this.reclamo = reclamo;
         this.ruta = ruta;
     }
 
@@ -101,14 +97,6 @@ public class Viaje {
 
     public void setPago(Pago pago) {
         this.pago = pago;
-    }
-
-    public Reclamo getReclamo() {
-        return reclamo;
-    }
-
-    public void setReclamo(Reclamo reclamo) {
-        this.reclamo = reclamo;
     }
 
     public Ruta getRuta() {

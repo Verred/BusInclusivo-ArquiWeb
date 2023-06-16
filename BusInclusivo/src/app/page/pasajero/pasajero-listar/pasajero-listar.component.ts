@@ -2,24 +2,26 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatTableDataSource } from '@angular/material/table';
 import { MatDialog } from '@angular/material/dialog'
 import { MatPaginator } from '@angular/material/paginator';
-import { Identificacion } from 'src/app/model/Identificacion';
-import { IdentificacionService } from 'src/app/service/identificacion.service';
-import { IdentificacionDialogoComponent } from './identificacion-dialogo/identificacion-dialogo.component';
+import { Pasajero } from 'src/app/model/Pasajero';
+import { PasajeroService } from 'src/app/service/pasajero.service';
+import { PasajeroDialogoComponent } from './pasajero-dialogo/pasajero-dialogo.component'; 
+
+
 
 @Component({
-  selector: 'app-identificacion-listar',
-  templateUrl: './identificacion-listar.component.html',
-  styleUrls: ['./identificacion-listar.component.css']
+  selector: 'app-pasajero-listar',
+  templateUrl: './pasajero-listar.component.html',
+  styleUrls: ['./pasajero-listar.component.css']
 })
-export class IdentificacionListarComponent {
+export class PasajeroListarComponent {
   @ViewChild(MatPaginator)
   paginator!: MatPaginator;
-  lista: Identificacion [] = [];
-  dataSource: MatTableDataSource<Identificacion> = new MatTableDataSource();
-  displayedColumns: string[] = ['id', 'numdocumento','tipo','user','vencimiento','Actualizar'];
+  lista: Pasajero [] = [];
+  dataSource: MatTableDataSource<Pasajero> = new MatTableDataSource();
+  displayedColumns: string[] = ['id', 'ususario', 'Actualizar'];
   private idMayor: number = 0;
 
-  constructor(private serv : IdentificacionService, private dialog: MatDialog) {}
+  constructor(private serv : PasajeroService, private dialog: MatDialog) {}
 
   ngOnInit(): void {
     this.serv.list().subscribe((data) => {
@@ -37,7 +39,7 @@ export class IdentificacionListarComponent {
   }
   confirmar(id: number) {
     this.idMayor = id;
-    this.dialog.open(IdentificacionDialogoComponent);
+    this.dialog.open(PasajeroDialogoComponent);
   }
   eliminar(id: number) {
     this.serv.eliminar(id).subscribe(() => {

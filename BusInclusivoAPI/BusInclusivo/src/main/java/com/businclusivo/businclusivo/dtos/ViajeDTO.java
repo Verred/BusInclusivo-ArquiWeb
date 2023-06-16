@@ -15,7 +15,6 @@ public class ViajeDTO {
     private Pasajero pasajero;
     private Calificacion calificacion;
     private Pago pago;
-    private Reclamo reclamo;
     private Ruta ruta;
 
     public int getIdViaje() {
@@ -72,14 +71,6 @@ public class ViajeDTO {
 
     public void setPago(Pago pago) {
         this.pago = pago;
-    }
-
-    public Reclamo getReclamo() {
-        return reclamo;
-    }
-
-    public void setReclamo(Reclamo reclamo) {
-        this.reclamo = reclamo;
     }
 
     public Ruta getRuta() {

@@ -12,29 +12,11 @@
     <div class="container" style="text-align: center;">
         <div style="text-align: center;">
             <h1>
-             Agregar Documentos
+             Agregar Conductores
             </h1>
         </div>
 
         <form [formGroup]="form"(submit)="aceptar()">
-
-            <mat-form-field class="example-full-width">
-                <mat-label>                  Numero de Documento                </mat-label>
-                <input matInput  required placeholder="num" formControlName = "num">
-            </mat-form-field>
-
-            <br>
-
-            <mat-form-field appearance="fill">
-                <mat-label> Tipo documento </mat-label>
-                <mat-select formControlName="tipo" [(value)]="idTipoSele" required>
-                  <mat-option *ngFor="let enty of listaTipos" [value]="enty.idTipoDocumento">
-                    {{enty.descripcion}}
-                </mat-option>
-                </mat-select>
-            </mat-form-field>
-
-            <br>
 
             <mat-form-field appearance="fill">
                 <mat-label> Usuario </mat-label>
@@ -45,14 +27,19 @@
                 </mat-select>
             </mat-form-field>
 
-           
             <br>
 
-            <mat-form-field appearance="fill">
-                <mat-label>Fecha de vencimiento </mat-label>
-                <input matInput [matDatepicker]="picker" formControlName="fecha" [max]="maxFecha">
-                <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-                <mat-datepicker #picker></mat-datepicker>
+            
+            <mat-form-field class="example-full-width">
+                <mat-label>                  Licencias               </mat-label>
+                <input matInput  required placeholder="licencia" formControlName = "licencia">
+            </mat-form-field>
+
+            <br>
+
+            <mat-form-field class="example-full-width">
+                <mat-label>                 Horas              </mat-label>
+                <input matInput  required placeholder="horas" formControlName = "horas">
             </mat-form-field>
 
             <br>
@@ -60,7 +47,7 @@
             <div style="text-align: center;"  >
                 <button mat-raidsed-button class="btn btn-success" role="button" >Aceptar</button>
               
-                <button mat-raidsed-button routerLink="/tarjetapropiedades" class="btn btn-danger" role="button" style="margin-left: 10em"> Cancelar </button>
+                <button mat-raidsed-button routerLink="/conductores" class="btn btn-danger" role="button" style="margin-left: 10em"> Cancelar </button>
             </div>
 
 
