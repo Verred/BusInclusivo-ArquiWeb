@@ -50,7 +50,7 @@ aceptar():void{
       })
     })
  }
-  this.router.navigate(['estadovehiculo']);
+  this.router.navigate(['estadovehiculos']);
 } else {
   this.mensaje = "Ingrese el nombre!!!";
 }

@@ -2,26 +2,25 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatTableDataSource } from '@angular/material/table';
 import { MatDialog } from '@angular/material/dialog'
 import { MatPaginator } from '@angular/material/paginator';
-
-import { TarjetaPropiedad } from 'src/app/model/TarjetaPropiedad';
-import { TarjetapropiedadService } from 'src/app/service/tarjetapropiedad.service';
-import { TarjetaPropiedadDialogoComponent } from './tarjetapropiedad-dialogo/tarjetapropiedad-dialogo.component';
+import { Vehiculo } from 'src/app/model/Vehiculo';
+import { VehiculoService } from 'src/app/service/vehiculo.service';
+import { VehiculoDialogoComponent } from './vehiculo-dialogo/vehiculo-dialogo.component';
 
 @Component({
-  selector: 'app-tarjetapropiedad-listar',
-  templateUrl: './tarjetapropiedad-listar.component.html',
-  styleUrls: ['./tarjetapropiedad-listar.component.css']
+  selector: 'app-vehiculo-listar',
+  templateUrl: './vehiculo-listar.component.html',
+  styleUrls: ['./vehiculo-listar.component.css']
 })
-export class TarjetapropiedadListarComponent implements OnInit {
+export class VehiculoListarComponent  implements OnInit{
 
   @ViewChild(MatPaginator)
   paginator!: MatPaginator;
-  lista: TarjetaPropiedad [] = [];
-  dataSource: MatTableDataSource<TarjetaPropiedad> = new MatTableDataSource();
-  displayedColumns: string[] = ['id', 'marca','modelo','color','placa','tarjeta','anio','descripcion','cantidad','Actualizar'];
+  lista: Vehiculo [] = [];
+  dataSource: MatTableDataSource<Vehiculo> = new MatTableDataSource();
+  displayedColumns: string[] = ['id', 'tarjeta','estado','Actualizar'];
   private idMayor: number = 0;
 
-  constructor(private serv : TarjetapropiedadService, private dialog: MatDialog) {}
+  constructor(private serv : VehiculoService, private dialog: MatDialog) {}
 
   ngOnInit(): void {
     this.serv.list().subscribe((data) => {
@@ -39,7 +38,7 @@ export class TarjetapropiedadListarComponent implements OnInit {
   }
   confirmar(id: number) {
     this.idMayor = id;
-    this.dialog.open(TarjetaPropiedadDialogoComponent);
+    this.dialog.open(VehiculoDialogoComponent);
   }
   eliminar(id: number) {
     this.serv.eliminar(id).subscribe(() => {

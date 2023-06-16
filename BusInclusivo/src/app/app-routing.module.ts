@@ -28,6 +28,12 @@ import { CoordenadaComponent } from './page/coordenada/coordenada.component';
 import { CoordenadaCreaeditaComponent } from './page/coordenada/coordenada-creaedita/coordenada-creaedita.component';
 import { UsuarioComponent } from './page/usuario/usuario.component';
 import { UsuarioCreaeditaComponent } from './page/usuario/usuario-creaedita/usuario-creaedita.component';
+import { RutaComponent } from './page/ruta/ruta.component';
+import { RutaCreaeditaComponent } from './page/ruta/ruta-creaedita/ruta-creaedita.component';
+import { VehiculoComponent } from './page/vehiculo/vehiculo.component';
+import { VehiculoCreaeditaComponent } from './page/vehiculo/vehiculo-creaedita/vehiculo-creaedita.component';
+import { IdentificacionComponent } from './page/identificacion/identificacion.component';
+import { IdentificacionCreaeditaComponent } from './page/identificacion/identificacion-creaedita/identificacion-creaedita.component';
 
 const routes: Routes = [
   {
@@ -113,6 +119,30 @@ const routes: Routes = [
       { path: 'edicion/:id', component: UsuarioCreaeditaComponent }
     ]
     
+  },
+  {
+    path: 'rutas', component: RutaComponent, children: [
+      { path: 'rutaEditar', component: RutaCreaeditaComponent },
+      { path: 'edicion/:id', component: RutaCreaeditaComponent }
+    ]
+  },
+  {
+    path: 'vehiculos', component: VehiculoComponent, children: [
+      { path: 'vehiculoEditar', component: VehiculoCreaeditaComponent },
+      { path: 'edicion/:id', component: VehiculoCreaeditaComponent }
+    ]
+  },
+  {
+    path: 'estadovehiculos', component: EstadoVehiculoComponent, children: [
+      { path: 'estadovehiculoEditar', component: EstadoVehiculoCreaditaComponent },
+      { path: 'edicion/:id', component: EstadoVehiculoCreaditaComponent }
+    ]
+  },
+  {
+    path: 'identificaciones', component: IdentificacionComponent, children: [
+      { path: 'identificacionEditar', component: IdentificacionCreaeditaComponent },
+      { path: 'edicion/:id', component: IdentificacionCreaeditaComponent }
+    ]
   },
 ];
 

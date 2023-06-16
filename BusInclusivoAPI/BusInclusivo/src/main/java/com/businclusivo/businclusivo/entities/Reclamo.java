@@ -15,18 +15,18 @@ public class Reclamo {
     @Column(name = "horaFecha", nullable = false)
     private LocalDate horaFecha;
     @ManyToOne
-    @JoinColumn(name = "idCoordenada")
-    private Coordenada coordenada;
+    @JoinColumn(name = "idViaje")
+    private Viaje viaje;
 
     public Reclamo() {
     }
 
-    public Reclamo(int idReclamo, String evidencia, String comentario, LocalDate horaFecha, Coordenada coordenada) {
+    public Reclamo(int idReclamo, String evidencia, String comentario, LocalDate horaFecha, Viaje viaje) {
         this.idReclamo = idReclamo;
         this.evidencia = evidencia;
         this.comentario = comentario;
         this.horaFecha = horaFecha;
-        this.coordenada = coordenada;
+        this.viaje = viaje;
     }
 
     public int getIdReclamo() {
@@ -61,11 +61,11 @@ public class Reclamo {
         this.horaFecha = horaFecha;
     }
 
-    public Coordenada getCoordenada() {
-        return coordenada;
+    public Viaje getViaje() {
+        return viaje;
     }
 
-    public void setCoordenada(Coordenada coordenada) {
-        this.coordenada = coordenada;
+    public void setViaje(Viaje viaje) {
+        this.viaje = viaje;
     }
 }

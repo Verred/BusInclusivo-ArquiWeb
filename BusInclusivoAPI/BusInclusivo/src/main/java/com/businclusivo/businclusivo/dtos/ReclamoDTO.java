@@ -1,6 +1,7 @@
 package com.businclusivo.businclusivo.dtos;
 
 import com.businclusivo.businclusivo.entities.Coordenada;
+import com.businclusivo.businclusivo.entities.Viaje;
 
 
 import java.time.LocalDate;
@@ -10,7 +11,7 @@ public class ReclamoDTO {
     private String evidencia;
     private String comentario;
     private LocalDate horaFecha;
-    private Coordenada coordenada;
+    private Viaje viaje;
 
     public int getIdReclamo() {
         return idReclamo;
@@ -44,11 +45,11 @@ public class ReclamoDTO {
         this.horaFecha = horaFecha;
     }
 
-    public Coordenada getCoordenada() {
-        return coordenada;
+    public Viaje getViaje() {
+        return viaje;
     }
 
-    public void setCoordenada(Coordenada coordenada) {
-        this.coordenada = coordenada;
+    public void setViaje(Viaje viaje) {
+        this.viaje = viaje;
     }
 }

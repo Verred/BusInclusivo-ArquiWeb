@@ -77,6 +77,18 @@ import { UsuarioComponent } from './page/usuario/usuario.component';
 import { UsuarioListarComponent } from './page/usuario/usuario-listar/usuario-listar.component';
 import { UsuarioCreaeditaComponent } from './page/usuario/usuario-creaedita/usuario-creaedita.component';
 import { UsuarioDialogoComponent } from './page/usuario/usuario-listar/usuario-dialogo/usuario-dialogo.component';
+import { RutaComponent } from './page/ruta/ruta.component';
+import { RutaListarComponent } from './page/ruta/ruta-listar/ruta-listar.component';
+import { RutaCreaeditaComponent } from './page/ruta/ruta-creaedita/ruta-creaedita.component';
+import { RutaDialogoComponent } from './page/ruta/ruta-listar/ruta-dialogo/ruta-dialogo.component';
+import { VehiculoComponent } from './page/vehiculo/vehiculo.component';
+import { VehiculoListarComponent } from './page/vehiculo/vehiculo-listar/vehiculo-listar.component';
+import { VehiculoCreaeditaComponent } from './page/vehiculo/vehiculo-creaedita/vehiculo-creaedita.component';
+import { VehiculoDialogoComponent } from './page/vehiculo/vehiculo-listar/vehiculo-dialogo/vehiculo-dialogo.component';
+import { IdentificacionComponent } from './page/identificacion/identificacion.component';
+import { IdentificacionListarComponent } from './page/identificacion/identificacion-listar/identificacion-listar.component';
+import { IdentificacionCreaeditaComponent } from './page/identificacion/identificacion-creaedita/identificacion-creaedita.component';
+import { IdentificacionDialogoComponent } from './page/identificacion/identificacion-listar/identificacion-dialogo/identificacion-dialogo.component';
 
 
 
@@ -131,7 +143,19 @@ import { UsuarioDialogoComponent } from './page/usuario/usuario-listar/usuario-d
    UsuarioComponent,
    UsuarioListarComponent,
    UsuarioCreaeditaComponent,
-   UsuarioDialogoComponent
+   UsuarioDialogoComponent,
+   RutaComponent,
+   RutaListarComponent,
+   RutaCreaeditaComponent,
+   RutaDialogoComponent,
+   VehiculoComponent,
+   VehiculoListarComponent,
+   VehiculoCreaeditaComponent,
+   VehiculoDialogoComponent,
+   IdentificacionComponent,
+   IdentificacionListarComponent,
+   IdentificacionCreaeditaComponent,
+   IdentificacionDialogoComponent
 
 
   ],

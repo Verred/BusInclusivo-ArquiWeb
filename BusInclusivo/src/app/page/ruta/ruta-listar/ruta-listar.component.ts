@@ -2,26 +2,24 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatTableDataSource } from '@angular/material/table';
 import { MatDialog } from '@angular/material/dialog'
 import { MatPaginator } from '@angular/material/paginator';
-
-import { TarjetaPropiedad } from 'src/app/model/TarjetaPropiedad';
-import { TarjetapropiedadService } from 'src/app/service/tarjetapropiedad.service';
-import { TarjetaPropiedadDialogoComponent } from './tarjetapropiedad-dialogo/tarjetapropiedad-dialogo.component';
+import { Ruta } from 'src/app/model/Ruta';
+import { RutaService } from 'src/app/service/ruta.service';
+import { RutaDialogoComponent } from './ruta-dialogo/ruta-dialogo.component';
 
 @Component({
-  selector: 'app-tarjetapropiedad-listar',
-  templateUrl: './tarjetapropiedad-listar.component.html',
-  styleUrls: ['./tarjetapropiedad-listar.component.css']
+  selector: 'app-ruta-listar',
+  templateUrl: './ruta-listar.component.html',
+  styleUrls: ['./ruta-listar.component.css']
 })
-export class TarjetapropiedadListarComponent implements OnInit {
-
+export class RutaListarComponent implements OnInit{
   @ViewChild(MatPaginator)
   paginator!: MatPaginator;
-  lista: TarjetaPropiedad [] = [];
-  dataSource: MatTableDataSource<TarjetaPropiedad> = new MatTableDataSource();
-  displayedColumns: string[] = ['id', 'marca','modelo','color','placa','tarjeta','anio','descripcion','cantidad','Actualizar'];
+  lista: Ruta [] = [];
+  dataSource: MatTableDataSource<Ruta> = new MatTableDataSource();
+  displayedColumns: string[] = ['id', 'start','end','descripcion','Actualizar'];
   private idMayor: number = 0;
 
-  constructor(private serv : TarjetapropiedadService, private dialog: MatDialog) {}
+  constructor(private serv : RutaService, private dialog: MatDialog) {}
 
   ngOnInit(): void {
     this.serv.list().subscribe((data) => {
@@ -39,7 +37,7 @@ export class TarjetapropiedadListarComponent implements OnInit {
   }
   confirmar(id: number) {
     this.idMayor = id;
-    this.dialog.open(TarjetaPropiedadDialogoComponent);
+    this.dialog.open(RutaDialogoComponent);
   }
   eliminar(id: number) {
     this.serv.eliminar(id).subscribe(() => {
