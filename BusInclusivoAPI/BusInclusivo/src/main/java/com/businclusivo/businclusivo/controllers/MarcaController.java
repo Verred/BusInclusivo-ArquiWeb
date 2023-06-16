@@ -5,6 +5,7 @@ import com.businclusivo.businclusivo.dtos.MarcaDTO;
 import com.businclusivo.businclusivo.entities.Marca;
 import com.businclusivo.businclusivo.services.MarcaService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.stream.Collectors;

@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient,HttpHeaders } from '@angular/common/http';
 import { Marca } from '../model/Marca';
 import { environment } from 'src/environments/environment';
 import { Subject } from 'rxjs';
@@ -14,10 +14,18 @@ export class MarcaService {
   private confirmaEliminacion = new Subject<Boolean>()
   constructor(private http:HttpClient) { }
   list() {
-    return this.http.get<Marca[]>(this.url);
+    let token = sessionStorage.getItem("token");
+
+    return this.http.get<Marca[]>(this.url, {
+      headers: new HttpHeaders().set('Authorization', `Bearer ${token}`).set('Content-Type', 'application/json')
+    });
   }
   insert(marca: Marca) {
-    return this.http.post(this.url, marca);
+    let token = sessionStorage.getItem("token");
+
+    return this.http.post(this.url, marca, {
+      headers: new HttpHeaders().set('Authorization', `Bearer ${token}`).set('Content-Type', 'application/json')
+    });
   }
 
   setList(listaNueva: Marca[]) {
@@ -29,14 +37,26 @@ export class MarcaService {
   }
 
   listId(id: number) {
-    return this.http.get<Marca>(`${this.url}/${id}`);
+    let token = sessionStorage.getItem("token");
+
+    return this.http.get<Marca>(`${this.url}/${id}`, {
+      headers: new HttpHeaders().set('Authorization', `Bearer ${token}`).set('Content-Type', 'application/json')
+    });
   }
   update(marca: Marca) {
+    let token = sessionStorage.getItem("token");
+
     //return this.http.put(this.url + '/' + marca.idMarca, marca);
-    return this.http.put(this.url, marca);
+    return this.http.put(this.url, marca, {
+      headers: new HttpHeaders().set('Authorization', `Bearer ${token}`).set('Content-Type', 'application/json')
+    });
   }
   eliminar(id: number) {
-    return this.http.delete(`${this.url}/${id}`);
+    let token = sessionStorage.getItem("token");
+
+    return this.http.delete(`${this.url}/${id}`, {
+      headers: new HttpHeaders().set('Authorization', `Bearer ${token}`).set('Content-Type', 'application/json')
+    });
   }
   getConfirmaEliminacion() {
     return this.confirmaEliminacion.asObservable();

@@ -58,7 +58,7 @@ export class MarcaCreaeditaComponent implements OnInit{
         });
       }
 
-      this.router.navigate(['marcas']);
+      this.router.navigate(['pages/marcas']);
 
     } else {
       this.mensaje = "Ingrese la descripcion"

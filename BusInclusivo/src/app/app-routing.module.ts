@@ -5,7 +5,7 @@ import { MarcaCreaeditaComponent } from './page/marca/marca-creaedita/marca-crea
 import { CalificacionComponent } from './page/calificacion/calificacion.component';
 import { CalificacionCreaditaComponent } from './page/calificacion/calificacion-creadita/calificacion-creadita.component';
 import { MenuComponent } from './menu/menu.component';
-import { LoginComponent } from './login/login.component';
+import { LoginComponent } from './page/login/login.component';
 import { HomePageComponent } from './home-page/home-page.component';
 import { ModeloComponent } from './page/modelo/modelo.component';
 import { ModeloCreaeditaComponent } from './page/modelo/modelo-creaedita/modelo-creaedita.component';
@@ -50,12 +50,12 @@ const routes: Routes = [
     ]
 
   },
-  {
-    path: 'marcas', component: MarcaComponent, children: [
-      { path: 'marcaEditar', component: MarcaCreaeditaComponent },
-      { path: 'edicion/:id', component: MarcaCreaeditaComponent },
-    ]
-  },
+  // {
+  //   path: 'marcas', component: MarcaComponent, children: [
+  //     { path: 'marcaEditar', component: MarcaCreaeditaComponent },
+  //     { path: 'edicion/:id', component: MarcaCreaeditaComponent },
+  //   ]
+  // },
   {
     path:'modelos',component:ModeloComponent,children:[
       { path: 'modeloEditar',component: ModeloCreaeditaComponent },
@@ -80,9 +80,6 @@ const routes: Routes = [
   { path: 'landing', component: HomePageComponent
   },
   {
-    path: 'login', component: LoginComponent
-  },
-  {
     path:'pagos',component:PagoComponent,children:[
       { path: 'pagoEditar',component: PagoCreaeditaComponent },
       { path: 'edicion/:id',component:PagoCreaeditaComponent },
@@ -94,6 +91,18 @@ const routes: Routes = [
       { path: 'edicion/:id', component: TarjetapropiedadCreaeditaComponent }
     ]
     
+  },
+
+  {
+    path: '',
+    redirectTo: 'login', pathMatch: 'full'
+  },
+  {
+    path: 'login', component: LoginComponent
+  },
+  {
+    path: 'pages',
+    loadChildren: () => import('./page/pages.module').then((m) => m.PagesModule),
   },
 ];
 

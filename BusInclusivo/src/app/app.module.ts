@@ -9,10 +9,10 @@ import { CalificacionComponent } from './page/calificacion/calificacion.componen
 import { CalificacionListarComponent } from './page/calificacion/calificacion-listar/calificacion-listar.component';
 import { CalificacionCreaditaComponent } from './page/calificacion/calificacion-creadita/calificacion-creadita.component';
 
-import { MarcaComponent } from './page/marca/marca.component';
-import { MarcaListarComponent } from './page/marca/marca-listar/marca-listar.component';
+// import { MarcaComponent } from './page/marca/marca.component';
+// import { MarcaListarComponent } from './page/marca/marca-listar/marca-listar.component';
+// import { MarcaCreaeditaComponent } from './page/marca/marca-creaedita/marca-creaedita.component'
 import { MatTableModule } from '@angular/material/table';
-import { MarcaCreaeditaComponent } from './page/marca/marca-creaedita/marca-creaedita.component'
 
 import { MatNativeDateModule } from '@angular/material/core';
 import {MatInputModule} from '@angular/material/input';
@@ -32,7 +32,6 @@ import { MatIconModule } from '@angular/material/icon';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MenuComponent } from './menu/menu.component';
-import { LoginComponent } from './login/login.component';
 import { HomePageComponent } from './home-page/home-page.component';
 
 import { ModeloComponent } from './page/modelo/modelo.component';
@@ -69,8 +68,8 @@ import { TipoDocumentoCreaditaComponent } from './page/tipodocumento/tipodocumen
 import { TipoDocumentoService } from './service/tipodocumento.service';
 import { TipoDocumentoDialogoComponent } from './page/tipodocumento/tipodocumento-listar/tipodocumento-dialogo/tipodocumento-dialogo.component';
 import { TipoDocumentoListarComponent } from './page/tipodocumento/tipodocumento-listar/tipodocumento-listar.component';
-
-
+import { LoginComponent } from './page/login/login.component';
+import { MatToolbarModule } from '@angular/material/toolbar';
 
 @NgModule({
   declarations: [
@@ -79,12 +78,11 @@ import { TipoDocumentoListarComponent } from './page/tipodocumento/tipodocumento
     CalificacionComponent,
     CalificacionCreaditaComponent,
     CalificacionDialogoComponent,
-    MarcaComponent,
-    MarcaListarComponent,
-    MarcaCreaeditaComponent,
-    MarcaDialogoComponent,
+    //MarcaComponent,
+    // MarcaListarComponent,
+    // MarcaCreaeditaComponent,
+    // MarcaDialogoComponent,
     MenuComponent,
-    LoginComponent,
     HomePageComponent,
     ModeloComponent,
     ModeloCreaeditaComponent,
@@ -115,9 +113,9 @@ import { TipoDocumentoListarComponent } from './page/tipodocumento/tipodocumento
     TipoDocumentoComponent,
     TipoDocumentoCreaditaComponent,
     TipoDocumentoDialogoComponent,
-   TipoDocumentoListarComponent
-
-
+    TipoDocumentoListarComponent,
+    LoginComponent,
+    
   ],
   imports: [
     BrowserModule,
@@ -136,7 +134,7 @@ import { TipoDocumentoListarComponent } from './page/tipodocumento/tipodocumento
     MatIconModule,
     NgxPaginationModule,
     MatPaginatorModule,
-
+    MatToolbarModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -6,6 +6,7 @@ import { MatDialog } from '@angular/material/dialog'
 import { MarcaDialogoComponent } from './marca-dialogo/marca-dialogo.component';
 import { MatPaginator } from '@angular/material/paginator';
 import { NgxPaginationModule } from 'ngx-pagination';
+import { LoginService } from 'src/app/service/login.service';
 
 @Component({
   selector: 'app-marca-listar',
@@ -17,14 +18,20 @@ export class MarcaListarComponent implements OnInit {
   @ViewChild(MatPaginator)
   paginator!: MatPaginator;
 
+  role:string="";
+
   lista: Marca[] = [];
   dataSource: MatTableDataSource<Marca> = new MatTableDataSource();
   displayedColumns: string[] = ['id', 'descripcion','Actualizar'];
   private idMayor: number = 0;
 
-  constructor(private mS: MarcaService, private dialog: MatDialog) {}
+  constructor(private mS: MarcaService, private dialog: MatDialog, private ls:LoginService) {}
 
   ngOnInit(): void {
+    
+    this.role=this.ls.showRole();
+    console.log(this.role);
+
     this.mS.list().subscribe((data) => {
       this.dataSource = new MatTableDataSource(data);
       this.dataSource.paginator = this.paginator;
