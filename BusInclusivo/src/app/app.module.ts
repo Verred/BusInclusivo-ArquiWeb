@@ -9,10 +9,10 @@ import { CalificacionComponent } from './page/calificacion/calificacion.componen
 import { CalificacionListarComponent } from './page/calificacion/calificacion-listar/calificacion-listar.component';
 import { CalificacionCreaditaComponent } from './page/calificacion/calificacion-creadita/calificacion-creadita.component';
 
-import { MarcaComponent } from './page/marca/marca.component';
-import { MarcaListarComponent } from './page/marca/marca-listar/marca-listar.component';
+// import { MarcaComponent } from './page/marca/marca.component';
+// import { MarcaListarComponent } from './page/marca/marca-listar/marca-listar.component';
+// import { MarcaCreaeditaComponent } from './page/marca/marca-creaedita/marca-creaedita.component'
 import { MatTableModule } from '@angular/material/table';
-import { MarcaCreaeditaComponent } from './page/marca/marca-creaedita/marca-creaedita.component'
 
 import { MatNativeDateModule } from '@angular/material/core';
 import {MatInputModule} from '@angular/material/input';
@@ -32,7 +32,6 @@ import { MatIconModule } from '@angular/material/icon';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MenuComponent } from './menu/menu.component';
-import { LoginComponent } from './login/login.component';
 import { HomePageComponent } from './home-page/home-page.component';
 
 import { ModeloComponent } from './page/modelo/modelo.component';
@@ -105,7 +104,8 @@ import { ReclamoComponent } from './page/reclamo/reclamo.component';
 import { ReclamoListarComponent } from './page/reclamo/reclamo-listar/reclamo-listar.component';
 import { ReclamoCreaeditaComponent } from './page/reclamo/reclamo-creaedita/reclamo-creaedita.component';
 import { ReclamoDialogoComponent } from './page/reclamo/reclamo-listar/reclamo-dialogo/reclamo-dialogo.component';
-
+import { LoginComponent } from './page/login/login.component';
+import { MatToolbarModule } from '@angular/material/toolbar';
 
 
 @NgModule({
@@ -115,12 +115,11 @@ import { ReclamoDialogoComponent } from './page/reclamo/reclamo-listar/reclamo-d
     CalificacionComponent,
     CalificacionCreaditaComponent,
     CalificacionDialogoComponent,
-    MarcaComponent,
-    MarcaListarComponent,
-    MarcaCreaeditaComponent,
-    MarcaDialogoComponent,
+    //MarcaComponent,
+    // MarcaListarComponent,
+    // MarcaCreaeditaComponent,
+    // MarcaDialogoComponent,
     MenuComponent,
-    LoginComponent,
     HomePageComponent,
     ModeloComponent,
     ModeloCreaeditaComponent,
@@ -187,9 +186,10 @@ import { ReclamoDialogoComponent } from './page/reclamo/reclamo-listar/reclamo-d
    ReclamoComponent,
    ReclamoListarComponent,
    ReclamoCreaeditaComponent,
-   ReclamoDialogoComponent
-
-
+   ReclamoDialogoComponent,
+    TipoDocumentoListarComponent,
+    LoginComponent,
+    
   ],
   imports: [
     BrowserModule,
@@ -208,7 +208,7 @@ import { ReclamoDialogoComponent } from './page/reclamo/reclamo-listar/reclamo-d
     MatIconModule,
     NgxPaginationModule,
     MatPaginatorModule,
-
+    MatToolbarModule
   ],
   providers: [],
   bootstrap: [AppComponent]

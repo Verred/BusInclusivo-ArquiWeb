@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { MarcaService } from 'src/app/service/marca.service'
-import { LoginComponent } from '../login/login.component';
+import { LoginComponent } from '../page/login/login.component'; 
 import { Router, NavigationEnd } from '@angular/router';
 
 @Component({
