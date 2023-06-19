@@ -35,20 +35,14 @@ export class ViajeCreaeditaComponent {
   listaConductor: Conductor[] = [];
   listaVehiculo: Vehiculo[] = [];
   listaPasajero: Pasajero[] = [];
-  listacalificacion: Calificacion[] = [];
-  listapago: Pago[] = [];
+  listaPago: Pago[] = [];
 
-
-  idMarcaSele: number = 0;
-  idModeloSele: number = 0;
-  idColorSele: number = 0;
 
   idRutaSele: number  = 0;
   idConductoSele: number = 0;
   idVehicuSele: number = 0;
-  idPasajero: number = 0;
-  idCalificacion: number =0;
-  idPago: number = 0;
+  idPasajeroSele: number = 0;
+  idPagoSele: number = 0;
 
   constructor(
     private servi: ViajeService, 
@@ -58,8 +52,7 @@ export class ViajeCreaeditaComponent {
     private ServRuta: RutaService,
     private ServConductor: ConductorService,
     private ServVehiculo: VehiculoService,
-    private ServPasaj: PasajeroService,
-    private ServCalif: CalificacionService,
+    private ServPasajero: PasajeroService,
     private ServPago: PagoService
 
   ) {}
@@ -75,46 +68,54 @@ export class ViajeCreaeditaComponent {
     this.ServRuta.list().subscribe(data => {this.listaRuta = data})
     this.ServConductor.list().subscribe(data => {this.listaConductor = data})
     this.ServVehiculo.list().subscribe(data => {this.listaVehiculo = data})
+    this.ServPasajero.list().subscribe(data => {this.listaPasajero = data})
+    this.ServPago.list().subscribe(data => {this.listaPago = data})
+
+
 
     this.form = new FormGroup({
       id: new FormControl(),
-      placa: new FormControl(),
-      modelo :new FormControl(),
-      marca :new FormControl(),
-      color :new FormControl(),
-      tarjeta :new FormControl(),
-      descripcion :new FormControl(),
-      cantidad :new FormControl(),
-      anio :new FormControl()
+      conductor: new FormControl(),
+      vehiculo :new FormControl(),
+      pasajero :new FormControl(),
+      pago :new FormControl(),
+      ruta :new FormControl(),
+      fecha :new FormControl(),
     })
   }
 
   aceptar(): void {
-    this.entidad.idTarjetaPropiedad = this.form.value['id'];
-    this.entidad.placa = this.form.value['placa'];
-    this.entidad.modelo.descripcion=this.form.value['modelo.descripcion'];
-    this.entidad.marca.descripcion=this.form.value['marca.descripcion'];
-    this.entidad.color.descripcion=this.form.value['color.descripcion'];
-    this.entidad.tarjetaNumero = this.form.value['tarjeta'];
-    this.entidad.descripcion = this.form.value['descripcion'];
-    this.entidad.cantidadAsientos = this.form.value['cantidad'];
-    this.entidad.anio = this.form.value['anio'];
+    this.entidad.idViaje = this.form.value['id'];
+    this.entidad.conductor.usuario.nombre = this.form.value['conductor.usuario.nombre'];
+    this.entidad.vehiculo.tarjetaPropiedad.tarjetaNumero =this.form.value['vehiculo.tarjetaPropiedad.tarjetaNumero'];
+    this.entidad.pasajero.usuario.nombre =this.form.value['pasajero.usuario.nombre'];
+    this.entidad.pago.precioKM =this.form.value['pago.precioKM'];
+    this.entidad.ruta.descripcion = this.form.value['ruta.descripcion'];
+    this.entidad.fechaViaje = this.form.value['fecha'];
 
+    let ConductorIndepe = new Conductor();
+    ConductorIndepe.idConductor = this.idConductoSele;
+    this.entidad.conductor = ConductorIndepe;
 
-    let MarcaIndepe = new Marca();
-    MarcaIndepe.idMarca = this.idMarcaSele;
-    this.entidad.marca = MarcaIndepe ;
+    let VehiculoIndepe = new Vehiculo();
+    VehiculoIndepe.idVehiculo = this.idVehicuSele;
+    this.entidad.vehiculo = VehiculoIndepe;
 
-    let ModeloIndepe = new Modelo();
-    ModeloIndepe.idModelo = this.idModeloSele;
-    this.entidad.modelo = ModeloIndepe ;
+    let PasajeroIndepe = new Pasajero();
+    PasajeroIndepe.idPasajero = this.idPasajeroSele;
+    this.entidad.pasajero = PasajeroIndepe;
 
-    let ColorIndepe = new Color();
-    ColorIndepe.idColor = this.idColorSele;
-    this.entidad.color = ColorIndepe ;
-   
+    let PagoIndepe = new Pago();
+    PagoIndepe.idPago = this.idPagoSele;
+    this.entidad.pago = PagoIndepe;
 
-    if ( /*this.form.value['placa'].lenght > 0 && */ this.idColorSele > 0 && this.idMarcaSele > 0 && this.idModeloSele > 0 ) {
+    let RutaIndepe = new Ruta();
+    RutaIndepe.idRuta = this.idRutaSele;
+    this.entidad.ruta = RutaIndepe;
+
+    if ( /*this.form.value['placa'].lenght > 0 && */ 1 ) {
+
+      console.log(this.entidad)
 
       if (this.edicion){
         this.servi.update(this.entidad).subscribe(() => {
@@ -130,7 +131,7 @@ export class ViajeCreaeditaComponent {
         });
       }
 
-      this.router.navigate(['tarjetapropiedades']);
+      this.router.navigate(['viajes']);
 
     } else {
       this.mensaje = "Ingrese todos los datos"
@@ -140,15 +141,14 @@ export class ViajeCreaeditaComponent {
     if (this.edicion) {
       this.servi.listId(this.id).subscribe((data) => {
         this.form = new FormGroup({       
-          id: new FormControl(data.idTarjetaPropiedad),
-          placa: new FormControl(data.placa),
-          modelo :new FormControl(data.modelo),
-          marca :new FormControl(data.marca),
-          color :new FormControl(data.color),
-          tarjeta :new FormControl(data.tarjetaNumero),
-          descripcion :new FormControl(data.descripcion),
-          cantidad :new FormControl(data.cantidadAsientos),
-          anio :new FormControl(data.anio)
+          id: new FormControl(data.idViaje),
+          conductor: new FormControl(data.conductor),
+          vehiculo :new FormControl(data.vehiculo),
+          pasajero :new FormControl(data.pasajero),
+          pago :new FormControl(data.pago),
+          ruta :new FormControl(data.ruta),
+          fecha :new FormControl(data.fechaViaje),
+
         });
       });
     }

@@ -21,9 +21,6 @@ public class Viaje {
     @JoinColumn(name = "idPasajero")
     private Pasajero pasajero;
     @ManyToOne
-    @JoinColumn(name = "idCalificacion")
-    private Calificacion calificacion;
-    @ManyToOne
     @JoinColumn(name = "idPago")
     private Pago pago;
     @ManyToOne
@@ -32,13 +29,12 @@ public class Viaje {
     public Viaje() {
     }
 
-    public Viaje(int idViaje, LocalDate fechaViaje, Conductor conductor, Vehiculo vehiculo, Pasajero pasajero, Calificacion calificacion, Pago pago, Reclamo reclamo, Ruta ruta) {
+    public Viaje(int idViaje, LocalDate fechaViaje, Conductor conductor, Vehiculo vehiculo, Pasajero pasajero, Pago pago, Ruta ruta) {
         this.idViaje = idViaje;
         this.fechaViaje = fechaViaje;
         this.conductor = conductor;
         this.vehiculo = vehiculo;
         this.pasajero = pasajero;
-        this.calificacion = calificacion;
         this.pago = pago;
         this.ruta = ruta;
     }
@@ -81,14 +77,6 @@ public class Viaje {
 
     public void setPasajero(Pasajero pasajero) {
         this.pasajero = pasajero;
-    }
-
-    public Calificacion getCalificacion() {
-        return calificacion;
-    }
-
-    public void setCalificacion(Calificacion calificacion) {
-        this.calificacion = calificacion;
     }
 
     public Pago getPago() {

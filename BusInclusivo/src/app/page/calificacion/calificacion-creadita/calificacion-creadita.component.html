@@ -43,6 +43,17 @@
       <br>
 
       <mat-form-field appearance="fill">
+          <mat-label> Marca </mat-label>
+          <mat-select formControlName="viaje" [(value)]="idViajeSele" required>
+            <mat-option *ngFor="let enty of listaViaje" [value]="enty.idViaje">
+              {{enty.idViaje}}
+          </mat-option>
+          </mat-select>
+      </mat-form-field>
+
+      <br>
+
+      <mat-form-field appearance="fill">
         <mat-label> valoracion </mat-label>
         <mat-select required placeholder="valoracion" formControlName="valoracion">
           <mat-option value="5">5</mat-option>

@@ -2,26 +2,24 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatTableDataSource } from '@angular/material/table';
 import { MatDialog } from '@angular/material/dialog'
 import { MatPaginator } from '@angular/material/paginator';
-import { Viaje } from 'src/app/model/Viaje';
-import { ViajeService } from 'src/app/service/viaje.service';
-import { ViajeDialogoComponent } from './viaje-dialogo/viaje-dialogo.component';
-
+import { Reclamo } from 'src/app/model/Reclamo';
+import { ReclamoDialogoComponent } from './reclamo-dialogo/reclamo-dialogo.component';
+import { ReclamoService } from 'src/app/service/reclamo.service';
 
 @Component({
-  selector: 'app-viaje-listar',
-  templateUrl: './viaje-listar.component.html',
-  styleUrls: ['./viaje-listar.component.css']
+  selector: 'app-reclamo-listar',
+  templateUrl: './reclamo-listar.component.html',
+  styleUrls: ['./reclamo-listar.component.css']
 })
-export class ViajeListarComponent implements OnInit {
-
+export class ReclamoListarComponent implements OnInit{
   @ViewChild(MatPaginator)
   paginator!: MatPaginator;
-  lista: Viaje [] = [];
-  dataSource: MatTableDataSource<Viaje> = new MatTableDataSource();
-  displayedColumns: string[] = ['id','conductor','vehiculo','pasajero','pago','ruta','fecha','Actualizar'];
+  lista: Reclamo [] = [];
+  dataSource: MatTableDataSource<Reclamo> = new MatTableDataSource();
+  displayedColumns: string[] = ['id', 'evidencia','comentario','fecha','viaje'];
   private idMayor: number = 0;
 
-  constructor(private serv : ViajeService, private dialog: MatDialog) {}
+  constructor(private serv : ReclamoService, private dialog: MatDialog) {}
 
   ngOnInit(): void {
     this.serv.list().subscribe((data) => {
@@ -39,7 +37,7 @@ export class ViajeListarComponent implements OnInit {
   }
   confirmar(id: number) {
     this.idMayor = id;
-    this.dialog.open(ViajeDialogoComponent);
+    this.dialog.open(ReclamoDialogoComponent);
   }
   eliminar(id: number) {
     this.serv.eliminar(id).subscribe(() => {
@@ -56,6 +54,4 @@ export class ViajeListarComponent implements OnInit {
   pageSize = 10;
   collectionSize = 100;
   items = [5]; // Aquí debes reemplazar "..." con los elementos que quieres paginar
-
-
 }

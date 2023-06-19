@@ -1,10 +1,13 @@
 package com.businclusivo.businclusivo.dtos;
 
+import com.businclusivo.businclusivo.entities.Viaje;
+
 public class CalificacionDTO {
     private int idCalificacion;
     private int valoracion;
 
     private String comentario;
+    private Viaje viaje;
 
     public int getIdCalificacion() {
         return idCalificacion;
@@ -30,4 +33,11 @@ public class CalificacionDTO {
         this.comentario = comentario;
     }
 
+    public Viaje getViaje() {
+        return viaje;
+    }
+
+    public void setViaje(Viaje viaje) {
+        this.viaje = viaje;
+    }
 }

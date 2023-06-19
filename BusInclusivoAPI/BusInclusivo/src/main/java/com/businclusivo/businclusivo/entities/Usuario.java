@@ -13,10 +13,6 @@ public class Usuario {
     private int idUsuario;
     @Column(name = "email", length = 25, nullable = false)
     private String email;
-    @Column(name = "contraseña", length = 25, nullable = false)
-    private String contraseña;
-    @Column(name = "salt", length = 25, nullable = false)
-    private String   salt;
     @Column(name = "direccion", length = 25, nullable = false)
     private String direccion;
     @Column(name = "nombre", length = 25, nullable = false)
@@ -29,11 +25,9 @@ public class Usuario {
     public Usuario() {
     }
 
-    public Usuario(int idUsuario, String email, String contraseña, String salt, String direccion, String nombre, int telefono, LocalDate fechaNacimiento) {
+    public Usuario(int idUsuario, String email, String direccion, String nombre, int telefono, LocalDate fechaNacimiento) {
         this.idUsuario = idUsuario;
         this.email = email;
-        this.contraseña = contraseña;
-        this.salt = salt;
         this.direccion = direccion;
         this.nombre = nombre;
         this.telefono = telefono;
@@ -54,22 +48,6 @@ public class Usuario {
 
     public void setEmail(String email) {
         this.email = email;
-    }
-
-    public String getContraseña() {
-        return contraseña;
-    }
-
-    public void setContraseña(String contraseña) {
-        this.contraseña = contraseña;
-    }
-
-    public String getSalt() {
-        return salt;
-    }
-
-    public void setSalt(String salt) {
-        this.salt = salt;
     }
 
     public String getDireccion() {

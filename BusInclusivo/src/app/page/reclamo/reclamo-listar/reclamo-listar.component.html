@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+</head>
+
+<body>
+  <div class="container"> 
+
+    <mat-paginator [length]="dataSource.data.length" [pageSize]="10" [pageSizeOptions]="[5, 10, 25, 100]"></mat-paginator>
+
+    <div style=" text-align: center;">
+      <h1>Lista de Reclamos </h1>
+    </div>
+    <div>
+      <div style="text-align: right;">
+        <button type="button" class="btn btn-success"  mat-raidsed-button routerLink="/reclamos/reclamoEditar" >
+          Nuevo
+        </button>
+      </div>
+      <br>
+      <table mat-table [dataSource]="dataSource" class="mat-elevation-z8" style="text-align: center;">
+        
+        <!--- Note that these columns can be defined in any order.
+              The actual rendered columns are set as a property on the row definition" -->
+  
+        <!-- Position Column -->
+  
+        <ng-container matColumnDef="id">
+          <th mat-header-cell *matHeaderCellDef>No.</th>
+          <td mat-cell *matCellDef="let element">{{ element.idReclamo }}</td>
+        </ng-container>
+  
+        <!-- Name Column -->
+        <ng-container matColumnDef="evidencia">
+          <th mat-header-cell *matHeaderCellDef> Evaidencia</th>
+          <td mat-cell *matCellDef="let element">{{ element.evidencia}}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="comentario">
+            <th mat-header-cell *matHeaderCellDef> Comentarios</th>
+            <td mat-cell *matCellDef="let element">{{ element.comentario}}</td>
+          </ng-container>
+
+          <ng-container matColumnDef="fecha">
+            <th mat-header-cell *matHeaderCellDef> Fecha de Reclamo </th>
+            <td mat-cell *matCellDef="let element">{{ element.horaFecha}}</td>
+          </ng-container>
+
+          <ng-container matColumnDef="viaje">
+            <th mat-header-cell *matHeaderCellDef> Viaje </th>
+            <td mat-cell *matCellDef="let element">{{ element.viaje.idViaje}}</td>
+          </ng-container>
+        
+        <ng-container matColumnDef="Actualizar">
+          <th mat-header-cell *matHeaderCellDef>Actualizar / Eliminar</th>
+          <td mat-cell *matCellDef="let element">
+            <button mat-raised-button class="boton-verde" [routerLink]="['edicion', element.idTarjetaPropiedad]">
+              <mat-icon>edit</mat-icon>
+            </button>
+  
+            <button mat-raised-button class="boton-celeste" (click)="confirmar(element.idTarjetaPropiedad)">
+              <mat-icon>delete</mat-icon>
+            </button>
+          </td>
+        </ng-container>
+  
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+      </table>
+  
+    </div>
+
+  </div>
+  
+</body>
+
+</html>

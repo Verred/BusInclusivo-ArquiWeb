@@ -13,7 +13,6 @@ public class ViajeDTO {
     private Conductor conductor;
     private Vehiculo vehiculo;
     private Pasajero pasajero;
-    private Calificacion calificacion;
     private Pago pago;
     private Ruta ruta;
 
@@ -57,14 +56,6 @@ public class ViajeDTO {
         this.pasajero = pasajero;
     }
 
-    public Calificacion getCalificacion() {
-        return calificacion;
-    }
-
-    public void setCalificacion(Calificacion calificacion) {
-        this.calificacion = calificacion;
-    }
-
     public Pago getPago() {
         return pago;
     }
@@ -80,4 +71,6 @@ public class ViajeDTO {
     public void setRuta(Ruta ruta) {
         this.ruta = ruta;
     }
+
+
 }

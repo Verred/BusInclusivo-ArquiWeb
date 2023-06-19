@@ -101,6 +101,10 @@ import { ViajeComponent } from './page/viaje/viaje.component';
 import { ViajeListarComponent } from './page/viaje/viaje-listar/viaje-listar.component';
 import { ViajeCreaeditaComponent } from './page/viaje/viaje-creaedita/viaje-creaedita.component';
 import { ViajeDialogoComponent } from './page/viaje/viaje-listar/viaje-dialogo/viaje-dialogo.component';
+import { ReclamoComponent } from './page/reclamo/reclamo.component';
+import { ReclamoListarComponent } from './page/reclamo/reclamo-listar/reclamo-listar.component';
+import { ReclamoCreaeditaComponent } from './page/reclamo/reclamo-creaedita/reclamo-creaedita.component';
+import { ReclamoDialogoComponent } from './page/reclamo/reclamo-listar/reclamo-dialogo/reclamo-dialogo.component';
 
 
 
@@ -179,7 +183,11 @@ import { ViajeDialogoComponent } from './page/viaje/viaje-listar/viaje-dialogo/v
    ViajeComponent,
    ViajeListarComponent,
    ViajeCreaeditaComponent,
-   ViajeDialogoComponent
+   ViajeDialogoComponent,
+   ReclamoComponent,
+   ReclamoListarComponent,
+   ReclamoCreaeditaComponent,
+   ReclamoDialogoComponent
 
 
   ],

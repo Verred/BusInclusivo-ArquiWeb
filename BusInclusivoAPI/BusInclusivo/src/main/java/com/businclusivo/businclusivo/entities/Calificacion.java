@@ -14,16 +14,20 @@ public class Calificacion {
     private int valoracion;
 
     @Column(name = "comentario", length = 200, nullable = false)
-
     private String comentario;
+
+    @ManyToOne
+    @JoinColumn(name = "idViaje")
+    private Viaje viaje;
 
     public Calificacion() {
     }
 
-    public Calificacion(int idCalificacion, int valoracion, String comentario) {
+    public Calificacion(int idCalificacion, int valoracion, String comentario, Viaje viaje) {
         this.idCalificacion = idCalificacion;
         this.valoracion = valoracion;
         this.comentario = comentario;
+        this.viaje = viaje;
     }
 
     public int getIdCalificacion() {
@@ -48,5 +52,13 @@ public class Calificacion {
 
     public void setComentario(String comentario) {
         this.comentario = comentario;
+    }
+
+    public Viaje getViaje() {
+        return viaje;
+    }
+
+    public void setViaje(Viaje viaje) {
+        this.viaje = viaje;
     }
 }

@@ -41,8 +41,13 @@
         <td mat-cell *matCellDef="let element"> {{element.comentario}} </td>
       </ng-container>
 
+      <ng-container matColumnDef="viaje">
+        <th mat-header-cell *matHeaderCellDef> Comentario </th>
+        <td mat-cell *matCellDef="let element"> {{element.viaje.idViaje}} </td>
+      </ng-container>
+
       <ng-container matColumnDef="accion01">
-        <th mat-header-cell *matHeaderCellDef>Pulsa para editar </th>
+        <th mat-header-cell *matHeaderCellDef> Actualizat / Eliminar</th>
         <td mat-cell *matCellDef="let element">
 
           <button mat-raised-button class="boton-verde" [routerLink]="['edicion', element.idCalificacion]">

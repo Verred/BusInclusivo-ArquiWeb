@@ -22,16 +22,11 @@ export class CalificacionListarComponent implements OnInit {
   collectionSize = 100;
   items = [5]; // Aquí debes reemplazar "..." con los elementos que quieres paginar
 
-
-
-
-
-
   lista: Calificacion[] = [];
 
   dataSource: MatTableDataSource<Calificacion> = new MatTableDataSource();
 
-  displayedColumns: string[] = ['id', 'valoracion','comentario','accion01']
+  displayedColumns: string[] = ['id', 'valoracion','comentario','viaje','accion01']
   private idMayor: number = 0;
   constructor(private pS: CalificacionService, private dialog:MatDialog) { }
 

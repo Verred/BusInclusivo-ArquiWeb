@@ -6,8 +6,6 @@ public class UsuarioDTO {
 
     private int idUsuario;
     private String email;
-    private String contraseña;
-    private String  salt;
     private String direccion;
     private String nombre;
     private int telefono;
@@ -27,22 +25,6 @@ public class UsuarioDTO {
 
     public void setEmail(String email) {
         this.email = email;
-    }
-
-    public String getContraseña() {
-        return contraseña;
-    }
-
-    public void setContraseña(String contraseña) {
-        this.contraseña = contraseña;
-    }
-
-    public String getSalt() {
-        return salt;
-    }
-
-    public void setSalt(String salt) {
-        this.salt = salt;
     }
 
     public String getDireccion() {

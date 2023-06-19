@@ -38,6 +38,8 @@ import { ConductorComponent } from './page/conductor/conductor.component';
 import { ConductorCreaeditaComponent } from './page/conductor/conductor-creaedita/conductor-creaedita.component';
 import { PasajeroComponent } from './page/pasajero/pasajero.component';
 import { PasajeroCreaeditaComponent } from './page/pasajero/pasajero-creaedita/pasajero-creaedita.component';
+import { ViajeComponent } from './page/viaje/viaje.component';
+import { ViajeCreaeditaComponent } from './page/viaje/viaje-creaedita/viaje-creaedita.component';
 
 const routes: Routes = [
   {
@@ -161,9 +163,9 @@ const routes: Routes = [
     ]
   },
   {
-    path: 'viajes', component: PasajeroComponent, children: [
-      { path: 'viajeEditar', component: PasajeroCreaeditaComponent },
-      { path: 'edicion/:id', component: PasajeroCreaeditaComponent }
+    path: 'viajes', component: ViajeComponent, children: [
+      { path: 'viajeEditar', component: ViajeCreaeditaComponent },
+      { path: 'edicion/:id', component: ViajeCreaeditaComponent }
     ]
   },
 ];
