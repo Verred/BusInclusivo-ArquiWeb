@@ -2,7 +2,11 @@ import { Injectable } from '@angular/core';
 import { HttpClient,HttpHeaders } from '@angular/common/http';
 import { TarjetaPropiedad } from '../model/TarjetaPropiedad';
 import { environment } from 'src/environments/environment';
-import { Subject } from 'rxjs';
+import { Observable, Subject } from 'rxjs';
+import { ModeloCountDTO } from '../model/ModeloCountDTO';
+import { MarcaCountDTO } from '../model/MarcaCountDTO';
+import { ColorCountDTO } from '../model/ColorCountDTO';
+
 
 const base_url = environment.base
 
@@ -59,5 +63,18 @@ export class TarjetapropiedadService {
   }
   setConfirmaEliminacion(estado: Boolean) {
     this.confirmaEliminacion.next(estado);
+  }
+  
+  getCountModelos(): Observable <ModeloCountDTO[]> {
+    let token = sessionStorage.getItem("token");
+    return this.http.get<ModeloCountDTO[]>(`${this.url}/modelo-count`, {
+      headers: new HttpHeaders().set('Authorization', `Bearer ${token}`).set('Content-Type', 'application/json')
+    });
+  }
+  getCountColores(): Observable <ColorCountDTO[]> {
+    return this.http.get<ColorCountDTO[]>(`${this.url}/color-count`);
+  }
+  getCountMarcas(): Observable <MarcaCountDTO[]> {
+    return this.http.get<MarcaCountDTO[]>(`${this.url}/marca-count`);
   }
 }

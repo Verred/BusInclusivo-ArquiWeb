@@ -108,7 +108,7 @@ export class TarjetapropiedadCreaeditaComponent {
         });
       }
 
-      this.router.navigate(['tarjetapropiedades']);
+      this.router.navigate(['pages/tarjetapropiedades']);
 
     } else {
       this.mensaje = "Ingrese todos los datos"

@@ -53,7 +53,7 @@ export class ColorCreaeditaComponent implements OnInit {
       })
     })
   }
-  this.router.navigate(['colores']);
+  this.router.navigate(['pages/colores']);
   } else {
     this.mensaje="Ingrese el color";
 

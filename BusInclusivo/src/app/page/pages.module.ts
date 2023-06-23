@@ -122,6 +122,8 @@ import { CalificacionComponent } from './calificacion/calificacion.component';
 import { CalificacionDialogoComponent } from './calificacion/calificacion-listar/calificacion-dialogo/calificacion-dialogo.component';
 import { CalificacionListarComponent } from './calificacion/calificacion-listar/calificacion-listar.component';
 import { CalificacionCreaditaComponent } from './calificacion/calificacion-creadita/calificacion-creadita.component';
+import { ReportesComponent } from './reportes/reportes.component';
+import { ReporteModeloComponent } from './reportes/reporte-modelo/reporte-modelo.component';
 
 @NgModule({
   declarations: [
@@ -223,6 +225,8 @@ import { CalificacionCreaditaComponent } from './calificacion/calificacion-cread
     ReclamoListarComponent,
     ReclamoCreaeditaComponent,
     ReclamoDialogoComponent,
+    ReportesComponent,
+    ReporteModeloComponent,
 
   ],
   imports: [

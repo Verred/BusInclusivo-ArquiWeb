@@ -52,6 +52,8 @@ import { PasajeroCreaeditaComponent } from './pasajero/pasajero-creaedita/pasaje
 
 import { ViajeComponent } from './viaje/viaje.component';
 import { ViajeCreaeditaComponent } from './viaje/viaje-creaedita/viaje-creaedita.component';
+import { ReportesComponent } from './reportes/reportes.component';
+import { ReporteModeloComponent } from './reportes/reporte-modelo/reporte-modelo.component';
 
 const routes: Routes = [
     {
@@ -168,6 +170,12 @@ const routes: Routes = [
             { path: 'edicion/:id', component: CalificacionCreaditaComponent }
         ], canActivate: [GuardService]
     },
+    {
+        path:'reportes',component:ReportesComponent,children:[
+    
+        { path: 'model-count', component: ReporteModeloComponent },
+      ]
+      }
 
 ]
 
