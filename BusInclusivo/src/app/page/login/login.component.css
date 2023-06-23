@@ -1,7 +1,7 @@
 body {
     margin: 0;
     padding: 0;
-    /* background: url(../../assets/img/imgPrincipal.png) no-repeat center top; */
+    background: url(../../../assets/img/imgPrincipal.png) no-repeat center top; 
     background-size: cover;
     font-family: sans-serif;
     height: 100vh;
@@ -9,7 +9,7 @@ body {
   
   .login-box {
     width: 320px;
-    height: 420px;
+    height: 480px;
     background: #005b25;
     color: #fff;
     top: 50%;
@@ -31,7 +31,6 @@ body {
   
   .login-box h1 {
     margin: 0;
-    padding: 0 0 20px;
     text-align: center;
     font-size: 22px;
   }
@@ -45,7 +44,7 @@ body {
   
   .login-box input {
     width: 100%;
-    margin-bottom: 20px;
+    
   }
   
   .login-box input[type="text"], .login-box input[type="password"] {
@@ -58,7 +57,7 @@ body {
     font-size: 16px;
   }
   
-  .login-box input[type="submit"] {
+  .login-box button {
     border: none;
     outline: none;
     height: 40px;
@@ -68,7 +67,7 @@ body {
     border-radius: 20px;
   }
   
-  .login-box input[type="submit"]:hover {
+  .login-box button:hover {
     cursor: pointer;
     background: #00b347;
     color: #000;
@@ -84,4 +83,7 @@ body {
   .login-box a:hover {
     color: #fff;
   }
-  
+  .centered-content {
+    display: flex;
+    justify-content: center;
+  }

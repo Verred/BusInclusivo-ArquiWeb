@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { LoginService } from './service/login.service';
 import { MatToolbar } from '@angular/material/toolbar';
-
+import { MatSidenavModule } from '@angular/material/sidenav';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -22,11 +22,15 @@ export class AppComponent {
     return this.loginService.verificar();
   }
   validarRol(){
-    if(this.role=='ADMIN' || this.role=='USER'){
+    if(this.role=='ADMIN'|| this.role=='USER' || this.role=='PASAJERO' || this.role=='CONDUCTOR'|| this.role=='MODERADOR'){
       return true;
     }else{
       return false;
     }
   }
+  sideBarOpen = true;
 
+  sideBarToggler() {
+    this.sideBarOpen = !this.sideBarOpen;
+  }
 }

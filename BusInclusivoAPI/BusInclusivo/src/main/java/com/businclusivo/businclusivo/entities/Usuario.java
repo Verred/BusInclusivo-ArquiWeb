@@ -21,17 +21,20 @@ public class Usuario {
     private int telefono;
     @Column(name = "fechaNacimiento", nullable = false)
     private LocalDate fechaNacimiento;
-
+    @OneToOne
+    @JoinColumn(name = "idUser")
+    private Users users;
     public Usuario() {
     }
 
-    public Usuario(int idUsuario, String email, String direccion, String nombre, int telefono, LocalDate fechaNacimiento) {
+    public Usuario(int idUsuario, String email, String direccion, String nombre, int telefono, LocalDate fechaNacimiento, Users users) {
         this.idUsuario = idUsuario;
         this.email = email;
         this.direccion = direccion;
         this.nombre = nombre;
         this.telefono = telefono;
         this.fechaNacimiento = fechaNacimiento;
+        this.users = users;
     }
 
     public int getIdUsuario() {
@@ -80,5 +83,13 @@ public class Usuario {
 
     public void setFechaNacimiento(LocalDate fechaNacimiento) {
         this.fechaNacimiento = fechaNacimiento;
+    }
+
+    public Users getUsers() {
+        return users;
+    }
+
+    public void setUsers(Users users) {
+        this.users = users;
     }
 }

@@ -57,7 +57,7 @@ export class ModeloCreaeditaComponent implements OnInit{
         });
       }
 
-      this.router.navigate(['modelos']);
+      this.router.navigate(['pages/modelos']);
 
     } else {
       this.mensaje = "Ingrese la descripcion"

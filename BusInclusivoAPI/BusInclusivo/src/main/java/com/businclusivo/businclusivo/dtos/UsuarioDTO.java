@@ -1,5 +1,7 @@
 package com.businclusivo.businclusivo.dtos;
 
+import com.businclusivo.businclusivo.entities.Users;
+
 import java.time.LocalDate;
 
 public class UsuarioDTO {
@@ -10,6 +12,7 @@ public class UsuarioDTO {
     private String nombre;
     private int telefono;
     private LocalDate fechaNacimiento;
+    private Users users;
 
     public int getIdUsuario() {
         return idUsuario;
@@ -57,5 +60,13 @@ public class UsuarioDTO {
 
     public void setFechaNacimiento(LocalDate fechaNacimiento) {
         this.fechaNacimiento = fechaNacimiento;
+    }
+
+    public Users getUsers() {
+        return users;
+    }
+
+    public void setUsers(Users users) {
+        this.users = users;
     }
 }

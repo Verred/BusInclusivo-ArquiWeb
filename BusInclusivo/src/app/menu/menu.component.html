@@ -1,19 +1,38 @@
+<mat-nav-list class="lis">
+  <div class="logo py-4">
+    <img src="./../../assets/img/logoSinFondo250.jpg" alt="Bus Inclusivo Logo" />
+  </div>
+  <mat-divider></mat-divider>
+  <h2 matSubheader class="mt-2"> Bus Inclusivo </h2>
+
+  <a mat-list-item  routerLinkActive="list-item-active" routerLink="/pages/viajes">
+    <mat-icon>home</mat-icon> Viajes
+  </a>
+  <a mat-list-item routerLinkActive="list-item-active" routerLink="/pages/reportes">
+    <mat-icon>dashboard</mat-icon> Reportes
+  </a>
+  <a mat-list-item *ngIf="role == 'ADMIN' || role == 'MODERADOR'"   routerLink="/pages/marcas"> <mat-icon>edit</mat-icon> Marcas </a>
+  <a mat-list-item *ngIf="role == 'ADMIN' || role == 'MODERADOR'"   routerLink="/pages/modelos"> <mat-icon>edit</mat-icon> Modelos </a>
+  <a mat-list-item *ngIf="role == 'ADMIN' || role == 'MODERADOR'"  routerLink="/pages/colores"> <mat-icon>edit</mat-icon> Colores </a>
+  <a mat-list-item *ngIf="role == 'ADMIN' || role == 'MODERADOR'"  routerLink="/pages/metodopagos"> <mat-icon>edit</mat-icon> Metodo Pagos </a>
+  <a mat-list-item *ngIf="role == 'ADMIN' || role == 'MODERADOR'"   routerLink="/pages/tipodocumento"> <mat-icon>edit</mat-icon> Tipo Documento </a>
+  <a mat-list-item *ngIf="role == 'ADMIN' || role == 'MODERADOR'"   routerLink="/pages/usuarios"> <mat-icon>edit</mat-icon> Usuarios </a>
 
 
-    <header class="header">
-        <div class="logo">
-          <img src="../../assets/img/logoSinFondo.png" alt="logo bus inclusivo" height="153px" width="130px">
-        </div>
-        <nav>
-           <ul class="nav-links">
-            <li><a routerLink="/calificaciones">Calificaciones </a></li>
-            <li><a routerLink="/marcas">Marcas </a></li>
-            <li><a routerLink="/modelos">Modelos</a></li>
-            <li><a routerLink="/colores">Colores</a></li>
-            <li><a routerLink="/metodopagos">Metodo Pago</a></li>
-           
-          </ul>            
+  <a mat-list-item *ngIf="role == 'ADMIN'|| role == 'CONDUCTOR' || role == 'MODERADOR'" routerLink="/pages/tarjetapropiedades"> <mat-icon>edit</mat-icon> Tarjeta Propiedades </a>
+  <a mat-list-item *ngIf="role == 'ADMIN'|| role == 'CONDUCTOR' || role == 'MODERADOR'" routerLink="/pages/estadovehiculo"> <mat-icon>edit</mat-icon> Estado Vehiculos </a>
+  <a mat-list-item *ngIf="role == 'ADMIN'|| role == 'CONDUCTOR' || role == 'MODERADOR'"  routerLink="/pages/vehiculos"> <mat-icon>edit</mat-icon> Vehiculos </a>
+  <a mat-list-item *ngIf="role == 'ADMIN'|| role == 'CONDUCTOR' || role == 'MODERADOR'" routerLink="/pages/conductores"> <mat-icon>edit</mat-icon> Conductores </a>
 
-        </nav>
-        <!-- <a class="btn" href="#"><button> Bus Inclusivo</button></a> -->
-    </header>
+  <a mat-list-item *ngIf="role == 'ADMIN'|| role == 'PASAJERO' || role == 'MODERADOR'"   routerLink="/pages/pagos"> <mat-icon>edit</mat-icon> Pagos </a>
+  <a mat-list-item *ngIf="role == 'ADMIN'|| role == 'PASAJERO' || role == 'MODERADOR'"   routerLink="/pages/identificaciones"> <mat-icon>edit</mat-icon> Documentos </a>
+  <a mat-list-item *ngIf="role == 'ADMIN'|| role == 'PASAJERO' || role == 'MODERADOR'"   routerLink="/pages/pasajeros"> <mat-icon>edit</mat-icon> Pasajeros </a>
+  <!-- <a mat-list-item *ngIf="role=='ADMIN' || 'MODERADOR' || 'PASAJERO'"  routerLink="/pages/reclamos"> <mat-icon>edit</mat-icon> Reclamos </a> -->
+  <!-- <a mat-list-item *ngIf="role=='ADMIN' || 'MODERADOR' || 'PASAJERO'"  routerLink="/pages/users"> <mat-icon>edit</mat-icon> Users </a> -->
+  <!-- <a mat-list-item *ngIf="role=='ADMIN' || 'MODERADOR' || 'PASAJERO'"  routerLink="/pages/roles"> <mat-icon>edit</mat-icon> Roles </a> -->
+
+  <a mat-list-item *ngIf="role == 'ADMIN'|| role == 'PASAJERO' || role == 'MODERADOR' || role == 'PASAJERO'"  routerLink="/pages/coordenadas"> <mat-icon>edit</mat-icon> Coordenadas </a>
+  <a mat-list-item *ngIf="role == 'ADMIN'|| role == 'PASAJERO' || role == 'MODERADOR' || role == 'PASAJERO'"   routerLink="/pages/calificaciones"> <mat-icon>edit</mat-icon> Calificaciones </a>
+  <a mat-list-item *ngIf="role == 'ADMIN'|| role == 'PASAJERO' || role == 'MODERADOR' || role == 'PASAJERO'"  routerLink="/pages/rutas"> <mat-icon>edit</mat-icon> Rutas </a>
+
+</mat-nav-list>
