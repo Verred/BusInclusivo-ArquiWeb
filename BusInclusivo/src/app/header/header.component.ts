@@ -1,5 +1,6 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { Router } from '@angular/router';
+import { LoginService } from '../service/login.service';
 
 @Component({
   selector: 'app-header',
@@ -9,12 +10,17 @@ import { Router } from '@angular/router';
 export class HeaderComponent implements OnInit  {
   @Output() toggleSidebarForMe: EventEmitter<any> = new EventEmitter();
 
-  constructor(private router: Router) {}
-
-  ngOnInit(): void {}
+  userName: string = ''
+  userRol: string = ''
+  constructor(private router: Router, private serv: LoginService) {}
+  ngOnInit(): void {
+    this.userRol = this.serv.showRole();
+    this.userName = this.serv.showName();
+  }
 
   toggleSidebar() {
     this.toggleSidebarForMe.emit();
+    
   }
   cerrar() {
     sessionStorage.clear();

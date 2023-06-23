@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient,HttpHeaders } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
 import { Subject } from 'rxjs';
 import { Reclamo } from '../model/Reclamo';
@@ -16,10 +16,16 @@ export class ReclamoService {
   private confirmaEliminacion = new Subject<Boolean>()
   constructor(private http:HttpClient) { }
   list() {
-    return this.http.get<Reclamo[]>(this.url);
+    let token = sessionStorage.getItem("token");
+    return this.http.get<Reclamo[]>(this.url, {
+      headers: new HttpHeaders().set('Authorization', `Bearer ${token}`).set('Content-Type', 'application/json')
+    });
   }
   insert(entidad: Reclamo) {
-    return this.http.post(this.url, entidad);
+    let token = sessionStorage.getItem("token");
+    return this.http.post(this.url, entidad, {
+      headers: new HttpHeaders().set('Authorization', `Bearer ${token}`).set('Content-Type', 'application/json')
+    });
   }
 
   setList(listaNueva: Reclamo[]) {
@@ -31,13 +37,22 @@ export class ReclamoService {
   }
 
   listId(id: number) {
-    return this.http.get<Reclamo>(`${this.url}/${id}`);
+    let token = sessionStorage.getItem("token");
+    return this.http.get<Reclamo>(`${this.url}/${id}`, {
+      headers: new HttpHeaders().set('Authorization', `Bearer ${token}`).set('Content-Type', 'application/json')
+    });
   }
   update(entidad: Reclamo) {
-    return this.http.put(this.url, entidad);
+    let token = sessionStorage.getItem("token");
+    return this.http.put(this.url, entidad, {
+      headers: new HttpHeaders().set('Authorization', `Bearer ${token}`).set('Content-Type', 'application/json')
+    });
   }
   eliminar(id: number) {
-    return this.http.delete(`${this.url}/${id}`);
+    let token = sessionStorage.getItem("token");
+    return this.http.delete(`${this.url}/${id}`, {
+      headers: new HttpHeaders().set('Authorization', `Bearer ${token}`).set('Content-Type', 'application/json')
+    });
   }
   getConfirmaEliminacion() {
     return this.confirmaEliminacion.asObservable();

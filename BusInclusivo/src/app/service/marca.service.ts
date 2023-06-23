@@ -15,14 +15,12 @@ export class MarcaService {
   constructor(private http:HttpClient) { }
   list() {
     let token = sessionStorage.getItem("token");
-
     return this.http.get<Marca[]>(this.url, {
       headers: new HttpHeaders().set('Authorization', `Bearer ${token}`).set('Content-Type', 'application/json')
     });
   }
   insert(marca: Marca) {
     let token = sessionStorage.getItem("token");
-
     return this.http.post(this.url, marca, {
       headers: new HttpHeaders().set('Authorization', `Bearer ${token}`).set('Content-Type', 'application/json')
     });
