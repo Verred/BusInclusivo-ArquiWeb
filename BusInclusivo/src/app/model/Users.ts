@@ -1,6 +1,15 @@
-export class Users{
+import { Role } from "./Role"
+
+export class Usuario{
     username: string=""
     password: string=""
-    enabled:boolean=false
+    enabled:boolean=true
     id: number = 0
+   
+    roles : Role[] = [];
+
+    email:string=""
+    direccion:string=""
+    telefono: number = 0
+    fechaNacimiento :Date = new Date(Date.now());
 }

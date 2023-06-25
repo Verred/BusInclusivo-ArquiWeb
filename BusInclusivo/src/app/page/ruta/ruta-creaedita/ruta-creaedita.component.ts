@@ -92,7 +92,7 @@ export class RutaCreaeditaComponent {
       console.log(this.entidad)
       
 
-      this.router.navigate(['rutas']);
+      this.router.navigate(['pages/rutas']);
 
     } else {
       this.mensaje = "Ingrese todos los datos"

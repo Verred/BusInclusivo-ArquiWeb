@@ -1,30 +1,20 @@
 package com.businclusivo.businclusivo.controllers;
+import com.businclusivo.businclusivo.dtos.UserDTO;
 import com.businclusivo.businclusivo.entities.Users;
 import com.businclusivo.businclusivo.services.UsersService;
+import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.annotation.Secured;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.bind.support.SessionStatus;
 
-import java.io.Serializable;
 import java.util.List;
+import java.util.stream.Collectors;
 
-import javax.persistence.CascadeType;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.FetchType;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.OneToMany;
-import javax.persistence.Table;
 import javax.validation.Valid;
 
 @Controller
@@ -69,4 +59,42 @@ public class UsersControlller {
         }
         return "usersecurity/listUser";
     }
+
+    /*********************/
+
+    @PostMapping
+    public void insert(@RequestBody UserDTO dto){
+        ModelMapper mp=new ModelMapper();
+        Users m=mp.map(dto, Users.class);
+        uService.insert(m);
+    }
+
+    //list
+    @GetMapping
+    public List<UserDTO> list(){
+        return uService.list().stream().map(x->{
+            ModelMapper mp=new ModelMapper();
+            return mp.map(x,UserDTO.class);
+        }).collect(Collectors.toList());
+    }
+
+    @DeleteMapping("/{id}")
+    public void delete(@PathVariable("id") Long id){
+        uService.delete(id);
+    }
+
+    @GetMapping("/{id}")
+    public UserDTO listID(@PathVariable ("id") Long id){
+        ModelMapper mp=new ModelMapper();
+        UserDTO dto =mp.map(uService.listID(id), UserDTO.class);
+        return dto;
+    }
+    @PutMapping
+    public void goUpdate(@RequestBody UserDTO dto){
+        ModelMapper mp=new ModelMapper();
+        Users m=mp.map(dto,Users.class);
+        uService.insert(m);
+    }
+
+
 }

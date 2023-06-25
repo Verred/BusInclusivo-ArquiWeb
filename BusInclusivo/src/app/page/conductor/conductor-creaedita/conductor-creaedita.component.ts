@@ -4,7 +4,7 @@ import { FormControl, FormGroup } from '@angular/forms';
 import { Conductor } from 'src/app/model/Conductor';
 import { ConductorService } from 'src/app/service/conductor.service';
 import { ActivatedRoute, Params, Router } from '@angular/router';
-import { Usuario } from 'src/app/model/Usuario';
+import { Usuario } from 'src/app/model/Users';
 import { UsuarioService } from 'src/app/service/usuario.service';
 @Component({
   selector: 'app-conductor-creaedita',
@@ -59,7 +59,7 @@ export class ConductorCreaeditaComponent {
    
 
     let UserIndepe = new Usuario();
-    UserIndepe.idUsuario = this.idUserSele;
+    UserIndepe.id = this.idUserSele;
     this.entidad.usuario = UserIndepe ;
    
 
@@ -79,7 +79,7 @@ export class ConductorCreaeditaComponent {
         });
       }
 
-      this.router.navigate(['conductores']);
+      this.router.navigate(['pages/conductores']);
 
     } else {
       this.mensaje = "Ingrese todos los datos"

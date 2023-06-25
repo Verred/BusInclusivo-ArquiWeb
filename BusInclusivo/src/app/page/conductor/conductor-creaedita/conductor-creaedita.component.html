@@ -21,8 +21,8 @@
             <mat-form-field appearance="fill">
                 <mat-label> Usuario </mat-label>
                 <mat-select formControlName="user" [(value)]="idUserSele" required>
-                  <mat-option *ngFor="let enty of listaUser" [value]="enty.idUsuario">
-                    {{enty.nombre}}
+                  <mat-option *ngFor="let enty of listaUser" [value]="enty.id">
+                    {{enty.username}}
                 </mat-option>
                 </mat-select>
             </mat-form-field>
@@ -47,7 +47,7 @@
             <div style="text-align: center;"  >
                 <button mat-raidsed-button class="btn btn-success" role="button" >Aceptar</button>
               
-                <button mat-raidsed-button routerLink="/conductores" class="btn btn-danger" role="button" style="margin-left: 10em"> Cancelar </button>
+                <button mat-raidsed-button routerLink="/pages/conductores" class="btn btn-danger" role="button" style="margin-left: 10em"> Cancelar </button>
             </div>
 
 

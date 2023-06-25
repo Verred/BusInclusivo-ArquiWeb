@@ -24,7 +24,7 @@
   </p>
   <router-outlet></router-outlet> -->
 
-  <!-- <mat-drawer-container>
+<!-- <mat-drawer-container>
     <mat-drawer mode="side" [opened]="sideBarOpen">
       <app-menu></app-menu>
     </mat-drawer>
@@ -34,7 +34,7 @@
     </mat-drawer-content>
   </mat-drawer-container>
   <router-outlet></router-outlet> -->
-<div [hidden]= "verificar()">
+<!-- <div [hidden]= "verificar()">
   <app-login></app-login>
 </div>
 
@@ -48,11 +48,59 @@
       <router-outlet></router-outlet>
     </mat-drawer-content>
   </mat-drawer-container>
+</div> -->
+<div *ngIf="verificar(); else loginComponent" class="host">
+  <mat-drawer-container>
+    <mat-drawer mode="side" [opened]="sideBarOpen" style="background-color: #073576;">
+      <app-menu></app-menu>
+    </mat-drawer>
+    <mat-drawer-content>
+      <app-header (toggleSidebarForMe)="sideBarToggler()"></app-header>
+      <router-outlet></router-outlet>
+    </mat-drawer-content>
+  </mat-drawer-container>
 </div>
 
+<!-- <ng-template #loginComponent>
+  <div>
+    <ng-container *ngIf="loginVisible; else loginComponent">
+      <app-login (abrirCreaEdita)="openRegister()"></app-login>
+    </ng-container>
+   
+    <ng-template #loginComponent>
+      <div>
+         <app-register></app-register> 
+      </div>
+    </ng-template>
+  </div>
+</ng-template> -->
+<ng-template #loginComponent>
+
+  <ng-container *ngIf="loginVisible; else loginComponent">
+    <app-login (abrirRegister)="abrirRegisterComponent()"></app-login>
+  </ng-container>
+
+  <ng-container *ngIf="!loginVisible; else registerComponent">
+    <app-register (abrirLogin)="abrirLoginComponent()"></app-register>
+  </ng-container>
+
+  <ng-template #loginComponent>
+    <div>
+      <button (click)="abrirRegisterComponent()">Abrir Register</button>
+    </div>
+  </ng-template>
+
+  <ng-template #registerComponent>
+    <div>
+      <button (click)="abrirLoginComponent()">Abrir Login</button>
+    </div>
+  </ng-template>
+
+</ng-template>
 
 
-  <!-- <p>
+
+<!-- <p>
     <mat-toolbar *ngIf="verificar()">
         <button mat-menu-item class="example-icon" aria-label="Example icon-button with menu icon"
         *ngIf="validarRol()" routerLink="/pages/pets">

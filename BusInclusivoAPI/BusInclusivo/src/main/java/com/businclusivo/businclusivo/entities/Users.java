@@ -1,6 +1,7 @@
 package com.businclusivo.businclusivo.entities;
 
 import java.io.Serializable;
+import java.time.LocalDate;
 import java.util.List;
 
 import javax.persistence.CascadeType;
@@ -21,11 +22,22 @@ public class Users implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(length = 30, unique = true)
+    @Column(length = 30, unique = true, nullable = false)
     private String username;
     @Column(length = 200)
     private String password;
+
     private Boolean enabled;
+
+    @Column(name = "email", length = 25)
+    private String email;
+    @Column(name = "direccion", length = 25)
+    private String direccion;
+    @Column(name = "telefono")
+    private int telefono;
+    @Column(name = "fechaNacimiento")
+    private LocalDate fechaNacimiento;
+
     @OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     @JoinColumn(name = "user_id")
     private List<Role> roles;
@@ -70,4 +82,35 @@ public class Users implements Serializable {
         this.roles = roles;
     }
 
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getDireccion() {
+        return direccion;
+    }
+
+    public void setDireccion(String direccion) {
+        this.direccion = direccion;
+    }
+
+    public int getTelefono() {
+        return telefono;
+    }
+
+    public void setTelefono(int telefono) {
+        this.telefono = telefono;
+    }
+
+    public LocalDate getFechaNacimiento() {
+        return fechaNacimiento;
+    }
+
+    public void setFechaNacimiento(LocalDate fechaNacimiento) {
+        this.fechaNacimiento = fechaNacimiento;
+    }
 }

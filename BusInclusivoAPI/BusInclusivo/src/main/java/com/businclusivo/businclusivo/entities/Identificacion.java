@@ -15,14 +15,14 @@ public class Identificacion {
     private TipoDocumento tipoDocumento;
     @ManyToOne
     @JoinColumn(name = "idUsuario")
-    private Usuario usuario;
+    private Users usuario;
     @Column(name = "fechaVencimiento",  nullable = false)
     private LocalDate fechaVencimiento;
 
     public Identificacion() {
     }
 
-    public Identificacion(int idIdentificacion, String numDocumento, TipoDocumento tipoDocumento, Usuario usuario, LocalDate fechaVencimiento) {
+    public Identificacion(int idIdentificacion, String numDocumento, TipoDocumento tipoDocumento, Users usuario, LocalDate fechaVencimiento) {
         this.idIdentificacion = idIdentificacion;
         this.numDocumento = numDocumento;
         this.tipoDocumento = tipoDocumento;
@@ -54,11 +54,11 @@ public class Identificacion {
         this.tipoDocumento = tipoDocumento;
     }
 
-    public Usuario getUsuario() {
+    public Users getUsuario() {
         return usuario;
     }
 
-    public void setUsuario(Usuario usuario) {
+    public void setUsuario(Users usuario) {
         this.usuario = usuario;
     }
 

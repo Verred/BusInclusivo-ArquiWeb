@@ -5,7 +5,7 @@ import { Identificacion } from 'src/app/model/Identificacion';
 import { IdentificacionService } from 'src/app/service/identificacion.service';
 import { ActivatedRoute, Params, Router } from '@angular/router';
 import { TipoDocumento } from 'src/app/model/TipoDocumento';
-import { Usuario } from 'src/app/model/Usuario';
+import { Usuario } from 'src/app/model/Users';
 import { TipoDocumentoService } from 'src/app/service/tipodocumento.service';
 import { UsuarioService } from 'src/app/service/usuario.service';
 
@@ -63,12 +63,12 @@ export class IdentificacionCreaeditaComponent {
     this.entidad.idIdentificacion = this.form.value['id'];
     this.entidad.numDocumento = this.form.value['num'];
     this.entidad.tipoDocumento.descripcion=this.form.value['tipo.descripcion'];
-    this.entidad.usuario.nombre=this.form.value['user.nombre'];
+    this.entidad.usuario.username=this.form.value['user.nombre'];
     this.entidad.fechaVencimiento =this.form.value['fecha'];
 
 
     let UserIndepe = new Usuario();
-    UserIndepe.idUsuario = this.idUserSele;
+    UserIndepe.id = this.idUserSele;
     this.entidad.usuario = UserIndepe ;
 
     let TipoIndepe = new TipoDocumento();
@@ -92,7 +92,7 @@ export class IdentificacionCreaeditaComponent {
         });
       }
 
-      this.router.navigate(['identificaciones']);
+      this.router.navigate(['pages/identificaciones']);
 
     } else {
       this.mensaje = "Ingrese todos los datos"

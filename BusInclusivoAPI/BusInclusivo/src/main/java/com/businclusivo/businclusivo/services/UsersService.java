@@ -8,4 +8,9 @@ public interface UsersService {
     public Integer insert(Users user);
 
     List<Users> list();
+
+    Users findWihtName(String name);
+
+    public void delete(Long id);
+    public Users listID(Long id);
 }

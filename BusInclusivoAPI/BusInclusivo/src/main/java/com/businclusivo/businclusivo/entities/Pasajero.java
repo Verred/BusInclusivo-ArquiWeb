@@ -10,12 +10,12 @@ public class Pasajero {
     private int idPasajero;
     @OneToOne
     @JoinColumn(name = "idUsuario")
-    private Usuario usuario; /* OtO idUser*/
+    private Users usuario; /* OtO idUser*/
 
     public Pasajero() {
     }
 
-    public Pasajero(int idPasajero, Usuario usuario) {
+    public Pasajero(int idPasajero, Users usuario) {
         this.idPasajero = idPasajero;
         this.usuario = usuario;
     }
@@ -28,11 +28,11 @@ public class Pasajero {
         this.idPasajero = idPasajero;
     }
 
-    public Usuario getUsuario() {
+    public Users getUsuario() {
         return usuario;
     }
 
-    public void setUsuario(Usuario usuario) {
+    public void setUsuario(Users usuario) {
         this.usuario = usuario;
     }
 }

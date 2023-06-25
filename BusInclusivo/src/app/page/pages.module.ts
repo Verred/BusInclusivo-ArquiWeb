@@ -124,6 +124,10 @@ import { CalificacionListarComponent } from './calificacion/calificacion-listar/
 import { CalificacionCreaditaComponent } from './calificacion/calificacion-creadita/calificacion-creadita.component';
 import { ReportesComponent } from './reportes/reportes.component';
 import { ReporteModeloComponent } from './reportes/reporte-modelo/reporte-modelo.component';
+import { ReporteMarcaComponent } from './reportes/reporte-marca/reporte-marca.component';
+import { ReporteColorComponent } from './reportes/reporte-color/reporte-color.component';
+import { ReporteConductoresComponent } from './reportes/reporte-conductores/reporte-conductores.component';
+
 
 @NgModule({
   declarations: [
@@ -227,6 +231,10 @@ import { ReporteModeloComponent } from './reportes/reporte-modelo/reporte-modelo
     ReclamoDialogoComponent,
     ReportesComponent,
     ReporteModeloComponent,
+    ReporteMarcaComponent,
+    ReporteColorComponent,
+    ReporteConductoresComponent,
+
 
   ],
   imports: [

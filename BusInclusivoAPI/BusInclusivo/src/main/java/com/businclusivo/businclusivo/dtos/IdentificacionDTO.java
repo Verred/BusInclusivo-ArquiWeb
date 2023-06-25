@@ -1,7 +1,7 @@
 package com.businclusivo.businclusivo.dtos;
 
 import com.businclusivo.businclusivo.entities.TipoDocumento;
-import com.businclusivo.businclusivo.entities.Usuario;
+import com.businclusivo.businclusivo.entities.Users;
 
 import java.time.LocalDate;
 
@@ -9,7 +9,7 @@ public class IdentificacionDTO {
     private int idIdentificacion;
     private String numDocumento;
     private TipoDocumento tipoDocumento;
-    private Usuario usuario;
+    private Users usuario;
     private LocalDate fechaVencimiento;
 
     public int getIdIdentificacion() {
@@ -36,11 +36,11 @@ public class IdentificacionDTO {
         this.tipoDocumento = tipoDocumento;
     }
 
-    public Usuario getUsuario() {
+    public Users getUsuario() {
         return usuario;
     }
 
-    public void setUsuario(Usuario usuario) {
+    public void setUsuario(Users usuario) {
         this.usuario = usuario;
     }
 

@@ -27,4 +27,20 @@ public class UsersServiceImplement  implements UsersService {
         // TODO Auto-generated method stub
         return uR.findAll();
     }
+
+    @Override
+    public Users findWihtName(String name) {
+        return uR.findByUsername(name);
+    }
+
+    @Override
+    public void delete(Long id) {
+        uR.deleteById(id);
+    }
+
+
+    @Override
+    public Users listID(Long id) {
+        return uR.findById(id).orElse(new Users());
+    }
 }

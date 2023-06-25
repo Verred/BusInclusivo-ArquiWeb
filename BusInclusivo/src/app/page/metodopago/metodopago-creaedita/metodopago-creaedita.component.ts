@@ -57,7 +57,7 @@ export class MetodopagoCreaeditaComponent implements OnInit{
         });
       }
 
-      this.router.navigate(['metodopagos']);
+      this.router.navigate(['pages/metodopagos']);
 
     } else {
       this.mensaje = "Ingrese la descripcion"

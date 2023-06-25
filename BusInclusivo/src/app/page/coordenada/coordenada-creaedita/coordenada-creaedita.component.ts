@@ -67,7 +67,7 @@ export class CoordenadaCreaeditaComponent {
         });
       }
 
-      this.router.navigate(['coordenadas']);
+      this.router.navigate(['pages/coordenadas']);
 
     } else {
       this.mensaje = "Ingrese todos los datos"

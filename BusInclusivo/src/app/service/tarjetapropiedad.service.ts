@@ -72,9 +72,15 @@ export class TarjetapropiedadService {
     });
   }
   getCountColores(): Observable <ColorCountDTO[]> {
-    return this.http.get<ColorCountDTO[]>(`${this.url}/color-count`);
+    let token = sessionStorage.getItem("token");
+    return this.http.get<ColorCountDTO[]>(`${this.url}/color-count`, {
+      headers: new HttpHeaders().set('Authorization', `Bearer ${token}`).set('Content-Type', 'application/json')
+    });
   }
   getCountMarcas(): Observable <MarcaCountDTO[]> {
-    return this.http.get<MarcaCountDTO[]>(`${this.url}/marca-count`);
+    let token = sessionStorage.getItem("token");
+    return this.http.get<MarcaCountDTO[]>(`${this.url}/marca-count`, {
+      headers: new HttpHeaders().set('Authorization', `Bearer ${token}`).set('Content-Type', 'application/json')
+    });
   }
 }

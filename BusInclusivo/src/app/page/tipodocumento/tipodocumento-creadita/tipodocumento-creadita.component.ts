@@ -50,7 +50,7 @@ aceptar():void{
       })
     })
  }
-  this.router.navigate(['tipodocumento']);
+  this.router.navigate(['pages/tipodocumento']);
 } else {
   this.mensaje = "Ingrese el nombre!!!";
 }

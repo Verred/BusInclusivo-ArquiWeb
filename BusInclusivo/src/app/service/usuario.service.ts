@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient,HttpHeaders } from '@angular/common/http';
-import { Usuario } from '../model/Usuario';
+import { Usuario } from '../model/Users';
 import { environment } from 'src/environments/environment';
 import { Subject } from 'rxjs';
 
@@ -11,7 +11,7 @@ const base_url = environment.base
 })
 export class UsuarioService {
 
-  private url = `${base_url}/usuarios`;
+  private url = `${base_url}/users`;
   private listCambio = new Subject<Usuario[]>();
   private confirmaEliminacion = new Subject<Boolean>()
   constructor(private http:HttpClient) { }

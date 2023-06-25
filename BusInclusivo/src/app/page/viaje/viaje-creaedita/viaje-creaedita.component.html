@@ -24,7 +24,7 @@
                 <mat-label> Conductor </mat-label>
                 <mat-select formControlName="conductor" [(value)]="idConductoSele" required>
                   <mat-option *ngFor="let enty of listaConductor " [value]="enty.idConductor">
-                    {{enty.usuario.nombre}}
+                    {{enty.usuario.username}}
                 </mat-option>
                 </mat-select>
             </mat-form-field>
@@ -46,7 +46,7 @@
                 <mat-label> Pasajero </mat-label>
                 <mat-select formControlName="pasajero" [(value)]="idPasajeroSele" required>
                   <mat-option *ngFor="let enty of listaPasajero " [value]="enty.idPasajero">
-                    {{enty.usuario.nombre}}
+                    {{enty.usuario.username}}
                 </mat-option>
                 </mat-select>
             </mat-form-field>

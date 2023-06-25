@@ -3,7 +3,7 @@ import { Router } from '@angular/router';
 import { MatDialogRef } from '@angular/material/dialog';
 import { LoginService } from 'src/app/service/login.service';
 import { JwtRequest } from 'src/app/model/jwtRequest';
-
+import { EventEmitter, Output } from '@angular/core';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -14,9 +14,9 @@ export class LoginComponent implements OnInit {
   username: string = ""
   password: string = ""
   mensaje: string = ""
-  oculto: boolean= false;
+  oculto: boolean = false;
   ngOnInit(): void {
-   //visible= false;
+    //visible= false;
   }
   login() {
     let request = new JwtRequest();
@@ -25,11 +25,20 @@ export class LoginComponent implements OnInit {
     this.loginService.login(request).subscribe((data: any) => {
       sessionStorage.setItem("token", data.jwttoken);
       this.router.navigate(['/pages/viajes']);
-      this.oculto  = true;
+      this.oculto = true;
     }, error => {
       this.mensaje = "Credenciales incorrectas!!!"
       //this.snackBar.open(this.mensaje, "Aviso",{duration:2000});
     });
   }
+
+  abrir() {
+    this.router.navigate(['/registro']);
+  }
   
+  @Output() abrirRegister = new EventEmitter<void>();
+
+  abrirRegisterComponent() {
+    this.abrirRegister.emit();
+  }
 }

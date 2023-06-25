@@ -1,7 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 
 import { UsuarioDialogoComponent } from './usuario-dialogo/usuario-dialogo.component';
-import { Usuario } from 'src/app/model/Usuario';
+import { Usuario } from 'src/app/model/Users';
 import { UsuarioService } from 'src/app/service/usuario.service';
 
 import { MatTableDataSource } from '@angular/material/table';

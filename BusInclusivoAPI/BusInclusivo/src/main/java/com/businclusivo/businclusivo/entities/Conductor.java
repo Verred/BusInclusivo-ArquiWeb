@@ -10,16 +10,16 @@ public class Conductor {
     private int idConductor;
     @OneToOne
     @JoinColumn(name = "idUsuario")
-    private Usuario usuario; /* OtO idUser*/
+    private Users usuario; /* OtO idUser*/
     @Column(name = "licencia", nullable = false)
     private int licencia;
-    @Column(name = "horasViaje", nullable = false)
+    @Column(name = "totalHoras", nullable = false)
     private float horasViaje;
 
     public Conductor() {
     }
 
-    public Conductor(int idConductor, Usuario usuario, int licencia, float horasViaje) {
+    public Conductor(int idConductor, Users usuario, int licencia, float horasViaje) {
         this.idConductor = idConductor;
         this.usuario = usuario;
         this.licencia = licencia;
@@ -34,11 +34,11 @@ public class Conductor {
         this.idConductor = idConductor;
     }
 
-    public Usuario getUsuario() {
+    public Users getUsuario() {
         return usuario;
     }
 
-    public void setUsuario(Usuario usuario) {
+    public void setUsuario(Users usuario) {
         this.usuario = usuario;
     }
 

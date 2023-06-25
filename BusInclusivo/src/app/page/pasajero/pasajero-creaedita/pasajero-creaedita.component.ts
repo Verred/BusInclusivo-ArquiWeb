@@ -4,7 +4,7 @@ import { FormControl, FormGroup } from '@angular/forms';
 import { Pasajero } from 'src/app/model/Pasajero';
 import { PasajeroService } from 'src/app/service/pasajero.service';
 import { ActivatedRoute, Params, Router } from '@angular/router';
-import { Usuario } from 'src/app/model/Usuario';
+import { Usuario } from 'src/app/model/Users';
 import { UsuarioService } from 'src/app/service/usuario.service';
 @Component({
   selector: 'app-pasajero-creaedita',
@@ -51,12 +51,12 @@ export class PasajeroCreaeditaComponent {
 
   aceptar(): void {
     this.entidad.idPasajero = this.form.value['id'];
-    this.entidad.usuario = this.form.value['user.nombre'];
+    this.entidad.usuario = this.form.value['user.username'];
 
    
 
     let UserIndepe = new Usuario();
-    UserIndepe.idUsuario = this.idUserSele;
+    UserIndepe.id = this.idUserSele;
     this.entidad.usuario = UserIndepe ;
    
 
@@ -76,7 +76,7 @@ export class PasajeroCreaeditaComponent {
         });
       }
 
-      this.router.navigate(['pasajeros']);
+      this.router.navigate(['pages/pasajeros']);
 
     } else {
       this.mensaje = "Ingrese todos los datos"

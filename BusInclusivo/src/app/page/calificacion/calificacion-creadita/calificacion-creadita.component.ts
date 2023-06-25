@@ -65,7 +65,7 @@ aceptar():void{
       })
     })
  }
-  this.router.navigate(['calificaciones']);
+  this.router.navigate(['pages/calificaciones']);
 } else {
   this.mensaje = "Ingrese el nombre!!!";
 }

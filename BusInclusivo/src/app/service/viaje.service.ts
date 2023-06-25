@@ -2,7 +2,8 @@ import { Injectable } from '@angular/core';
 import { HttpClient,HttpHeaders } from '@angular/common/http';
 import { Viaje } from '../model/Viaje';
 import { environment } from 'src/environments/environment';
-import { Subject } from 'rxjs';
+import { Observable, Subject } from 'rxjs';
+import { ConductorCountDTO } from '../model/ConductorCountDTO';
 
 const base_url = environment.base
 
@@ -59,6 +60,12 @@ export class ViajeService {
   }
   setConfirmaEliminacion(estado: Boolean) {
     this.confirmaEliminacion.next(estado);
+  }
+  getCountCondutores (): Observable <ConductorCountDTO[]> {
+    let token = sessionStorage.getItem("token");
+    return this.http.get<ConductorCountDTO[]>(`${this.url}/conductor-count`, {
+      headers: new HttpHeaders().set('Authorization', `Bearer ${token}`).set('Content-Type', 'application/json')
+    });
   }
 
 }

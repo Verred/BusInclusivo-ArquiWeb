@@ -2,6 +2,8 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { LoginComponent } from './page/login/login.component';
 import { MenuComponent } from './menu/menu.component';
+import { UserCreaeditaComponent } from './page/user/user-creaedita/user-creaedita.component';
+import { RegisterComponent } from './page/register/register.component';
 
 const routes: Routes = [
   {
@@ -17,6 +19,9 @@ const routes: Routes = [
   },
   {
     path: 'menu', component: MenuComponent
+  },
+  {
+    path: 'registro', component: RegisterComponent
   },
 ];
 

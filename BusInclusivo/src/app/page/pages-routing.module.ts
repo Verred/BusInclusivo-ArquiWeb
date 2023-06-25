@@ -54,6 +54,9 @@ import { ViajeComponent } from './viaje/viaje.component';
 import { ViajeCreaeditaComponent } from './viaje/viaje-creaedita/viaje-creaedita.component';
 import { ReportesComponent } from './reportes/reportes.component';
 import { ReporteModeloComponent } from './reportes/reporte-modelo/reporte-modelo.component';
+import { ReporteColorComponent } from './reportes/reporte-color/reporte-color.component';
+import { ReporteMarcaComponent } from './reportes/reporte-marca/reporte-marca.component';
+import { ReporteConductoresComponent } from './reportes/reporte-conductores/reporte-conductores.component';
 
 const routes: Routes = [
     {
@@ -174,8 +177,14 @@ const routes: Routes = [
         path:'reportes',component:ReportesComponent,children:[
     
         { path: 'model-count', component: ReporteModeloComponent },
-      ]
-      }
+        { path: 'color-count', component: ReporteColorComponent },
+        { path: 'marca-count', component: ReporteMarcaComponent },
+        { path: 'conductor-count', component: ReporteConductoresComponent },
+
+      ], canActivate: [GuardService]
+    }
+
+
 
 ]
 

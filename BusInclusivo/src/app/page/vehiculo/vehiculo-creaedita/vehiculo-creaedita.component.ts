@@ -87,7 +87,7 @@ export class VehiculoCreaeditaComponent {
         });
       }
 
-      this.router.navigate(['vehiculos']);
+      this.router.navigate(['pages/vehiculos']);
 
     } else {
       this.mensaje = "Ingrese todos los datos"

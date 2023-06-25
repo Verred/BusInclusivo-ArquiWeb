@@ -31,6 +31,7 @@ import { MatDividerModule } from '@angular/material/divider';
 import { MatListModule } from '@angular/material/list';
 import { HeaderComponent } from './header/header.component';
 import { MatMenuModule } from '@angular/material/menu';
+import { RegisterComponent } from './page/register/register.component';
 
 @NgModule({
   declarations: [
@@ -39,7 +40,7 @@ import { MatMenuModule } from '@angular/material/menu';
     HomePageComponent,
     LoginComponent,
     HeaderComponent,
-    
+    RegisterComponent,
   ],
   imports: [
     BrowserModule,

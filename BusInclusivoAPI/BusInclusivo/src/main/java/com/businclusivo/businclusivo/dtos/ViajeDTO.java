@@ -15,6 +15,7 @@ public class ViajeDTO {
     private Pasajero pasajero;
     private Pago pago;
     private Ruta ruta;
+    private float horasViaje;
 
     public int getIdViaje() {
         return idViaje;
@@ -72,5 +73,11 @@ public class ViajeDTO {
         this.ruta = ruta;
     }
 
+    public float getHorasViaje() {
+        return horasViaje;
+    }
 
+    public void setHorasViaje(float horasViaje) {
+        this.horasViaje = horasViaje;
+    }
 }

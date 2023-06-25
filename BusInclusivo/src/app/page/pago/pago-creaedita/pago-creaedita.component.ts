@@ -74,7 +74,7 @@ export class PagoCreaeditaComponent {
         });
       }
 
-      this.router.navigate(['pagos']);
+      this.router.navigate(['pages/pagos']);
 
     } else {
       this.mensaje = "Ingrese todos los datos"

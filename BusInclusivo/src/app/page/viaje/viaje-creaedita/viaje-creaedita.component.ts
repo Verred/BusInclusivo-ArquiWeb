@@ -86,9 +86,9 @@ export class ViajeCreaeditaComponent {
 
   aceptar(): void {
     this.entidad.idViaje = this.form.value['id'];
-    this.entidad.conductor.usuario.nombre = this.form.value['conductor.usuario.nombre'];
+    this.entidad.conductor.usuario.username = this.form.value['conductor.usuario.nombre'];
     this.entidad.vehiculo.tarjetaPropiedad.tarjetaNumero =this.form.value['vehiculo.tarjetaPropiedad.tarjetaNumero'];
-    this.entidad.pasajero.usuario.nombre =this.form.value['pasajero.usuario.nombre'];
+    this.entidad.pasajero.usuario.username =this.form.value['pasajero.usuario.nombre'];
     this.entidad.pago.precioKM =this.form.value['pago.precioKM'];
     this.entidad.ruta.descripcion = this.form.value['ruta.descripcion'];
     this.entidad.fechaViaje = this.form.value['fecha'];

@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import * as moment from 'moment';
 import { FormControl, FormGroup } from '@angular/forms';
 import { ActivatedRoute, Params, Router } from '@angular/router';
-import { Usuario } from 'src/app/model/Usuario';
+import { Usuario } from 'src/app/model/Users';
 import { UsuarioService } from 'src/app/service/usuario.service';
 
 @Component({
@@ -45,10 +45,10 @@ export class UsuarioCreaeditaComponent {
   }
 
   aceptar(): void {
-    this.entidad.idUsuario = this.form.value['id'];
+    this.entidad.id = this.form.value['id'];
     this.entidad.email = this.form.value['email'];
     this.entidad.direccion = this.form.value['direccion'];
-    this.entidad.nombre = this.form.value['nombre'];
+    this.entidad.username = this.form.value['nombre'];
     this.entidad.telefono = this.form.value['telefono'];
     this.entidad.fechaNacimiento = this.form.value['fechaNacimiento'];
 
@@ -69,7 +69,7 @@ export class UsuarioCreaeditaComponent {
         });
       }
 
-      this.router.navigate(['usuarios']);
+      this.router.navigate(['pages/usuarios']);
 
     } else {
       this.mensaje = "Ingrese todos los datos"
@@ -80,10 +80,10 @@ export class UsuarioCreaeditaComponent {
       this.servi.listId(this.id).subscribe((data) => {
         this.form = new FormGroup({       
 
-          id: new FormControl(data.idUsuario),
+          id: new FormControl(data.id),
           email: new FormControl(data.email),
           direccion :new FormControl(data.direccion),
-          nombre :new FormControl(data.nombre),
+          nombre :new FormControl(data.username),
           telefono :new FormControl(data.telefono),
           fechaNacimiento :new FormControl(data.fechaNacimiento)
 

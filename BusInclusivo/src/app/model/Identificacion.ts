@@ -1,5 +1,5 @@
 import { TipoDocumento } from "./TipoDocumento";
-import { Usuario } from "./Usuario";
+import { Usuario } from "./Users";
 
 export class Identificacion{
     idIdentificacion:number=0

@@ -26,10 +26,12 @@ public class Viaje {
     @ManyToOne
     @JoinColumn(name = "idRuta")
     private Ruta ruta;
+    @Column(name = "horasViaje", nullable = false)
+    private float horasViaje;
     public Viaje() {
     }
 
-    public Viaje(int idViaje, LocalDate fechaViaje, Conductor conductor, Vehiculo vehiculo, Pasajero pasajero, Pago pago, Ruta ruta) {
+    public Viaje(int idViaje, LocalDate fechaViaje, Conductor conductor, Vehiculo vehiculo, Pasajero pasajero, Pago pago, Ruta ruta, float horasViaje) {
         this.idViaje = idViaje;
         this.fechaViaje = fechaViaje;
         this.conductor = conductor;
@@ -37,6 +39,7 @@ public class Viaje {
         this.pasajero = pasajero;
         this.pago = pago;
         this.ruta = ruta;
+        this.horasViaje = horasViaje;
     }
 
     public int getIdViaje() {
@@ -93,5 +96,13 @@ public class Viaje {
 
     public void setRuta(Ruta ruta) {
         this.ruta = ruta;
+    }
+
+    public float getHorasViaje() {
+        return horasViaje;
+    }
+
+    public void setHorasViaje(float horasViaje) {
+        this.horasViaje = horasViaje;
     }
 }

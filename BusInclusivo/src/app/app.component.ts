@@ -33,4 +33,15 @@ export class AppComponent {
   sideBarToggler() {
     this.sideBarOpen = !this.sideBarOpen;
   }
+
+  loginVisible: boolean = true;
+
+  abrirRegisterComponent() {
+    this.loginVisible = false;
+  }
+
+  abrirLoginComponent() {
+    this.loginVisible = true;
+  }
+  
 }

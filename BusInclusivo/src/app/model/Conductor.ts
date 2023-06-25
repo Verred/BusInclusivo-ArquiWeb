@@ -1,4 +1,4 @@
-import { Usuario } from "./Usuario"
+import { Usuario } from "./Users"
 
 export class Conductor {
     idConductor :number=0

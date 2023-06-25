@@ -1,7 +1,6 @@
 package com.businclusivo.businclusivo.controllers;
 
-import com.businclusivo.businclusivo.dtos.TipoDocumentoDTO;
-import com.businclusivo.businclusivo.dtos.ViajeDTO;
+import com.businclusivo.businclusivo.dtos.*;
 import com.businclusivo.businclusivo.entities.TipoDocumento;
 import com.businclusivo.businclusivo.entities.Viaje;
 import com.businclusivo.businclusivo.services.TipoDocumentoService;
@@ -51,5 +50,11 @@ public class ViajeController {
         ModelMapper mp=new ModelMapper();
         Viaje m=mp.map(dto,Viaje.class);
         Servic.insert(m);
+    }
+
+    @GetMapping("/conductor-count")
+    public List<CountConductorDTO> getColorCount() {
+        List<CountConductorDTO> countConductorDTOS = Servic.reporteConductores();
+        return countConductorDTOS;
     }
 }

@@ -1,25 +1,51 @@
 package com.businclusivo.businclusivo.dtos;
 
-import com.businclusivo.businclusivo.entities.Users;
+import com.businclusivo.businclusivo.entities.Role;
 
+import javax.persistence.*;
 import java.time.LocalDate;
+import java.util.List;
 
-public class UsuarioDTO {
-
-    private int idUsuario;
+public class UserDTO {
+    private String username;
+    private String password;
+    private Boolean enabled;
+    private List<Role> roles;
     private String email;
     private String direccion;
-    private String nombre;
     private int telefono;
     private LocalDate fechaNacimiento;
-    private Users users;
 
-    public int getIdUsuario() {
-        return idUsuario;
+    public String getUsername() {
+        return username;
     }
 
-    public void setIdUsuario(int idUsuario) {
-        this.idUsuario = idUsuario;
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public Boolean getEnabled() {
+        return enabled;
+    }
+
+    public void setEnabled(Boolean enabled) {
+        this.enabled = enabled;
+    }
+
+    public List<Role> getRoles() {
+        return roles;
+    }
+
+    public void setRoles(List<Role> roles) {
+        this.roles = roles;
     }
 
     public String getEmail() {
@@ -38,14 +64,6 @@ public class UsuarioDTO {
         this.direccion = direccion;
     }
 
-    public String getNombre() {
-        return nombre;
-    }
-
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
-    }
-
     public int getTelefono() {
         return telefono;
     }
@@ -60,13 +78,5 @@ public class UsuarioDTO {
 
     public void setFechaNacimiento(LocalDate fechaNacimiento) {
         this.fechaNacimiento = fechaNacimiento;
-    }
-
-    public Users getUsers() {
-        return users;
-    }
-
-    public void setUsers(Users users) {
-        this.users = users;
     }
 }

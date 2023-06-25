@@ -48,10 +48,9 @@ export class ReporteModeloComponent implements OnInit {
     var options ={
       title: "Reporte de modelos"
     }
-    var datosFormateados = this.formatearDatosParaGrafico();
 
     var chart = new google.visualization.PieChart(document.getElementById('chart_div'));
-    chart.draw(datosFormateados, options);
+    chart.draw(data, options);
   }
 
   //Reporte en tabla 
@@ -60,22 +59,5 @@ export class ReporteModeloComponent implements OnInit {
       .subscribe((data: ModeloCountDTO[]) => {
         this.modelocounts = data;
       });
-  }
-
-   formatearDatosParaGrafico() {
-    var datos = this.servi.getCountModelos().pipe(
-    switchMap(datos => {
-      // Utilizar map() para crear un nuevo arreglo con los datos requeridos por el gráfico
-      var datosFormateados = datos.map(objeto => [objeto.modeloName, objeto.modeloCount]);
-      return datosFormateados;
-    })
-  );;
-  
-    // Utilizar map() para crear un nuevo arreglo con los datos requeridos por el gráfico
-    // var datosFormateados = datos.map(function(objeto) {
-    //   return [objeto.nombre, objeto.cantidad];
-    // });
-  
-    return datos;
   }
 }
