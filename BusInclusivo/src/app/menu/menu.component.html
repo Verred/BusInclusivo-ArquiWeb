@@ -8,8 +8,17 @@
   <a mat-list-item  routerLinkActive="list-item-active" routerLink="/pages/viajes">
     <mat-icon>home</mat-icon> Viajes
   </a>
-  <a mat-list-item routerLinkActive="list-item-active" routerLink="/pages/reportes">
-    <mat-icon>dashboard</mat-icon> Reportes
+  <a mat-list-item routerLinkActive="list-item-active" *ngIf="role == 'ADMIN'" routerLink="/pages/reportes/marca-count">
+    <mat-icon>dashboard</mat-icon> Reporte Marcas
+  </a>
+  <a mat-list-item routerLinkActive="list-item-active" *ngIf="role == 'ADMIN'" routerLink="/pages/reportes/model-count">
+    <mat-icon>dashboard</mat-icon> Reporte Modelos
+  </a>
+  <a mat-list-item routerLinkActive="list-item-active" *ngIf="role == 'ADMIN'" routerLink="/pages/reportes/color-count">
+    <mat-icon>dashboard</mat-icon> Reporte Colores
+  </a>
+  <a mat-list-item routerLinkActive="list-item-active" *ngIf="role == 'ADMIN'" routerLink="/pages/reportes/conductor-count">
+    <mat-icon>dashboard</mat-icon> Reporte Conductores
   </a>
   <a mat-list-item *ngIf="role == 'ADMIN' || role == 'MODERADOR'"   routerLink="/pages/marcas"> <mat-icon>edit</mat-icon> Marcas </a>
   <a mat-list-item *ngIf="role == 'ADMIN' || role == 'MODERADOR'"   routerLink="/pages/modelos"> <mat-icon>edit</mat-icon> Modelos </a>

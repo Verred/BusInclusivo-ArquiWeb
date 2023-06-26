@@ -15,7 +15,7 @@ export class ReporteColorComponent implements OnInit{
   colorcounts: ColorCountDTO[] = []; //para el reporte de tabla 
   dataSource: MatTableDataSource<ColorCountDTO> = new MatTableDataSource();
   displayedColumns: string[] = ['color', 'cantidad']
-
+  chartData: any[][] = [];
   constructor(private servi: TarjetapropiedadService) { 
   }
 
@@ -24,7 +24,12 @@ export class ReporteColorComponent implements OnInit{
     //Reporte tabla
     this.servi.getCountColores().subscribe(data => {
       this.dataSource = new MatTableDataSource(data);
+
+      //Carga data para el grafico
+      this.chartData = this.dataSource.data.map(row => [row.coloName, row.colorCount]);
+
     })
+    
     //Reporte grafico
     google.charts.load('current', { 'packages': ['corechart'] });
     google.charts.setOnLoadCallback(this.drawChart);
@@ -33,20 +38,14 @@ export class ReporteColorComponent implements OnInit{
 
   //Reporte grafico
 
-  drawChart() {
-    // Create the data table.
+  drawChart= () =>  {
     var data = new google.visualization.DataTable();
     data.addColumn('string', 'Modelo');
     data.addColumn('number', 'Numero');
-    data.addRows([
-      ['Mushrooms', 3],
-      ['Onions', 1],
-      ['Olives', 2],
-      ['Zucchini', 4],
-      ['Pepperoni', 2]
-    ]);
+ 
+    data.addRows(this.chartData);
     var options ={
-      title: "Reporte de modelos"
+      title: "Reporte de Color"
     }
 
     var chart = new google.visualization.PieChart(document.getElementById('chart_div'));

@@ -13,7 +13,7 @@ declare var google: any
 export class ReporteModeloComponent implements OnInit {
   modelocounts: ModeloCountDTO[] = []; //para el reporte de tabla 
   dataSource: MatTableDataSource<ModeloCountDTO> = new MatTableDataSource();
-
+  chartData: any[][] = [];
   displayedColumns: string[] = ['modelo', 'cantidad']
 
   constructor(private servi: TarjetapropiedadService) { 
@@ -24,6 +24,8 @@ export class ReporteModeloComponent implements OnInit {
     //Reporte tabla
     this.servi.getCountModelos().subscribe(data => {
       this.dataSource = new MatTableDataSource(data);
+       //Carga data para el grafico
+       this.chartData = this.dataSource.data.map(row => [row.modeloName, row.modeloCount]);
     })
     //Reporte grafico
     google.charts.load('current', { 'packages': ['corechart'] });
@@ -33,18 +35,12 @@ export class ReporteModeloComponent implements OnInit {
 
   //Reporte grafico
 
-  drawChart() {
+  drawChart= () =>   {
     // Create the data table.
     var data = new google.visualization.DataTable();
     data.addColumn('string', 'Modelo');
     data.addColumn('number', 'Numero');
-    data.addRows([
-      ['Mushrooms', 3],
-      ['Onions', 1],
-      ['Olives', 2],
-      ['Zucchini', 4],
-      ['Pepperoni', 2]
-    ]);
+    data.addRows(this.chartData);
     var options ={
       title: "Reporte de modelos"
     }

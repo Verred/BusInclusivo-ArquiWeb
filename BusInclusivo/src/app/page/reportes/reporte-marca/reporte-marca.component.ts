@@ -12,9 +12,8 @@ declare var google: any
 export class ReporteMarcaComponent implements OnInit {
   marcacounts: MarcaCountDTO[] = []; //para el reporte de tabla 
   dataSource: MatTableDataSource<MarcaCountDTO> = new MatTableDataSource();
-
   displayedColumns: string[] = ['marca', 'cantidad']
-
+  chartData: any[][] = [];
   constructor(private servi: TarjetapropiedadService) { 
   }
 
@@ -23,6 +22,8 @@ export class ReporteMarcaComponent implements OnInit {
     //Reporte tabla
     this.servi.getCountMarcas().subscribe(data => {
       this.dataSource = new MatTableDataSource(data);
+      //Carga data para el grafico
+      this.chartData = this.dataSource.data.map(row => [row.marcaName, row.marcaCount]);
     })
     //Reporte grafico
     google.charts.load('current', { 'packages': ['corechart'] });
@@ -32,20 +33,16 @@ export class ReporteMarcaComponent implements OnInit {
 
   //Reporte grafico
 
-  drawChart() {
+  drawChart= () => {
     // Create the data table.
     var data = new google.visualization.DataTable();
     data.addColumn('string', 'Marca');
     data.addColumn('number', 'Numero');
-    data.addRows([
-      ['Mushrooms', 3],
-      ['Onions', 1],
-      ['Olives', 2],
-      ['Zucchini', 4],
-      ['Pepperoni', 2]
-    ]);
+    data.addRows(this.chartData);
     var options ={
-      title: "Reporte de modelos"
+      title: "Reporte de Marcas",
+      'width':400,
+      'height':300
     }
 
     var chart = new google.visualization.PieChart(document.getElementById('chart_div'));

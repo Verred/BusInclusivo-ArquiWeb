@@ -15,7 +15,7 @@ export class ReporteConductoresComponent implements OnInit{
   dataSource: MatTableDataSource<ConductorCountDTO> = new MatTableDataSource();
 
   displayedColumns: string[] = ['conductor', 'Horas']
-
+  chartData: any[][] = [];
   constructor(private servi: ViajeService) { 
   }
 
@@ -24,6 +24,8 @@ export class ReporteConductoresComponent implements OnInit{
     //Reporte tabla
     this.servi.getCountCondutores().subscribe(data => {
       this.dataSource = new MatTableDataSource(data);
+       //Carga data para el grafico
+       this.chartData = this.dataSource.data.map(row => [row.name, row.horas]);
     })
     //Reporte grafico
     google.charts.load('current', { 'packages': ['corechart'] });
@@ -33,20 +35,14 @@ export class ReporteConductoresComponent implements OnInit{
 
   //Reporte grafico
 
-  drawChart() {
+  drawChart= () => {
     // Create the data table.
     var data = new google.visualization.DataTable();
     data.addColumn('string', 'conductor');
     data.addColumn('number', 'Horas');
-    data.addRows([
-      ['Mushrooms', 3],
-      ['Onions', 1],
-      ['Olives', 2],
-      ['Zucchini', 4],
-      ['Pepperoni', 2]
-    ]);
+    data.addRows(this.chartData);
     var options ={
-      title: "Reporte de modelos"
+      title: "Reporte de Conductores"
     }
 
     var chart = new google.visualization.PieChart(document.getElementById('chart_div'));
