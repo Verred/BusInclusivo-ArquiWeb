@@ -46,7 +46,7 @@ public class ViajeServiceImplement implements ViajeService {
         for (String[] data : HoursByConductor) {
             CountConductorDTO dto = new CountConductorDTO();
             dto.setName(data[0]);
-            dto.setHoras(Integer.parseInt(data[1]));
+            dto.setHoras(Float.parseFloat(data[1]));
             countConductorDTOS.add(dto);
         }
 

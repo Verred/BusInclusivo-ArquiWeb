@@ -1,10 +1,11 @@
 package com.businclusivo.businclusivo.dtos;
 
 import com.businclusivo.businclusivo.entities.Users;
+import com.businclusivo.businclusivo.entities.Usuario;
 
 public class PasajeroDTO {
     private int idPasajero;
-    private Users usuario;
+    private Usuario usuario;
 
     public int getIdPasajero() {
         return idPasajero;
@@ -14,11 +15,11 @@ public class PasajeroDTO {
         this.idPasajero = idPasajero;
     }
 
-    public Users getUsuario() {
+    public Usuario getUsuario() {
         return usuario;
     }
 
-    public void setUsuario(Users usuario) {
+    public void setUsuario(Usuario usuario) {
         this.usuario = usuario;
     }
 }

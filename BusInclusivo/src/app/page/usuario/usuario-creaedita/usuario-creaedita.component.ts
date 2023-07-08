@@ -45,10 +45,10 @@ export class UsuarioCreaeditaComponent {
   }
 
   aceptar(): void {
-    this.entidad.id = this.form.value['id'];
+    this.entidad.idUsuario = this.form.value['id'];
     this.entidad.email = this.form.value['email'];
     this.entidad.direccion = this.form.value['direccion'];
-    this.entidad.username = this.form.value['nombre'];
+    this.entidad.nombre = this.form.value['nombre'];
     this.entidad.telefono = this.form.value['telefono'];
     this.entidad.fechaNacimiento = this.form.value['fechaNacimiento'];
 
@@ -80,10 +80,10 @@ export class UsuarioCreaeditaComponent {
       this.servi.listId(this.id).subscribe((data) => {
         this.form = new FormGroup({       
 
-          id: new FormControl(data.id),
+          id: new FormControl(data.idUsuario),
           email: new FormControl(data.email),
           direccion :new FormControl(data.direccion),
-          nombre :new FormControl(data.username),
+          nombre :new FormControl(data.nombre),
           telefono :new FormControl(data.telefono),
           fechaNacimiento :new FormControl(data.fechaNacimiento)
 

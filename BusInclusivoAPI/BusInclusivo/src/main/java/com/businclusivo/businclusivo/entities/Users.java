@@ -113,4 +113,19 @@ public class Users implements Serializable {
     public void setFechaNacimiento(LocalDate fechaNacimiento) {
         this.fechaNacimiento = fechaNacimiento;
     }
+
+    public Users() {
+    }
+
+    public Users(Long id, String username, String password, Boolean enabled, String email, String direccion, int telefono, LocalDate fechaNacimiento, List<Role> roles) {
+        this.id = id;
+        this.username = username;
+        this.password = password;
+        this.enabled = enabled;
+        this.email = email;
+        this.direccion = direccion;
+        this.telefono = telefono;
+        this.fechaNacimiento = fechaNacimiento;
+        this.roles = roles;
+    }
 }

@@ -3,7 +3,7 @@ package com.businclusivo.businclusivo.dtos;
 public class CountConductorDTO {
 
     private String name;
-    private int horas;
+    private float horas;
 
     public CountConductorDTO() {
     }
@@ -21,11 +21,11 @@ public class CountConductorDTO {
         this.name = name;
     }
 
-    public int getHoras() {
+    public float getHoras() {
         return horas;
     }
 
-    public void setHoras(int horas) {
+    public void setHoras(float horas) {
         this.horas = horas;
     }
 }

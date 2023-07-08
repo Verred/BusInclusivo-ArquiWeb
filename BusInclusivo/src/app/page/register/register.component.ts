@@ -2,9 +2,9 @@ import { Component } from '@angular/core';
 import * as moment from 'moment';
 import { FormControl, FormGroup } from '@angular/forms';
 import { ActivatedRoute, Params, Router } from '@angular/router';
-import { Usuario } from 'src/app/model/Users';
 import { EventEmitter, Output } from '@angular/core';
 import { RegisterService } from 'src/app/service/register.service';
+import { Usuario2 } from 'src/app/model/Usuario';
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
@@ -14,7 +14,7 @@ export class RegisterComponent {
   id: number = 0;
   edicion: boolean = false;
   form: FormGroup = new FormGroup({})
-  entidad: Usuario = new Usuario();
+  entidad: Usuario2 = new Usuario2();
   mensaje: string = "";
   maxFecha: Date = moment().add(-1, 'days').toDate();
 
@@ -51,7 +51,7 @@ export class RegisterComponent {
     if ( this.form.value['nombre'].lenght > 0) {
 
         
-        console.log(this.servi.insert(this.entidad))
+        
 
       this.router.navigate(['/login']);
 

@@ -1,13 +1,7 @@
-import { Role } from "./Role"
 
 export class Usuario{
-    username: string=""
-    password: string=""
-    enabled:boolean=true
-    id: number = 0
-   
-    roles : Role[] = [];
-
+    idUsuario: number = 0
+    nombre: string=""
     email:string=""
     direccion:string=""
     telefono: number = 0

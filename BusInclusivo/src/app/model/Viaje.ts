@@ -13,4 +13,5 @@ export class Viaje{
     pasajero: Pasajero = new Pasajero();
     pago: Pago = new Pago();
     fechaViaje: Date=new Date(Date.now());
+    horasViaje: number=0;
 }

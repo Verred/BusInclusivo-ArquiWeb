@@ -11,7 +11,7 @@ const base_url = environment.base
 })
 export class UsuarioService {
 
-  private url = `${base_url}/users`;
+  private url = `${base_url}/usuarios`;
   private listCambio = new Subject<Usuario[]>();
   private confirmaEliminacion = new Subject<Boolean>()
   constructor(private http:HttpClient) { }
