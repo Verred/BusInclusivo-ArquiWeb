@@ -128,8 +128,14 @@ export class TarjetapropiedadCreaeditaComponent {
           cantidad :new FormControl(data.cantidadAsientos),
           anio :new FormControl(data.anio)
         });
+        this.idColorSele = data.color.idColor;
+        this.idMarcaSele = data.marca.idMarca;
+        this.idModeloSele= data.modelo.idModelo;
+
       });
+
     }
+
   }
 
 

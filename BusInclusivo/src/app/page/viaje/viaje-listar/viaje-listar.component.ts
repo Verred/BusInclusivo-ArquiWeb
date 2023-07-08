@@ -18,7 +18,7 @@ export class ViajeListarComponent implements OnInit {
   paginator!: MatPaginator;
   lista: Viaje [] = [];
   dataSource: MatTableDataSource<Viaje> = new MatTableDataSource();
-  displayedColumns: string[] = ['id','conductor','vehiculo','pasajero','pago','ruta','fecha','Actualizar'];
+  displayedColumns: string[] = ['id','conductor','vehiculo','pasajero','pago','ruta','fecha', 'horas','Actualizar'];
   private idMayor: number = 0;
 
   constructor(private serv : ViajeService, private dialog: MatDialog) {}

@@ -24,7 +24,7 @@
                 <mat-label> Conductor </mat-label>
                 <mat-select formControlName="conductor" [(value)]="idConductoSele" required>
                   <mat-option *ngFor="let enty of listaConductor " [value]="enty.idConductor">
-                    {{enty.usuario.username}}
+                    {{enty.usuario.nombre}}
                 </mat-option>
                 </mat-select>
             </mat-form-field>
@@ -46,7 +46,7 @@
                 <mat-label> Pasajero </mat-label>
                 <mat-select formControlName="pasajero" [(value)]="idPasajeroSele" required>
                   <mat-option *ngFor="let enty of listaPasajero " [value]="enty.idPasajero">
-                    {{enty.usuario.username}}
+                    {{enty.usuario.nombre}}
                 </mat-option>
                 </mat-select>
             </mat-form-field>
@@ -74,6 +74,13 @@
             </mat-form-field>
 
             <br>
+
+            <mat-form-field class="example-full-width">
+                <mat-label>                  Horas de Viaje                </mat-label>
+                <input matInput  required placeholder="hora" formControlName = "hora">
+            </mat-form-field>
+
+            <br>
             <br>
 
 
@@ -89,7 +96,7 @@
             <div style="text-align: center;"  >
                 <button mat-raidsed-button class="btn btn-success" role="button" >Aceptar</button>
               
-                <button mat-raidsed-button routerLink="/viajes" class="btn btn-danger" role="button" style="margin-left: 10em"> Cancelar </button>
+                <button mat-raidsed-button routerLink="/pages/viajes" class="btn btn-danger" role="button" style="margin-left: 10em"> Cancelar </button>
             </div>
 
 

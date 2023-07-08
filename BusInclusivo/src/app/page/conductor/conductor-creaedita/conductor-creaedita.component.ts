@@ -53,13 +53,13 @@ export class ConductorCreaeditaComponent {
 
   aceptar(): void {
     this.entidad.idConductor = this.form.value['id'];
-    this.entidad.usuario = this.form.value['user.nombre'];
+    this.entidad.usuario = this.form.value['user'];
     this.entidad.licencia =this.form.value['licencia'];
     this.entidad.horasViaje =this.form.value['horas'];
    
 
     let UserIndepe = new Usuario();
-    UserIndepe.id = this.idUserSele;
+    UserIndepe.idUsuario = this.idUserSele;
     this.entidad.usuario = UserIndepe ;
    
 

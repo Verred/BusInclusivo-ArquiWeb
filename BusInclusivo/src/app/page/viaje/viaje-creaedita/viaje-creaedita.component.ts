@@ -81,17 +81,19 @@ export class ViajeCreaeditaComponent {
       pago :new FormControl(),
       ruta :new FormControl(),
       fecha :new FormControl(),
+      hora :new FormControl(),
     })
   }
 
   aceptar(): void {
     this.entidad.idViaje = this.form.value['id'];
-    this.entidad.conductor.usuario.username = this.form.value['conductor.usuario.nombre'];
+    this.entidad.conductor.usuario.nombre = this.form.value['conductor.usuario.nombre'];
     this.entidad.vehiculo.tarjetaPropiedad.tarjetaNumero =this.form.value['vehiculo.tarjetaPropiedad.tarjetaNumero'];
-    this.entidad.pasajero.usuario.username =this.form.value['pasajero.usuario.nombre'];
+    this.entidad.pasajero.usuario.nombre =this.form.value['pasajero.usuario.nombre'];
     this.entidad.pago.precioKM =this.form.value['pago.precioKM'];
     this.entidad.ruta.descripcion = this.form.value['ruta.descripcion'];
     this.entidad.fechaViaje = this.form.value['fecha'];
+    this.entidad.horasViaje = this.form.value['hora'];
 
     let ConductorIndepe = new Conductor();
     ConductorIndepe.idConductor = this.idConductoSele;
@@ -131,7 +133,7 @@ export class ViajeCreaeditaComponent {
         });
       }
 
-      this.router.navigate(['viajes']);
+      this.router.navigate(['pages/viajes']);
 
     } else {
       this.mensaje = "Ingrese todos los datos"
@@ -148,7 +150,7 @@ export class ViajeCreaeditaComponent {
           pago :new FormControl(data.pago),
           ruta :new FormControl(data.ruta),
           fecha :new FormControl(data.fechaViaje),
-
+          hora: new FormControl(data.horasViaje),
         });
       });
     }

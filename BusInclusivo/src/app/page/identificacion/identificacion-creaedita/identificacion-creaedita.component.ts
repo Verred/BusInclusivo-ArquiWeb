@@ -63,12 +63,12 @@ export class IdentificacionCreaeditaComponent {
     this.entidad.idIdentificacion = this.form.value['id'];
     this.entidad.numDocumento = this.form.value['num'];
     this.entidad.tipoDocumento.descripcion=this.form.value['tipo.descripcion'];
-    this.entidad.usuario.username=this.form.value['user.nombre'];
+    this.entidad.usuario.nombre=this.form.value['user'];
     this.entidad.fechaVencimiento =this.form.value['fecha'];
 
 
     let UserIndepe = new Usuario();
-    UserIndepe.id = this.idUserSele;
+    UserIndepe.idUsuario = this.idUserSele;
     this.entidad.usuario = UserIndepe ;
 
     let TipoIndepe = new TipoDocumento();

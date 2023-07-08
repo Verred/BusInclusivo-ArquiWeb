@@ -10,11 +10,11 @@ import java.util.List;
 
 @Repository
 public interface ViajeRepository extends JpaRepository<Viaje,Integer> {
-    @Query(value = "SELECT u.username, SUM(v.horas_viaje) AS total_horas_viaje\n" +
-            "FROM users u\n" +
+    @Query(value = "SELECT u.nombre, SUM(v.horas_viaje) AS total_horas_viaje\n" +
+            "FROM usuario u\n" +
             "JOIN conductor c ON u.id_usuario = c.id_usuario\n" +
             "JOIN viaje v ON c.id_conductor = v.id_conductor\n" +
-            "GROUP BY u.username;", nativeQuery = true)
+            "GROUP BY u.nombre", nativeQuery = true)
     List<String[]> getCountHoursConductor();
 
 }

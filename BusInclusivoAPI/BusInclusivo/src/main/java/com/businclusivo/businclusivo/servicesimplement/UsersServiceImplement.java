@@ -23,10 +23,11 @@ public class UsersServiceImplement  implements UsersService {
         return rpta;
     }
 
+    @Override
     public List<Users> list() {
-        // TODO Auto-generated method stub
         return uR.findAll();
     }
+
 
     @Override
     public Users findWihtName(String name) {

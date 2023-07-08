@@ -17,7 +17,7 @@ import java.util.stream.Collectors;
 
 import javax.validation.Valid;
 
-@Controller
+@RestController
 @Secured({"ROLE_ADMIN"})
 @RequestMapping("/users")
 public class UsersControlller {
@@ -70,6 +70,16 @@ public class UsersControlller {
     }
 
     //list
+    /*
+    @GetMapping
+    public List<UserDTO> list(){
+        return uService.list().stream().map(x->{
+            ModelMapper mp=new ModelMapper();
+            return mp.map(x,UserDTO.class);
+        }).collect(Collectors.toList());
+    }
+    */
+
     @GetMapping
     public List<UserDTO> list(){
         return uService.list().stream().map(x->{

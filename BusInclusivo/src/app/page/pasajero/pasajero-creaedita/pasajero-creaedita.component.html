@@ -21,8 +21,8 @@
             <mat-form-field appearance="fill">
                 <mat-label> Usuario </mat-label>
                 <mat-select formControlName="user" [(value)]="idUserSele" required>
-                  <mat-option *ngFor="let enty of listaUser" [value]="enty.id">
-                    {{enty.username}}
+                  <mat-option *ngFor="let enty of listaUser" [value]="enty.idUsuario">
+                    {{enty.nombre}}
                 </mat-option>
                 </mat-select>
             </mat-form-field>

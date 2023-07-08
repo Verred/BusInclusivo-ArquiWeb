@@ -51,12 +51,12 @@ export class PasajeroCreaeditaComponent {
 
   aceptar(): void {
     this.entidad.idPasajero = this.form.value['id'];
-    this.entidad.usuario = this.form.value['user.username'];
+    this.entidad.usuario = this.form.value['user.nombre'];
 
    
 
     let UserIndepe = new Usuario();
-    UserIndepe.id = this.idUserSele;
+    UserIndepe.idUsuario = this.idUserSele;
     this.entidad.usuario = UserIndepe ;
    
 

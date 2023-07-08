@@ -15,6 +15,7 @@ public class UserDTO {
     private String direccion;
     private int telefono;
     private LocalDate fechaNacimiento;
+    private Long id;
 
     public String getUsername() {
         return username;
@@ -78,5 +79,13 @@ public class UserDTO {
 
     public void setFechaNacimiento(LocalDate fechaNacimiento) {
         this.fechaNacimiento = fechaNacimiento;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 }
